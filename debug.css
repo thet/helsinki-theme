@@ -1,0 +1,5 @@
+div div div{
+  background-image:url(img/debug.png);
+  background-repeat:no-repeat;
+  -moz-background-size:100%,100%;
+}

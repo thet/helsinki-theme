@@ -1,0 +1,35 @@
+.clear {clear:both;}
+#logo { float:right; }
+/*#header { float:right; }*/
+#livestream,
+#onair,
+#searchbox { display:inline-block; }
+
+#lang li,
+#navigation li { display:inline; }
+#navigation { 
+    position:relative;
+    height:80px; }
+ul#navigation ul {
+    position:absolute;
+    top:30px;
+}
+
+#content, #column-1, #column-2 {
+    float:left;
+}
+#content {
+    position:relative;
+    left:300px;
+    width:513px;
+    margin-right:12px;
+}
+#column-1 {
+    position:relative;
+    left:-525px;
+    width:288px;
+    margin-right:12px;
+}
+#column-2 {
+    width:138px;
+}

@@ -1,10 +1,9 @@
-/*	Less Framework 3
-	by Joni Korpi
-	http://lessframework.com	*/
+/* Less Framework 3 by Joni Korpi 
+ * http://lessframework.com 
+ */
 
 
-/*	Resets
-	------	*/
+/* Resets */
 
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, 
 p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, 
@@ -29,8 +28,7 @@ figure {position: relative;}
 figure img {width: 100%;}
 
 
-/*	Typography presets
-	------------------	*/
+/* Typography presets */
 
 .gigantic {
 	font-size: 110px;

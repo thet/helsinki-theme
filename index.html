@@ -8,9 +8,10 @@
   <![endif]-->
   <script type="text/javascript" src="scripts.js"></script>
 
-  <link rel="stylesheet" media="all" href=""/>
-  <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+  <link rel="stylesheet" media="all" href="grid.css"/>
   <meta name="viewport" content="width=device-width; initial-scale=1"/>
+  <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="debug.css" />
 
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
   <link rel="apple-touch-icon" href="img/touch_icon.png" />
@@ -19,26 +20,39 @@
 
   <div id="visual-portal-wrapper">
     
+    <ul id="lang">
+      <li><a href="?lang=de">Deutsch</a></li>
+      <li><a href="?lang=en">English</a></li>
+    </ul>
+
+    <div id="logo">
+      <a href="/" title="startseite">
+        <img src="helsinki-logo.png" alt="helsinki logo" />
+      </a>
+      <br />
+      <br />
+      <br />
+      <br />
+
+    </div>
+
     <div id="header">
 
-      <ul id="lang">
-        <li><a href="?lang=de">Deutsch</a></li>
-        <li><a href="?lang=en">English</a></li>
-      </ul>
-
       <div id="toolbox">
-        <a id="livestream" href="/livestream">Livestream</a>
+        <div id="livestream">
+          <a href="/livestream">Livestream</a>
+        </div>
         <div id="onair">ONAIR</div>
         <div id="searchbox">
           <form id="searchform">
-            <input type="search" />
+            <input type="search" value="suchen" />
           </form>
         </div>
       </div>
 
       <ul id="navigation">
         <li><a href="/programm">Programm</a>
-          <ul id="navigation">
+          <ul>
             <li><a href="/programm/tagesansicht">Tagesansicht</a></li>
             <li><a href="/programm/wochenansicht">Wochenansicht</a></li>
             <li><a href="/programm/sendungen">Sendungen (Liste)</a></li>
@@ -52,20 +66,14 @@
         <li><a href="/projekte">Projekte</a></li>
       </ul>
 
-      <div id="logo">
-        <a href="/" title="startseite">
-          <img src="helsinki-logo.png" alt="helsinki logo" />
-        </a>
-      </div>
-
     </div>
+    <br class="clear" />
 
+    <div id="main">
     <div id="content">CONTENT</div>
-
     <div id="column-1">COLUMN 1</div>
-
     <div id="column-2">COLUMN 2</div>
-
+    </div>
   </div>
 
 
