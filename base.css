@@ -112,7 +112,7 @@ a {
     color:black;
 }
 a:hover {
-    color:#FBD62A;
+    color:red;
 }
 
 ::selection 	 	{background: #FBD62A;}

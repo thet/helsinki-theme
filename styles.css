@@ -142,7 +142,14 @@ ul#navigation ul li a:hover {
     /*color:#918F90;*/
     color:red; } 
 
-#content, #column-1, #column-2 { float:left; }
+#main {
+    clear:both;
+    position:relative;
+    margin:6px 0 24px 0; }
+#content, #column-1, #column-2 {
+    float:left;
+    margin-top:6px;
+}
 #content {
     position:relative;
     left:219px;
@@ -154,3 +161,18 @@ ul#navigation ul li a:hover {
     width:213px;
     margin-right:6px; }
 #column-2 { width:176px; }
+
+#column-1 .portlet {
+    background:url(img/pkt.png) repeat;
+    padding:10px; }
+#column-1 .portlet .portlet-inner {
+    background:white;
+    padding:6px; }
+
+#column-2 dt, #column-2 dd { text-align:center; } 
+#column-2 dt {
+    background:url(img/str-vert.png);
+    font-weight:bold;
+    text-transform:uppercase;
+    padding:10px; }
+#column-2 dt .portlet-inner { background:white; }
