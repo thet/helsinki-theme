@@ -8,74 +8,65 @@
   <![endif]-->
   <script type="text/javascript" src="scripts.js"></script>
 
-  <link rel="stylesheet" media="all" href="grid.css"/>
+  <link rel="stylesheet" media="all" href="base.css"/>
   <meta name="viewport" content="width=device-width; initial-scale=1"/>
   <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="debug.css" />
+  <!-- link rel="stylesheet" type="text/css" media="screen" href="debug.css" --/>
 
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
   <link rel="apple-touch-icon" href="img/touch_icon.png" />
 </head>
 <body>
-
-  <div id="visual-portal-wrapper">
     
-    <ul id="lang">
-      <li><a href="?lang=de">Deutsch</a></li>
-      <li><a href="?lang=en">English</a></li>
+  <ul id="lang">
+    <li><a href="?lang=de">Deutsch</a></li>
+    <li><a href="?lang=en">English</a></li>
+  </ul>
+
+  <div id="logo">
+    <a href="/" title="startseite">
+      <img src="img/logo.png" alt="helsinki logo" />
+    </a>
+  </div>
+
+  <div id="header">
+
+    <div id="toolbox">
+      <div id="livestream">
+        <a href="/livestream">Livestream</a>
+      </div>
+      <div id="onair">ONAIR</div>
+      <div id="searchbox">
+        <form id="searchform">
+          <input type="search" value="suchen" />
+        </form>
+      </div>
+    </div>
+
+    <ul id="navigation">
+      <li class="section-programm"><a href="/programm">Programm</a>
+        <ul>
+          <li><a href="/programm/tagesansicht">Tagesansicht</a></li>
+          <li><a href="/programm/wochenansicht">Wochenansicht</a></li>
+          <li><a href="/programm/sendungen">Sendungen (Liste)</a></li>
+          <li><a href="/programm/sendungsmachende">Sendungsmachende</a></li>
+          <li><a href="/programm/programmhinweise">Programmhinweise</a></li>
+          <li><a href="/programm/programmschienen">Programmschienen</a></li>
+          <li><a href="/programm/programmflyer">Programmflyer</a></li>
+        </ul>
+      </li>
+      <li class="section-info"><a href="/info">Info</a></li>
+      <li class="section-projekte"><a href="/projekte">Projekte</a></li>
     </ul>
 
-    <div id="logo">
-      <a href="/" title="startseite">
-        <img src="helsinki-logo.png" alt="helsinki logo" />
-      </a>
-      <br />
-      <br />
-      <br />
-      <br />
+  </div>
+  <br class="clear" />
 
-    </div>
-
-    <div id="header">
-
-      <div id="toolbox">
-        <div id="livestream">
-          <a href="/livestream">Livestream</a>
-        </div>
-        <div id="onair">ONAIR</div>
-        <div id="searchbox">
-          <form id="searchform">
-            <input type="search" value="suchen" />
-          </form>
-        </div>
-      </div>
-
-      <ul id="navigation">
-        <li><a href="/programm">Programm</a>
-          <ul>
-            <li><a href="/programm/tagesansicht">Tagesansicht</a></li>
-            <li><a href="/programm/wochenansicht">Wochenansicht</a></li>
-            <li><a href="/programm/sendungen">Sendungen (Liste)</a></li>
-            <li><a href="/programm/sendungsmachende">Sendungsmachende</a></li>
-            <li><a href="/programm/programmhinweise">Programmhinweise</a></li>
-            <li><a href="/programm/programmschienen">Programmschienen</a></li>
-            <li><a href="/programm/programmflyer">Programmflyer</a></li>
-          </ul>
-        </li>
-        <li><a href="/info">Info</a></li>
-        <li><a href="/projekte">Projekte</a></li>
-      </ul>
-
-    </div>
-    <br class="clear" />
-
-    <div id="main">
+  <div id="main">
     <div id="content">CONTENT</div>
     <div id="column-1">COLUMN 1</div>
     <div id="column-2">COLUMN 2</div>
-    </div>
   </div>
-
 
 </body>
 </html>

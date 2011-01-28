@@ -1,18 +1,112 @@
-.clear {clear:both;}
-#logo { float:right; }
-/*#header { float:right; }*/
+body {
+	background: white;
+	padding: 0px 63px 0;
+	width: 960px;
+	-webkit-tap-highlight-color: rgb(255,255,0);
+}
+
+#lang {
+    padding-left:10px;
+}
+#logo {
+    width:176px;
+    height:176px;
+    float:right;
+    margin-left:6px;
+    /*background-image:url(img/logo.png);*/
+}
+#header {
+    width:778px;
+}
+#toolbox {
+    width:100%;
+    height:33px;
+    background:black;
+}
 #livestream,
 #onair,
 #searchbox { display:inline-block; }
 
+#lang a {
+    color:black;
+    font-weight:bold;
+}
+
 #lang li,
 #navigation li { display:inline; }
-#navigation { 
+ul#navigation { 
+    /*margin-bottom = 176-58-33-6=79px;
+     * */
     position:relative;
-    height:80px; }
+    padding:0px;
+    margin:6px 0px 79px 0px;
+    }
+ul#navigation > li {
+    /* width = (778px - 2*6px) / 3 - 2*6px border
+     * height = 58-2*6=46px
+     */
+    width:244px;
+    height:36px;
+    border:6px solid black;
+    background:#FBD62A;
+    display:inline-block;
+    text-align:center;
+    padding-top:8px;
+
+}
+ul#navigation > li:hover {
+    border-color:#FBD62A;
+}
+ul#navigation > li > a {
+    color:black;
+    font-weight:bold;
+    font-size:28px;
+    text-transform:uppercase;
+    text-shadow:-3px 0px 0px #FBD62A,
+        3px 0px 0px #FBD62A,
+        0px -3px 0px #FBD62A,
+        0px 3px 0px #FBD62A,
+        -3px 3px 0px #FBD62A,
+        3px -3px 0px #FBD62A,
+        -3px -3px 0px #FBD62A,
+        3px 3px 0px #FBD62A;
+    /* horizontal-offset vertical-offset 'blur' colour */
+    -moz-text-shadow: 0 0 2 #FBD62A;
+    -webkit-text-shadow: 0 0 2 #FBD62A;
+    line-height:1em;
+}
+ul#navigation > li.section-programm {
+    background-image:url(img/str-quer-spiegel-gelb.png);
+}
+ul#navigation > li.section-info {
+    background-image:url(img/pkt3-gelb.png);
+}
+ul#navigation > li.section-projekte {
+    background-image:url(img/str-quer-gelb.png);
+}
+ul#navigation > li.section-programm > a {
+    background:url(img/radio1-real.png) no-repeat;
+    background-position:left center;
+    padding-left:49px;
+}
+ul#navigation > li.section-info > a {
+    background:url(img/radio2-real.png) no-repeat;
+    background-position:left center;
+    padding-left:60px;
+}
+ul#navigation > li.section-projekte > a {
+    background:url(img/radio3-real.png) no-repeat;
+    background-position:left center;
+    padding-left:55px;
+}
 ul#navigation ul {
+    /* margin-top=58+6
+     * */
     position:absolute;
-    top:30px;
+    top:64px;
+    margin:0px;
+    padding:0px 0px 0px 10px;
+
 }
 
 #content, #column-1, #column-2 {

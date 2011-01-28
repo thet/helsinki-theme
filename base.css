@@ -65,3 +65,47 @@ figure img {width: 100%;}
 	font-size: 13px;
 	line-height: 18px;
 }
+
+/* helpers */
+.clear {clear:both;}
+.marginT6 = { margin-top:6px; }
+.marginL6 = { margin-left:6px; }
+.marginB6 = { margin-bottom:6px; }
+.marginR6 = { margin-right:6px; }
+
+/* font def */
+/*
+ * http://24ways.org/2006/compose-to-a-vertical-rhythm
+ */
+body {
+font-size: 75%;
+}
+html>body {
+font-size: 12px;
+}
+p {
+line-height 1.5em;
+font-size:1em;
+margin-top: 1.5em;
+margin-bottom: 1.5em;
+}
+
+h1 {
+font-size:1.5em;
+line-height: 1em;
+margin-top: 0;
+margin-bottom: 1em;
+}
+h2 {
+font-size:1.1667em;
+line-height: 1.286em;
+margin-top: 1.929em;
+margin-bottom: 0.643em;
+}
+
+body {
+    font-style:sans-serif;
+}
+a {
+    text-decoration:none;
+}
