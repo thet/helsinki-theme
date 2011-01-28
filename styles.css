@@ -3,35 +3,66 @@ body {
 	padding: 0px 63px 0;
 	width: 960px;
 	-webkit-tap-highlight-color: rgb(255,255,0);
-}
+    margin: 0 auto; }
 
-#lang {
-    padding-left:10px;
-}
+#lang a, #logo a, #header a { text-decoration:none; }
+#lang { padding-left:6px; }
+#lang a:hover { color:red; }
 #logo {
     width:176px;
     height:176px;
     float:right;
-    margin-left:6px;
-    /*background-image:url(img/logo.png);*/
-}
-#header {
-    width:778px;
-}
+    margin-left:6px; }
+#header { width:778px; }
 #toolbox {
-    width:100%;
-    height:33px;
+    /* height:3px
+     */
+    width:772px;
+    height:28px;
     background:black;
-}
+    padding:5px 0px 0px 6px;
+    position:relative; }
+#toolbox input { border:1px solid black; height:19px; }
 #livestream,
 #onair,
-#searchbox { display:inline-block; }
+#searchbox {
+    display:inline-block;
+    margin-right:18px; }
+#searchbox {
+    position:absolute;
+    top:5px;
+    right:0px; 
+    margin-right:6px; }
+#searchbox input { width:200px; }
+#livestream a,
+#onair a {
+    color:white;
+    font-weight:bold;
+    text-transform:uppercase; }
+#livestream {
+    background:url(img/nowplay.png) no-repeat;
+    background-position:left center;
+    padding-left:19px; }
+#livestream:hover {
+    background:url(img/nowplay-over.png) no-repeat;
+    background-position:left center; }
+#onair {
+    background:url(img/onair.png) no-repeat;
+    background-position:left center;
+    padding-left:13px; }
+#onair:hover {
+    background:url(img/onair-over.png) no-repeat;
+    background-position:left center; }
+#onair input { width:355px; }
 
+#livestream a:hover,
+#onair a:hover {
+    color:#FBD62A; } 
 #lang a {
     color:black;
     font-weight:bold;
-    text-transform:uppercase;
-}
+    text-transform:uppercase; }
+#lang a:hover {}
 #lang li { margin-right:6px; }
 #lang li,
 #navigation li { display:inline; }
@@ -40,8 +71,7 @@ ul#navigation {
      * */
     position:relative;
     padding:0px;
-    margin:6px 0px 79px 0px;
-    }
+    margin:6px 0px 79px 0px; }
 ul#navigation > li {
     /* width = (778px - 2*6px) / 3 - 2*6px border
      * height = 58-2*6=46px
@@ -52,12 +82,8 @@ ul#navigation > li {
     background:#FBD62A;
     display:inline-block;
     text-align:center;
-    padding-top:8px;
-
-}
-ul#navigation > li:hover {
-    border-color:#FBD62A;
-}
+    padding-top:8px; }
+ul#navigation > li:hover { border-color:#FBD62A; }
 ul#navigation > li > a {
     color:black;
     font-weight:bold;
@@ -74,35 +100,28 @@ ul#navigation > li > a {
     /* horizontal-offset vertical-offset 'blur' colour */
     -moz-text-shadow: 0 0 2 #FBD62A;
     -webkit-text-shadow: 0 0 2 #FBD62A;
-    line-height:1em;
-}
+    line-height:1em; }
 ul#navigation > li.section-programm {
     background-image:url(img/str-quer-spiegel-gelb.png);
-    margin-right:2px;
-
-}
+    margin-right:2px; }
 ul#navigation > li.section-info {
     background-image:url(img/pkt3-gelb.png);
-    margin-right:2px;
-}
+    margin-right:2px; }
 ul#navigation > li.section-projekte {
-    background-image:url(img/str-quer-gelb.png);
-}
+    background-image:url(img/str-quer-gelb.png); }
 ul#navigation > li.section-programm > a {
     background:url(img/radio1-real.png) no-repeat;
     background-position:left center;
-    padding-left:49px;
-}
+    padding-left:49px; }
 ul#navigation > li.section-info > a {
     background:url(img/radio2-real.png) no-repeat;
     background-position:left center;
-    padding-left:60px;
-}
+    padding-left:65px;
+    letter-spacing:0.05em; }
 ul#navigation > li.section-projekte > a {
     background:url(img/radio3-real.png) no-repeat;
     background-position:left center;
-    padding-left:55px;
-}
+    padding-left:55px; }
 ul#navigation ul {
     /* margin-top=58+6
      * */
@@ -110,35 +129,28 @@ ul#navigation ul {
     top:64px;
     left:0px;
     margin:0px 0px 0px 12px;
-    padding:0px 0px 0px 0px;
-}
+    padding:0px 0px 0px 0px; }
 ul#navigation ul { text-align:left; }
 ul#navigation ul li { margin-right:0px; }
 ul#navigation ul li:after { content:" /// "; }
 
 ul#navigation ul li a {
     color:black;
-    text-transform:uppercase;
-}
+    /*font-weight:bold;*/
+    text-transform:uppercase; }
 ul#navigation ul li a:hover {
-    color:#918F90;
-}
+    /*color:#918F90;*/
+    color:red; } 
 
-#content, #column-1, #column-2 {
-    float:left;
-}
+#content, #column-1, #column-2 { float:left; }
 #content {
     position:relative;
-    left:300px;
-    width:513px;
-    margin-right:12px;
-}
+    left:219px;
+    width:559px;
+    margin-right:6px; }
 #column-1 {
     position:relative;
-    left:-525px;
-    width:288px;
-    margin-right:12px;
-}
-#column-2 {
-    width:138px;
-}
+    left:-565px;
+    width:213px;
+    margin-right:6px; }
+#column-2 { width:176px; }
