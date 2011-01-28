@@ -24,11 +24,11 @@ body {
 	background: white;
 	padding: 0px 63px 0;
 	width: 963px;
-	-webkit-tap-highlight-color: rgb(255,255,0);
+	-webkit-tap-highlight-color: #FBD62A;
 }
 
-::selection 	 	{background: rgb(255,255,0);}
-::-moz-selection 	{background: rgb(255,255,0);}
+::selection 	 	{background: #FBD62A;}
+::-moz-selection 	{background: #FBD62A;}
 img::selection 		{background: transparent;}
 img::-moz-selection {background: transparent;}
 

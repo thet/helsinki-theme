@@ -30,8 +30,9 @@ body {
 #lang a {
     color:black;
     font-weight:bold;
+    text-transform:uppercase;
 }
-
+#lang li { margin-right:6px; }
 #lang li,
 #navigation li { display:inline; }
 ul#navigation { 
@@ -107,9 +108,20 @@ ul#navigation ul {
      * */
     position:absolute;
     top:64px;
-    margin:0px;
-    padding:0px 0px 0px 10px;
+    left:0px;
+    margin:0px 0px 0px 12px;
+    padding:0px 0px 0px 0px;
+}
+ul#navigation ul { text-align:left; }
+ul#navigation ul li { margin-right:0px; }
+ul#navigation ul li:after { content:" /// "; }
 
+ul#navigation ul li a {
+    color:black;
+    text-transform:uppercase;
+}
+ul#navigation ul li a:hover {
+    color:#918F90;
 }
 
 #content, #column-1, #column-2 {
