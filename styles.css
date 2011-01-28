@@ -77,9 +77,12 @@ ul#navigation > li > a {
 }
 ul#navigation > li.section-programm {
     background-image:url(img/str-quer-spiegel-gelb.png);
+    margin-right:2px;
+
 }
 ul#navigation > li.section-info {
     background-image:url(img/pkt3-gelb.png);
+    margin-right:2px;
 }
 ul#navigation > li.section-projekte {
     background-image:url(img/str-quer-gelb.png);
