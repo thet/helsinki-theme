@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset>
+<server-settings>
+  <server>localhost:8880</server>
+  <execute-pyref>false</execute-pyref>
+  <dev-allow>localhost</dev-allow>
+  <dev-user username="admin" password="admin" />
+  <display-local-files>false</display-local-files>
+  <edit-local-files>false</edit-local-files>
+</server-settings>
+
+<proxy keep-host="1" path="/static" class="static">
+  <dest href="{here}" />
+</proxy>
+
+<proxy path="/" class="plone">
+  <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/" />
+</proxy>
+
+<!-- plone popups -->
+<match path="regex:.*contenthistorypopup.*" abort="1" />
+<!-- TinyMCE -->
+<match path="regex:^/portal_javascripts/.*" abort="1" />
+<match path="regex:.*/themes/advanced/.*" abort="1" />
+<match path="regex:.*/plugins/.*" abort="1" /> 
+
+<!-- ###### Rules ###### -->
+<rule class="plone" suppress-standard="1">
+  <theme href="/static/index.html" />
+
+  <drop theme="/html/head/meta" />
+
+  <replace content="/html/head/title" theme="/html/head/title" />
+  <append content="/html/head/meta" theme="children:/html/head" />
+  <append content="/html/head/base" theme="children:/html/head" />
+  <append content="link[rel *= 'kss-base-url']" theme="children:/html/head" />
+
+<!-- Add in the Plone-created CSS, KSS and JS in addition to the static ones -->
+  <prepend content="link[href *= 'member']" theme="/html/head/link" />
+  <prepend content="link[href *= 'public']" theme="/html/head/link" />
+  <prepend content="/html/head/style" theme="/html/head/link" />
+  <prepend content="link[href *= 'ploneKss']" theme="/html/head/link" />
+  <prepend content="link[rel *= 'kinetic-stylesheet']" theme="/html/head/link" />
+  <prepend content="/html/head/script" theme="/html/head/link" />
+
+  <append content="link[rel = 'author']" theme="children:/html/head" />
+  <append content="link[rel = 'home']" theme="children:/html/head" />
+  <append content="link[rel = 'contents']" theme="children:/html/head" />
+  <append content="link[rel = 'search']" theme="children:/html/head" />
+
+  <!-- #### Header #### -->
+
+  <!-- Accessibility -->
+  <prepend content='#portal-header > p.hiddenStructure' theme='children:body'  />
+
+  <!-- Set correct Link for the logo -->
+  <replace content='attributes(href,accesskey,title):#portal-logo' theme='attributes:#logo a' />
+
+  <!-- Search box -->
+  <drop content="#portal-searchbox div.searchSection" />
+  <drop content="tag:.LSBox" />
+  <replace content="children:#portal-searchbox" theme="children:#searchbox" />
+
+  <!-- metamenu -->
+  <replace content="#portal-siteactions" theme="children:#metamenu" />
+
+  <!--navigation -->
+  <drop theme="children:#navigation" />
+  <drop content=".portletNavigationTree .portletItem li img" />
+  <replace content="children:.portletNavigationTree ul.navTreeLevel0"
+      theme="children:#navigation" />
+  <drop content="dl.portletNavigationTree" />
+
+  
+  <!-- #### Portlets and Viewlets #### -->
+
+  <!-- Portlets Prepare -->
+  <drop content="tag:div[id *= 'portletwrapper']" />
+  <drop content="span.portletTopLeft" />
+  <drop content="span.portletTopRight" />
+  <replace content="children:#portal-column-one" theme="children:#column-1" />
+  <replace content="children:#portal-column-two" theme="children:#column-2" />
+
+  <!-- append languageselector to navigation -->
+  <!-- drop content="ul#portal-languageselector li.currentLanguage" / -->
+  <!-- append content="children:#portal-languageselector" theme="children:#sfd-menu .navTree" /-->
+
+  
+  <!-- #### main content #### -->
+  <drop theme="children:#content-main" />
+  <append content="attributes(class):div.documentEditable" theme="attributes(class):#content-main" />
+  <append content="#portal-breadcrumbs" theme="children:#content-main" />
+  <append content="#content h1" theme="children:#content-main" />
+  <append content=".portalMessage" theme="children:#content-main" />
+  <append content="#plone-document-byline" theme="children:#content-main" />
+  <append content="#edit-bar" theme="children:#content-main" />
+  <append content="#content" theme="children:#content-main" />
+
+  <!-- append content="div[id ^= 'pb_']" theme="#footer" />
+  <append content="div[id ^= 'lb']" theme="#footer" / -->
+
+</rule>
+</ruleset>
+
