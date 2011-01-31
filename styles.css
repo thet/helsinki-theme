@@ -5,9 +5,9 @@ body {
 	-webkit-tap-highlight-color: rgb(255,255,0);
     margin: 0 auto; }
 
-#lang a, #logo a, #header a { text-decoration:none; }
+#lang a, #metamenu a, #logo a, #header a { text-decoration:none; }
 #lang { padding-left:6px; }
-#lang a:hover { color:red; }
+#lang a:hover, #metamenu a:hover { color:red; }
 #logo {
     width:176px;
     height:176px;
@@ -34,6 +34,7 @@ body {
     right:0px; 
     margin-right:6px; }
 #searchbox input { width:200px; }
+#searchbox input.searchButton { display:none; }
 #livestream a,
 #onair a {
     color:white;
@@ -57,14 +58,15 @@ body {
 
 #livestream a:hover,
 #onair a:hover {
-    color:#FBD62A; } 
-#lang a {
+    color:#FBD62A; }
+#lang { float:left }
+#lang a, #metamenu a {
     color:black;
     font-weight:bold;
     text-transform:uppercase; }
-#lang a:hover {}
-#lang li { margin-right:6px; }
+#lang li, #metamenu li { margin-right:6px; }
 #lang li,
+#metamenu li,
 #navigation li { display:inline; }
 ul#navigation { 
     /*margin-bottom = 176-58-33-6=79px;
@@ -146,11 +148,11 @@ ul#navigation ul li a:hover {
     clear:both;
     position:relative;
     margin:6px 0 24px 0; }
-#content, #column-1, #column-2 {
+#content-main, #column-1, #column-2 {
     float:left;
     margin-top:6px;
 }
-#content {
+#content-main {
     position:relative;
     left:219px;
     width:559px;
