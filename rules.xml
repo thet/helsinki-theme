@@ -49,11 +49,13 @@
 
   <!-- #### Header #### -->
 
+  <replace content="attributes(class,dir):/html/body" theme="attributes:/html/body" />
+
   <!-- Accessibility -->
-  <prepend content='#portal-header > p.hiddenStructure' theme='children:body'  />
+  <prepend content="#portal-header > p.hiddenStructure" theme="children:body"  />
 
   <!-- Set correct Link for the logo -->
-  <replace content='attributes(href,accesskey,title):#portal-logo' theme='attributes:#logo a' />
+  <replace content="attributes:#portal-logo" theme="attributes:#logo a" />
 
   <!-- Search box -->
   <drop content="#portal-searchbox div.searchSection" />
@@ -61,11 +63,9 @@
   <replace content="children:#portal-searchbox" theme="children:#searchbox" />
 
   <!-- metamenu -->
-  <replace content="#portal-siteactions" theme="children:#metamenu" />
+  <replace content="#portal-siteactions" theme="#portal-siteactions" />
 
   <!--navigation -->
-  <drop theme="children:#navigation" />
-  <drop content=".portletNavigationTree .portletItem li img" />
   <replace content="children:.portletNavigationTree ul.navTreeLevel0"
       theme="children:#navigation" />
   <drop content="dl.portletNavigationTree" />
@@ -79,6 +79,8 @@
   <drop content="span.portletTopRight" />
   <replace content="children:#portal-column-one" theme="children:#column-1" />
   <replace content="children:#portal-column-two" theme="children:#column-2" />
+  <!-- append href="/static/snippets.html"
+      content="tag:.portlet-inner" theme="tag:.portletHeader" /-->
 
   <!-- append languageselector to navigation -->
   <!-- drop content="ul#portal-languageselector li.currentLanguage" / -->

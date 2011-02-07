@@ -9,20 +9,28 @@
   <script type="text/javascript" src="scripts.js"></script>
 
   <link rel="stylesheet" media="all" href="base.css"/>
+  <link rel="stylesheet" media="all" href="base-plone.css"/>
   <meta name="viewport" content="width=device-width; initial-scale=1"/>
   <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
 
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
-  <link rel="apple-touch-icon" href="img/touch_icon.png" />
+  <link rel="apple-touch-icon" href="img/icon.png-57" />
+  <link rel="apple-touch-icon" sizes="72x72" href="icon-72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="icon-114.png" />
+
 </head>
 <body>
     
-  <ul id="lang">
-    <li><a href="?lang=de">Deutsch</a></li>
-    <li><a href="?lang=en">English</a></li>
-  </ul>
-
-  <div id="metamenu">METAMENU</div>
+  <div id="metamenu">
+    <ul id="lang">
+      <li><a href="?lang=de">Deutsch</a></li>
+      <li><a href="?lang=en">English</a></li>
+    </ul>
+    <ul id="portal-siteactions">
+      <li><a href="#">Barrierefreiheit</a></li>
+      <li><a href="#">Konfiguration</a></li>
+    </ul>
+  </div>
 
   <div id="logo">
     <a href="/" title="startseite">
@@ -49,10 +57,10 @@
     </div>
 
     <ul id="navigation">
-      <li class="section-programm"><a href="/programm">Programm</a>
+      <li class="section-programm navTreeItemInPath"><a href="/programm">Programm</a>
         <ul>
           <li><a href="/programm/tagesansicht">Tagesansicht</a></li>
-          <li><a href="/programm/wochenansicht">Wochenansicht</a></li>
+          <li><a class="navTreeCurrentItem" href="/programm/wochenansicht">Wochenansicht</a></li>
           <li><a href="/programm/sendungen">Sendungen (Liste)</a></li>
           <li><a href="/programm/sendungsmachende">Sendungsmachende</a></li>
           <li><a href="/programm/programmhinweise">Programmhinweise</a></li>
@@ -146,9 +154,10 @@
           <dd>Unmoderiertes Musikprogramm</dd>
         </dl>
       </div>
-
     </div>
-    <div id="footer">FOOTER</div>
+  
+  </div>
 
+  <div id="footer">FOOTER</div>
 </body>
 </html>
