@@ -3,7 +3,16 @@ body {
 	padding: 0px 63px 0;
 	width: 960px;
 	-webkit-tap-highlight-color: rgb(255,255,0);
-    margin: 0 auto; }
+    margin: 0 auto; 
+    font-style:sans-serif;
+    line-height: 1.4em; }
+a {
+    text-decoration:underline;
+    color:black; }
+a:hover { color:red; }
+
+::selection 	 	{background: #FBD62A;}
+::-moz-selection 	{background: #FBD62A;}
 
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -50,7 +59,13 @@ textarea:focus {
     position:absolute;
     top:5px;
     right:0px; 
-    margin-right:6px; }
+    margin-right:6px;
+    padding-left:22px;
+    background:url(img/suche.png) no-repeat;
+    background-position:left center; }
+#searchbox:hover {
+    background:url(img/suche-over.png) no-repeat;
+    background-position:left center; }
 #searchbox input { width:200px; }
 #searchbox input.searchButton { display:none; }
 #livestream a,
@@ -61,7 +76,7 @@ textarea:focus {
 #livestream {
     background:url(img/nowplay.png) no-repeat;
     background-position:left center;
-    padding-left:19px; }
+    padding-left:20px; }
 #livestream:hover {
     background:url(img/nowplay-over.png) no-repeat;
     background-position:left center; }
@@ -170,27 +185,44 @@ ul#navigation ul li a:hover {
 }
 #content-main {
     position:relative;
-    left:219px;
-    width:559px;
-    margin-right:6px; }
+    left:223px;
+    width:551px;
+    margin-right:10px; }
 #column-1 {
     position:relative;
-    left:-565px;
+    left:-569px;
     width:213px;
-    margin-right:6px; }
+    margin-right:10px; }
 #column-2 { width:176px; }
 
-#column-1 .portlet {
+#column-1 dl, #column-2 dl { margin: 0 0 10px 0; }
+#column-1 a, #column-2 a { text-decoration:none; }
+#column-1 dt, #column-2 dt { 
+    font-weight:bold;
+    text-transform:uppercase;
+    text-align:center;
+    line-height:1.4em; }
+#column-1 dd, #column-2 dd { 
+    font-size:95%;
+}
+
+#column-1 dl.portlet {
     background:url(img/pkt.png) repeat;
     padding:10px; }
-#column-1 .portlet .portlet-inner {
-    background:white;
-    padding:6px; }
+#column-1 dl > * {
+    display:block;
+    width:181px;
+    height:100%;
+    background:white; 
+    padding:4px 6px 4px 6px; }
 
 #column-2 dt, #column-2 dd { text-align:center; } 
 #column-2 dt {
     background:url(img/str-vert.png);
-    font-weight:bold;
-    text-transform:uppercase;
     padding:10px; }
-#column-2 dt .portlet-inner { background:white; }
+#column-2 dt > * {
+    display:block;
+    width:100%;
+    height:100%;
+    background:white;
+}

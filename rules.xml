@@ -90,9 +90,9 @@
   <!-- #### main content #### -->
   <drop theme="children:#content-main" />
   <append content="attributes(class):div.documentEditable" theme="attributes(class):#content-main" />
-  <append content="#portal-breadcrumbs" theme="children:#content-main" />
-  <append content="#content h1" theme="children:#content-main" />
   <append content=".portalMessage" theme="children:#content-main" />
+  <append content="#content h1" theme="children:#content-main" />
+  <append content="#portal-breadcrumbs" theme="children:#content-main" />
   <append content="#plone-document-byline" theme="children:#content-main" />
   <append content="#edit-bar" theme="children:#content-main" />
   <append content="#content" theme="children:#content-main" />
