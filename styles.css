@@ -181,16 +181,24 @@ ul#navigation ul {
     position:absolute;
     top:64px;
     left:0px;
-    margin:0px 0px 0px 12px;
-    padding:0px 0px 0px 0px; }
-ul#navigation ul { text-align:left; }
+    margin:0px 0px 0px 20px;
+    padding:0px 0px 0px 0px;
+    width:700px;
+    text-align:left; }
+ul#navigation ul ul { top:20px; }
+/* don't display menus from 5th level on */
+ul#navigation ul ul ul ul { display:none; }
 ul#navigation ul li { margin-right:0px; }
 ul#navigation ul li:after { content:" /// "; }
 
 ul#navigation ul li a {
     color:black !important;
     /*font-weight:bold;*/
-    text-transform:uppercase; }
+    text-transform:uppercase;
+    line-height:1em;
+    background:none !important;
+    padding:0 !important;
+}
 ul#navigation ul li a.navTreeCurrentItem, 
 ul#navigation ul li a.navTreeItemInPath, 
 ul#navigation ul li a:hover {
