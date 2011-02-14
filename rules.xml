@@ -35,9 +35,16 @@
   <append content="/html/head/base" theme="children:/html/head" />
   <append content="link[rel *= 'kss-base-url']" theme="children:/html/head" />
 
-<!-- Add in the Plone-created CSS, KSS and JS in addition to the static ones -->
-  <!-- prepend content="link[href *= 'public']" theme="/html/head/link" / -->
+  <!-- Add in the Plone-created CSS, KSS and JS in addition to the static ones -->
   <prepend content="/html/head/style" theme="/html/head/link" />
+  <!-- prepend content="link[href *= 'public']" theme="/html/head/link" /-->
+  <prepend content="link[href *= 'base']" theme="/html/head/link" />
+  <prepend content="link[href *= 'authoring']" theme="/html/head/link" />
+  <prepend content="link[href *= 'member']" theme="/html/head/link" />
+  <prepend content="link[href *= 'forms']" theme="/html/head/link" />
+  <prepend content="link[href *= 'controlpanel']" theme="/html/head/link" />
+  <prepend content="link[href *= 'kupuplone']" theme="/html/head/link" />
+
   <prepend content="link[href *= 'ploneKss']" theme="/html/head/link" />
   <prepend content="link[rel *= 'kinetic-stylesheet']" theme="/html/head/link" />
   <prepend content="/html/head/script" theme="/html/head/link" />

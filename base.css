@@ -1,36 +1,25 @@
-/* Resets and Basic settings
- * Johannes Raggam
- *
- * Based on Less Framework by Joni Korpi
- * http://lessframework.com
- * and
- * Article "Compose to a Vertical Rhythm" by Richard Rutter
- * http://24ways.org/2006/compose-to-a-vertical-rhythm
- */
+/* @group CSS Reset */
 
-/* Resets */
+/* Remove implicit browser styles to have a neutral starting point:
+   - No elements should have implicit margin/padding
+   - No underline by default on links (we add it explicitly in the body text)
+   - When we want markers on lists, we will be explicit about it, and they render inline by default
+   - Browsers are inconsistent about hX/pre/code, reset
+   - Linked images should not have borders
+   */
 
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, 
-p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, 
-img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, 
-dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figure, figcaption, hgroup, 
-menu, footer, header, nav, section, summary, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-}
+* { margin: 0; padding: 0; }
+* :link,:visited { text-decoration:none }
+* ul,ol { list-style:none; }
+* li { display: inline; }
+* h1,h2,h3,h4,h5,h6,pre,code { font-size:1em; }
+* a img,:link img,:visited img { border:none }
+a { outline: none; }
+table { border-spacing: 0; }
+img { vertical-align: text-bottom; }
+iframe { border-width: 0; border-style:none; }
 
-article, aside, canvas, figure, figure img, figcaption, hgroup,
-footer, header, nav, section, audio, video {
-	display: block;
-}
-
-a img {border: 0;}
-
-figure {position: relative;}
-figure img {width: 100%;}
+/* @end */
 
 
 /* Typography presets */
@@ -91,18 +80,41 @@ margin-bottom: 1.5em;
 }
 
 h1 {
-font-size:1.6em;
+font-size:1.5em;
 line-height: 1em;
 margin-top: 0;
 margin-bottom: 1em;
-text-transform:uppercase;
 }
 h2 {
-font-size:1.4em;
+font-size:1.1667em;
 line-height: 1.286em;
 margin-top: 1.929em;
 margin-bottom: 0.643em;
-text-transform:uppercase;
 }
 
+body {
+    font-style:sans-serif;
+	-webkit-tap-highlight-color: #FBD62A;
+}
+a {
+    text-decoration:underline;
+    color:black;
+}
+a:hover {
+    color:red;
+}
 
+::selection 	 	{background: #FBD62A;}
+::-moz-selection 	{background: #FBD62A;}
+
+.hiddenStructure {
+    display: block;
+    background: transparent;
+    background-image: none; /* safari bug */
+    border: none;
+    height: 0.1em;
+    overflow: hidden;
+    padding: 0;
+    margin: -0.1em 0 0 -0.1em;
+    width: 1px;
+}

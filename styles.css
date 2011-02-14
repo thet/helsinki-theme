@@ -1,14 +1,37 @@
+body { font-size: 75%; }
+html>body { font-size: 12px; }
+p {
+    line-height 1.5em;
+    font-size:1em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em; }
+
+h1 {
+    font-size:1.6em;
+    line-height: 1em;
+    margin-top: 0;
+    margin-bottom: 1em;
+    text-transform:uppercase; }
+h2 {
+    font-size:1.4em;
+    line-height: 1.286em;
+    margin-top: 1.929em;
+    margin-bottom: 0.643em;
+    text-transform:uppercase; }
+
 body {
 	background: white;
 	padding: 0px 63px 0;
 	width: 960px;
-	-webkit-tap-highlight-color: rgb(255,255,0);
     margin: 0 auto; 
-    font-style:sans-serif;
-    line-height: 1.4em; }
+    font-family:sans-serif;
+    line-height: 1.4em; 
+	-webkit-tap-highlight-color: rgb(255,255,0); }
+
 a {
     text-decoration:underline;
     color:black; }
+
 a:hover { color:red; }
 
 ::selection 	 	{background: #FBD62A;}
@@ -49,7 +72,7 @@ textarea:focus {
     background:black;
     padding:5px 0px 0px 6px;
     position:relative; }
-#toolbox input { border:1px solid black; height:19px; }
+#toolbox input { border:1px solid black; height:21px; }
 #livestream,
 #onair,
 #searchbox {
@@ -60,7 +83,7 @@ textarea:focus {
     top:5px;
     right:0px; 
     margin-right:6px;
-    padding-left:22px;
+    padding-left:20px;
     background:url(img/suche.png) no-repeat;
     background-position:left center; }
 #searchbox:hover {
@@ -87,7 +110,7 @@ textarea:focus {
 #onair:hover {
     background:url(img/onair-over.png) no-repeat;
     background-position:left center; }
-#onair input { width:355px; }
+#onair input { width:348px; }
 
 #livestream a:hover,
 #onair a:hover {
@@ -105,7 +128,7 @@ ul#navigation > li {
      */
     width:244px;
     height:36px;
-    border:6px solid black;
+    border:5px solid black;
     background:#FBD62A;
     display:inline-block;
     text-align:center;
@@ -115,7 +138,7 @@ ul#navigation > li.navTreeCurrentNode,
 ul#navigation > li.navTreeItemInPath,
 ul#navigation > li:hover { border-color:#FBD62A; }
 ul#navigation > li > a {
-    color:black;
+    color:black !important;
     font-weight:bold;
     font-size:28px;
     text-transform:uppercase;
@@ -133,25 +156,25 @@ ul#navigation > li > a {
     line-height:1em; }
 ul#navigation > li.section-programm {
     background-image:url(img/str-quer-spiegel-gelb.png);
-    margin-right:2px; }
+    margin-right:4px; }
 ul#navigation > li.section-info {
     background-image:url(img/pkt3-gelb.png);
-    margin-right:2px; }
+    margin-right:4px; }
 ul#navigation > li.section-projekte {
     background-image:url(img/str-quer-gelb.png); }
 ul#navigation > li.section-programm > a {
     background:url(img/radio1-real.png) no-repeat;
     background-position:left center;
-    padding-left:49px; }
+    padding-left:49px !important; }
 ul#navigation > li.section-info > a {
     background:url(img/radio2-real.png) no-repeat;
     background-position:left center;
-    padding-left:65px;
+    padding-left:65px !important;
     letter-spacing:0.05em; }
 ul#navigation > li.section-projekte > a {
     background:url(img/radio3-real.png) no-repeat;
     background-position:left center;
-    padding-left:55px; }
+    padding-left:55px !important; }
 ul#navigation ul {
     /* margin-top=58+6
      * */
@@ -165,15 +188,14 @@ ul#navigation ul li { margin-right:0px; }
 ul#navigation ul li:after { content:" /// "; }
 
 ul#navigation ul li a {
-    color:black;
+    color:black !important;
     /*font-weight:bold;*/
     text-transform:uppercase; }
 ul#navigation ul li a.navTreeCurrentItem, 
 ul#navigation ul li a.navTreeItemInPath, 
 ul#navigation ul li a:hover {
     /*color:#918F90;*/
-    color:red; } 
-
+    color:red !important; } 
 
 #main {
     clear:both;
@@ -211,7 +233,6 @@ ul#navigation ul li a:hover {
     padding:10px; }
 #column-1 dl > * {
     display:block;
-    width:181px;
     height:100%;
     background:white; 
     padding:4px 6px 4px 6px; }
