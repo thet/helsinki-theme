@@ -65,7 +65,7 @@ textarea:focus {
 
 #lang a, #metamenu a, #logo a, #header a { text-decoration:none; }
 #metamenu { height:24px; }
-#metamenu a:hover { color:#636363; }
+#metamenu a:hover, #metamenu .currentLanguage a { color:#636363; }
 #lang { float:left; width:50%; }
 #portal-siteactions { float:left; width:50%; text-align:right; }
 #metamenu a {
@@ -147,12 +147,12 @@ ul#navigation > li {
      * height = 58-2*6=46px
      */
     width:244px;
-    height:36px;
+    height:42px;
     border:5px solid black;
     background:#FBD62A;
     display:inline-block;
     text-align:center;
-    padding-top:8px; }
+    padding-top:2px; }
 
 ul#navigation > li.navTreeCurrentNode,
 ul#navigation > li.navTreeItemInPath,
@@ -173,7 +173,7 @@ ul#navigation > li > a {
     /* horizontal-offset vertical-offset 'blur' colour */
     -moz-text-shadow: 0 0 2 #FBD62A;
     -webkit-text-shadow: 0 0 2 #FBD62A;
-    line-height:1em; }
+    line-height:41px; }
 ul#navigation > li.section-programm {
     background-image:url(img/str-quer-spiegel-gelb.png);
     margin-right:4px; }
@@ -183,6 +183,7 @@ ul#navigation > li.section-info {
 ul#navigation > li.section-projekte {
     background-image:url(img/str-quer-gelb.png); }
 ul#navigation > li.section-programm > a {
+    letter-spacing:-0.05em; 
     background:url(img/radio1-real.png) no-repeat;
     background-position:left center;
     padding-left:49px !important; }
@@ -190,8 +191,9 @@ ul#navigation > li.section-info > a {
     background:url(img/radio2-real.png) no-repeat;
     background-position:left center;
     padding-left:65px !important;
-    letter-spacing:0.05em; }
+    letter-spacing:0em; }
 ul#navigation > li.section-projekte > a {
+    letter-spacing:-0.02em; 
     background:url(img/radio3-real.png) no-repeat;
     background-position:left center;
     padding-left:55px !important; }
