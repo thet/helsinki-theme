@@ -277,3 +277,5 @@ ul#navigation ul li a:hover {
     height:100%;
     background:white;
 }
+
+#footer { clear:both; }

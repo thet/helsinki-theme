@@ -35,6 +35,7 @@
   <append content="/html/head/base" theme="children:/html/head" />
   <append content="link[rel *= 'kss-base-url']" theme="children:/html/head" />
 
+  <drop theme="link[href *= 'plonebase']" />
   <!-- Add in the Plone-created CSS, KSS and JS in addition to the static ones -->
   <prepend content="/html/head/style" theme="/html/head/link" />
   <!-- prepend content="link[href *= 'public']" theme="/html/head/link" /-->
