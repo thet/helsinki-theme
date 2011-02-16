@@ -28,14 +28,21 @@ body {
     line-height: 1.4em; 
 	-webkit-tap-highlight-color: rgb(255,255,0); }
 
-a {
-    text-decoration:underline;
-    color:black; }
-
+a { text-decoration:underline;
+    color:#636363; }
 a:hover { color:red; }
 
 ::selection 	 	{background: #FBD62A;}
 ::-moz-selection 	{background: #FBD62A;}
+
+#column-1 a,
+#column-2 a,
+#footer a { color:black !important; }
+#column-1 a:hover,
+#column-2 a:hover,
+#footer a:hover { color:#636363 !important; }
+
+
 
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -46,7 +53,7 @@ textarea:focus {
 
 #lang a, #metamenu a, #logo a, #header a { text-decoration:none; }
 #metamenu { height:24px; }
-#metamenu a:hover { color:red; }
+#metamenu a:hover { color:#636363; }
 #lang { float:left; width:50%; }
 #portal-siteactions { float:left; width:50%; text-align:right; }
 #metamenu a {
@@ -67,6 +74,7 @@ textarea:focus {
 #toolbox {
     /* height:3px
      */
+    font-size:12px;
     width:772px;
     height:28px;
     background:black;
@@ -203,7 +211,7 @@ ul#navigation ul li a.navTreeCurrentItem,
 ul#navigation ul li a.navTreeItemInPath, 
 ul#navigation ul li a:hover {
     /*color:#918F90;*/
-    color:red !important; } 
+    color:#636363 !important; } 
 
 #main {
     clear:both;
