@@ -70,6 +70,7 @@
   <replace content="children:#portal-searchbox" theme="children:#searchbox" />
 
   <!-- metamenu -->
+  <replace content="children:#portal-languageselector" theme="children:#lang" />
   <replace content="#portal-siteactions" theme="#portal-siteactions" />
 
   <!--navigation -->
