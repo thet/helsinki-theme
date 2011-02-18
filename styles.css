@@ -1,3 +1,6 @@
+/* don't show...  */
+ul#navigation > li.section-members { display:none; }
+
 body { font-size: 75%; }
 html>body { font-size: 12px; }
 p {
