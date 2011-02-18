@@ -104,11 +104,9 @@ textarea:focus {
     right:0px; 
     margin-right:6px;
     padding-left:20px;
-    background:url(img/suche.png) no-repeat;
-    background-position:left center; }
+    background:url(img/suche.png) no-repeat left center; }
 #searchbox:hover {
-    background:url(img/suche-over.png) no-repeat;
-    background-position:left center; }
+    background-image:url(img/suche-over.png); }
 #searchbox input { width:200px; }
 #searchbox input.searchButton { display:none; }
 #livestream a,
@@ -117,19 +115,15 @@ textarea:focus {
     font-weight:bold;
     text-transform:uppercase; }
 #livestream {
-    background:url(img/nowplay.png) no-repeat;
-    background-position:left center;
+    background:url(img/nowplay.png) no-repeat left center;
     padding-left:20px; }
 #livestream:hover {
-    background:url(img/nowplay-over.png) no-repeat;
-    background-position:left center; }
+    background-image:url(img/nowplay-over.png); }
 #onair {
-    background:url(img/onair.png) no-repeat;
-    background-position:left center;
+    background:url(img/onair.png) no-repeat left center;
     padding-left:13px; }
 #onair:hover {
-    background:url(img/onair-over.png) no-repeat;
-    background-position:left center; }
+    background-image:url(img/onair-over.png); }
 #onair input { width:348px; }
 
 #livestream a:hover,
@@ -185,18 +179,15 @@ ul#navigation > li.section-projekte {
     background-image:url(img/str-quer-gelb.png); }
 ul#navigation > li.section-programm > a {
     letter-spacing:-0.05em; 
-    background:url(img/radio1-real.png) no-repeat;
-    background-position:left center;
+    background:url(img/radio1-real.png) no-repeat left center;
     padding-left:49px !important; }
 ul#navigation > li.section-info > a {
-    background:url(img/radio2-real.png) no-repeat;
-    background-position:left center;
+    background:url(img/radio2-real.png) no-repeat left center;
     padding-left:65px !important;
     letter-spacing:0em; }
 ul#navigation > li.section-projekte > a {
     letter-spacing:-0.02em; 
-    background:url(img/radio3-real.png) no-repeat;
-    background-position:left center;
+    background:url(img/radio3-real.png) no-repeat left center;
     padding-left:55px !important; }
 ul#navigation ul {
     /* margin-top=58+6
