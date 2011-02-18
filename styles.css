@@ -66,8 +66,8 @@ textarea:focus {
 #lang a, #metamenu a, #logo a, #header a { text-decoration:none; }
 #metamenu { height:24px; }
 #metamenu a:hover, #metamenu .currentLanguage a { color:#636363; }
-#lang { float:left; width:50%; }
-#portal-siteactions { float:left; width:50%; text-align:right; }
+#lang { float:left; width:20%; }
+#portal-siteactions { float:left; width:80%; text-align:right; }
 #metamenu a {
     color:black;
     font-weight:bold;
@@ -139,6 +139,7 @@ textarea:focus {
 ul#navigation { 
     /*margin-bottom = 176-58-33-6=79px;
      * */
+    z-index:1;
     position:relative;
     padding:0px;
     margin:6px 0px 79px 0px; }
@@ -279,3 +280,38 @@ ul#navigation ul li a:hover {
 }
 
 #footer { clear:both; }
+
+#LSResult {
+    background:none;
+    margin:-1.5em 0 0;
+    position:absolute;
+    right:0; 
+    top:30px;
+    z-index:10; }
+#LSResult fieldset {
+    background:white;
+    border:6px solid #FBD62A; 
+    padding:1em 0 0; }
+fieldset, .editionComment {
+    margin:0; }
+#livesearchLegend {
+    margin:-5px 0 0 -6px;
+    background-color:white;
+    border:6px solid #FBD62A; 
+    padding:0.3em;
+    color:black;
+    font-weight:bold; }
+#LSResult .LSDescr {
+    font-size: 85%;
+    color:black; }
+.LSRow,
+#LSNothingFound {
+    display: block;
+    padding: 0.5em 1em;
+    white-space: normal;
+    width:28em; }
+.LSHighlight {
+    background:red; }
+
+/* @end */
+
