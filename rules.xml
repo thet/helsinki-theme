@@ -86,6 +86,10 @@
   <drop content="tag:div[id *= 'portletwrapper']" />
   <drop content="span.portletTopLeft" />
   <drop content="span.portletTopRight" />
+
+  <drop theme="children:#column-1" />
+  <drop theme="children:#column-2" />
+
   <replace content="children:#portal-column-one" theme="children:#column-1" />
   <replace content="children:#portal-column-two" theme="children:#column-2" />
   <!-- append href="/static/snippets.html"
