@@ -50,14 +50,26 @@ a:hover { color:red; }
 ::selection 	 	{background: #FBD62A;}
 ::-moz-selection 	{background: #FBD62A;}
 
+
+#content-main h1 {
+    text-shadow:-2px 0px 0px #FBD62A,
+        2px 0px 0px #FBD62A,
+        0px -2px 0px #FBD62A,
+        0px 2px 0px #FBD62A,
+        -2px 2px 0px #FBD62A,
+        2px -2px 0px #FBD62A,
+        -2px -2px 0px #FBD62A,
+        2px 2px 0px #FBD62A;
+}
+
+
+
 #column-1 a,
 #column-2 a,
 #footer a { color:black !important; }
 #column-1 a:hover,
 #column-2 a:hover,
 #footer a:hover { color:#636363 !important; }
-
-
 
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -224,11 +236,11 @@ ul#navigation ul li a:hover {
 
 #main {
     clear:both;
-    position:relative;
-    margin:6px 0 24px 0; }
+    /*position:relative;
+    margin:6px 0 24px 0;*/ }
 #content-main, #column-1, #column-2 {
     float:left;
-    margin-top:6px;
+    margin-top:12px;
 }
 #content-main {
     position:relative;
@@ -242,7 +254,7 @@ ul#navigation ul li a:hover {
     margin-right:10px; }
 #column-2 { width:176px; }
 
-#column-1 dl, #column-2 dl { margin: 0 0 10px 0; }
+#column-1 dl, #column-2 dl { margin: 0 0 12px 0; }
 #column-1 a, #column-2 a { text-decoration:none; }
 #column-1 dt, #column-2 dt { 
     font-weight:bold;
@@ -275,6 +287,10 @@ ul#navigation ul li a:hover {
 
 #footer { clear:both; }
 
+.portletGallery dd { margin-top:6px; }
+
+
+/* LIVESEARCH */
 #LSResult {
     background:none;
     margin:-1.5em 0 0;
@@ -306,6 +322,4 @@ fieldset, .editionComment {
     width:28em; }
 .LSHighlight {
     background:red; }
-
-/* @end */
 
