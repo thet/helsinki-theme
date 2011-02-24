@@ -1,6 +1,3 @@
-/* don't show...  */
-ul#navigation > li.section-members { display:none; }
-
 body { font-size: 75%; }
 html>body { font-size: 12px; }
 p {
@@ -160,9 +157,13 @@ ul#navigation > li {
     height:42px;
     border:5px solid black;
     background:#FBD62A;
-    display:inline-block;
+    /*display:inline-block;*/
+    display:none; /* display only those, which are wanted */
     text-align:center;
     padding-top:2px; }
+ul#navigation > li.section-programm,
+ul#navigation > li.section-info,
+ul#navigation > li.section-projekte { display:inline-block; }
 
 ul#navigation > li.navTreeCurrentNode,
 ul#navigation > li.navTreeItemInPath,

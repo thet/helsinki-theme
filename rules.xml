@@ -23,6 +23,7 @@
 <match path="regex:^/portal_javascripts/.*" abort="1" />
 <match path="regex:.*/themes/advanced/.*" abort="1" />
 <match path="regex:.*/plugins/.*" abort="1" /> 
+<match path="regex:.*/image_view_fullscreen$" abort="1" /> 
 
 <!-- ###### Rules ###### -->
 <rule class="plone" suppress-standard="1">
