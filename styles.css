@@ -290,6 +290,8 @@ ul#navigation ul li a:hover {
 
 .portletGallery dd { margin-top:6px; }
 
+.documentDescription { font-weight:bold; }
+.documentByLine { font-size:smaller; }
 
 /* LIVESEARCH */
 #LSResult {
