@@ -81,32 +81,23 @@
   <drop content="dl.portletNavigationTree" />
 
   
-  <!-- #### Portlets and Viewlets #### -->
-
-  <!-- Portlets Prepare -->
-  <drop content="tag:div[id *= 'portletwrapper']" />
-  <drop content="span.portletTopLeft" />
-  <drop content="span.portletTopRight" />
-
-  <drop theme="children:#column-1" />
-  <drop theme="children:#column-2" />
-
-  <replace content="children:#portal-column-one" theme="children:#column-1" />
-  <replace content="children:#portal-column-two" theme="children:#column-2" />
-  <!-- append href="/static/snippets.html"
-      content="tag:.portlet-inner" theme="tag:.portletHeader" /-->
-
-  <!-- append languageselector to navigation -->
-  <!-- drop content="ul#portal-languageselector li.currentLanguage" / -->
-  <!-- append content="children:#portal-languageselector" theme="children:#sfd-menu .navTree" /-->
-
-  
+ 
   <!-- #### main content #### -->
-  <drop theme="children:#content-main" />
+  <drop theme="children:#portal-breadcrumbs" />
+  <append content="children:#portal-breadcrumbs" theme="children:#portal-breadcrumbs" />
+  
   <append content="attributes(class):div.documentEditable" theme="attributes(class):#content-main" />
+  <drop theme="#content-main h1" />
+  <drop theme="#content-main div.documentDescription" />
+
+  <drop theme="children:#teaser-main" />
+  <drop if-content="not:#portal-column-one dl.portletTeaser"
+      theme="#teaser-main" />
+  <append content="children:#portal-column-one dl.portletTeaser dd" theme="children:#content-main #teaser-main" />
+  <drop content="#portal-column-one dl.portletTeaser" />
+  
   <append content=".portalMessage" theme="children:#content-main" />
   <append content="#content h1" theme="children:#content-main" />
-  <append content="#portal-breadcrumbs" theme="children:#content-main" />
   <append content="#plone-document-byline" theme="children:#content-main" />
   <append content="#edit-bar" theme="children:#content-main" />
   <append content="#content" theme="children:#content-main" />
@@ -114,6 +105,19 @@
   <!-- append content="div[id ^= 'pb_']" theme="#footer" />
   <append content="div[id ^= 'lb']" theme="#footer" / -->
 
-</rule>
+  <!-- #### Portlets and Viewlets #### -->
+
+  <!-- Portlets Prepare -->
+  <drop content="tag:div[id *= 'portletwrapper']" />
+  <drop content="span.portletTopLeft" />
+  <drop content="span.portletTopRight" />
+  <drop theme="children:#column-1" />
+  <drop theme="children:#column-2" />
+  <replace content="children:#portal-column-one" theme="children:#column-1" />
+  <replace content="children:#portal-column-two" theme="children:#column-2" />
+  <!-- append href="/static/snippets.html"
+      content="tag:.portlet-inner" theme="tag:.portletHeader" /-->
+
+ </rule>
 </ruleset>
 

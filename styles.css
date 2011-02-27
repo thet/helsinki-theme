@@ -250,7 +250,7 @@ ul#navigation ul li a:hover {
     margin-right:10px; }
 #column-1 {
     position:relative;
-    left:-569px;
+    left:-561px;
     width:213px;
     margin-right:10px; }
 #column-2 { width:176px; }
@@ -286,9 +286,12 @@ ul#navigation ul li a:hover {
     background:white;
 }
 
+#teaser-main h3 { margin-top:0; }
+#teaser-main { margin-bottom:12px; }
+
 #footer { clear:both; }
 
-.portletGallery dd { margin-top:6px; }
+#column-2 dd { margin-top:6px; }
 
 .documentDescription { font-weight:bold; }
 .documentByLine { font-size:smaller; }
