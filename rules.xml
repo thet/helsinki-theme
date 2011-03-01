@@ -76,9 +76,10 @@
   <replace content="#portal-siteactions" theme="#portal-siteactions" />
 
   <!--navigation -->
-  <replace content="children:.portletNavigationTree ul.navTreeLevel0"
+  <drop theme="children:#navigation" />
+  <append content="children:#portal-column-two .portletNavigationTree ul.navTreeLevel0"
       theme="children:#navigation" />
-  <drop content="dl.portletNavigationTree" />
+  <drop content="#portal-column-two dl.portletNavigationTree" />
 
   
  

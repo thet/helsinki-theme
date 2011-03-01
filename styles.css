@@ -235,6 +235,16 @@ ul#navigation ul li a:hover {
     /*color:#918F90;*/
     color:#636363 !important; } 
 
+/* project nav */
+#column-1 .portletNavigationTree .navTreeTopNode { display:none; }
+#column-1 .portletNavigationTree dt { display:none; }
+#column-1 ul ul { margin-left:10px; }
+#column-1 ul li a.navTreeCurrentItem, 
+#column-1 ul li a.navTreeItemInPath {
+    color:#636363 !important; }
+
+#column-1, #column-2 { overflow:hidden; }
+
 #main {
     clear:both;
     /*position:relative;
