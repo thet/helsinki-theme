@@ -107,9 +107,9 @@ textarea:focus {
 #toolbox input { border:1px solid black; height:21px; }
 #livestream,
 #onair,
-#searchbox {
-    display:inline-block;
-    margin-right:18px; }
+#searchbox {  display:inline-block; }
+#livestream { margin-right:15px; }
+#onair { margin-right:5px; }
 #searchbox {
     position:absolute;
     top:5px;
