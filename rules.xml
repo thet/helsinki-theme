@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ruleset>
 <server-settings>
-  <server>localhost:8906</server>
-  <!-- server>localhost:8880</server -->
+  <!--server>localhost:8906</server-->
+  <server>localhost:8880</server>
   <execute-pyref>false</execute-pyref>
   <dev-allow>localhost</dev-allow>
   <dev-user username="admin" password="admin" />
@@ -14,12 +14,12 @@
   <dest href="{here}" />
 </proxy>
 
-<proxy path="/" class="plone">
+<!--proxy path="/" class="plone">
   <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/" />
-</proxy>
-<!-- proxy path="/" class="plone">
+</proxy-->
+<proxy path="/" class="plone">
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/" />
-</proxy -->
+</proxy>
 
 <!-- plone popups -->
 <match path="regex:.*contenthistorypopup.*" abort="1" />
@@ -43,13 +43,21 @@
   <drop theme="link[href *= 'plonebase']" />
   <!-- Add in the Plone-created CSS, KSS and JS in addition to the static ones -->
   <prepend content="/html/head/style" theme="/html/head/link" />
-  <!-- prepend content="link[href *= 'public']" theme="/html/head/link" /-->
-  <prepend content="link[href *= 'base']" theme="/html/head/link" />
+  <drop content="link[href *= 'public']" />
+  <drop content="link[href *= 'columns']" />
+  <drop content="link[href *= 'portlets']" />
+  <drop content="link[href *= 'deprecated']" />
+  <drop content="link[href *= 'navtree']" />
+  <drop content="link[href *= 'invisibles']" />
+  <drop content="link[href *= 'print']" />
+  <drop content="link[href *= 'mobile']" />
+  <prepend content="link[href *= 'css']" theme="/html/head/link" />
+  <!-- prepend content="link[href *= 'base']" theme="/html/head/link" />
   <prepend content="link[href *= 'authoring']" theme="/html/head/link" />
   <prepend content="link[href *= 'member']" theme="/html/head/link" />
   <prepend content="link[href *= 'forms']" theme="/html/head/link" />
   <prepend content="link[href *= 'controlpanel']" theme="/html/head/link" />
-  <prepend content="link[href *= 'kupuplone']" theme="/html/head/link" />
+  <prepend content="link[href *= 'kupuplone']" theme="/html/head/link" /-->
 
   <prepend content="link[href *= 'ploneKss']" theme="/html/head/link" />
   <prepend content="link[rel *= 'kinetic-stylesheet']" theme="/html/head/link" />
