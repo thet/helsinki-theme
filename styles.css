@@ -78,6 +78,11 @@ a:hover,
         -1px -1px 0px #FBD62A,
         1px 1px 0px #FBD62A;
 }
+.formTabs a:hover, #edit-bar a:hover, #toolbox a:hover {
+    text-shadow:none;
+    -moz-text-shadow:none;
+    -webkit-text-shadow:none;
+}
 
 ::selection 	 	{background: #FBD62A;}
 ::-moz-selection 	{background: #FBD62A;}
@@ -117,9 +122,7 @@ a:hover,
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
-textarea:focus { 
-    /* background-color:#FFFFE0; */
-    background-color:#FBD62A; }
+textarea:focus { background-color:#EEE; }
 
 #lang a, #metamenu a, #logo a, #header a { text-decoration:none; }
 #metamenu { height:24px; }
@@ -392,7 +395,7 @@ ul#navigation ul li a.navTreeItemInPath {
 
 #footer { clear:both; }
 
-#column-2 dd { margin-top:6px; }
+#column-2 dt { margin-bottom:6px; }
 
 .documentDescription { font-weight:bold; }
 .documentByLine { font-size:smaller; }
