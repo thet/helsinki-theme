@@ -414,12 +414,12 @@ ul#navigation ul li a.navTreeItemInPath {
 .portlet-static-mach-mit dd p+p+p+p+p+p+p+p+p { background-image:url(img/str-quer.png); }
 .portlet-static-mach-mit dd p+p+p+p+p+p+p+p+p+p { background-image:url(img/str-quer-spiegel.png); }
 .portlet-static-mach-mit dd p+p+p+p+p+p+p+p+p+p+p { background-image:url(img/str-vert.png); }
+.portlet-static-mach-mit dd p a { color:black !important; }
 .portlet-static-mach-mit dd p {
     padding:5px;
     background-repeat:repeat;
     display:block;
     margin:0 0 6px 0; 
-    color:black !important;
     border:1px solid white;
     font-weight:bold;
     font-size:20px;
