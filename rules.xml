@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ruleset>
 <server-settings>
-  <server>localhost:8906</server>
-  <!-- server>localhost:8880</server-->
+  <!-- server>localhost:8906</server-->
+  <server>localhost:8880</server>
   <execute-pyref>false</execute-pyref>
   <dev-allow>localhost</dev-allow>
   <dev-user username="admin" password="admin" />
@@ -14,12 +14,12 @@
   <dest href="{here}" />
 </proxy>
 
-<proxy path="/" class="plone">
+<!-- proxy path="/" class="plone">
   <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/" />
-</proxy>
-<!--proxy path="/" class="plone">
-  <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/" />
 </proxy-->
+<proxy path="/" class="plone">
+  <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/" />
+</proxy>
 
 <!-- plone popups -->
 <match path="regex:.*contenthistorypopup.*" abort="1" />
