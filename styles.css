@@ -420,7 +420,6 @@ ul#navigation ul li a.navTreeItemInPath {
     background-repeat:repeat;
     display:block;
     margin:0 0 6px 0; 
-    border:1px solid white;
     font-weight:bold;
     font-size:20px;
     line-height:24px;
@@ -453,8 +452,6 @@ ul#navigation ul li a.navTreeItemInPath {
         3px -3px 0px white,
         -3px -3px 0px white,
         3px 3px 0px white; }
-.portlet-static-mach-mit dd p:hover {
-    border:1px solid black; }
 .portlet-static-mach-mit dd p a:hover {
     text-shadow:
         -3px 0px 0px #FBD62A,
