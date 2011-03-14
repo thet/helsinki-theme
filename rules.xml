@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ruleset>
 <server-settings>
-  <server>localhost:8906</server>
-  <!--server>localhost:8880</server-->
+  <!-- server>localhost:8906</server-->
+  <server>localhost:8880</server>
   <execute-pyref>false</execute-pyref>
   <dev-allow>localhost</dev-allow>
   <dev-user username="admin" password="admin" />
@@ -14,12 +14,12 @@
   <dest href="{here}" />
 </proxy>
 
-<proxy path="/" class="plone">
-  <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/" />
-</proxy>
 <!-- proxy path="/" class="plone">
-  <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/" />
+  <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/" />
 </proxy -->
+<proxy path="/" class="plone">
+  <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/" />
+</proxy>
 
 <!-- plone popups -->
 <match path="regex:.*contenthistorypopup.*" abort="1" />
@@ -40,7 +40,14 @@
   <append content="/html/head/base" theme="children:/html/head" />
   <append content="link[rel *= 'kss-base-url']" theme="children:/html/head" />
 
-  <drop theme="link[href *= 'plonebase']" />
+  <!-- workaround jscalendar/calendar-system.css bug
+       see: http://blog.jazkarta.com/2010/04/02/deliverance-great-plone-theming-no-zope-after-taste/ -->
+  <drop content="style[media = 'all']" />
+  <drop
+    if-content="not:body.template-atct_edit"
+    theme="link[href *= 'calendar-system.css']" />
+  <drop theme="link[href *= 'plonebase.css']" />
+  
   <!-- Add in the Plone-created CSS, KSS and JS in addition to the static ones -->
   <prepend content="/html/head/style" theme="/html/head/link" />
   <drop content="link[href *= 'public']" />
@@ -52,12 +59,9 @@
   <drop content="link[href *= 'print']" />
   <drop content="link[href *= 'mobile']" />
   <prepend content="link[href *= 'css']" theme="/html/head/link" />
-  <!-- prepend content="link[href *= 'base']" theme="/html/head/link" />
-  <prepend content="link[href *= 'authoring']" theme="/html/head/link" />
-  <prepend content="link[href *= 'member']" theme="/html/head/link" />
-  <prepend content="link[href *= 'forms']" theme="/html/head/link" />
-  <prepend content="link[href *= 'controlpanel']" theme="/html/head/link" />
-  <prepend content="link[href *= 'kupuplone']" theme="/html/head/link" /-->
+
+
+
 
   <prepend content="link[href *= 'ploneKss']" theme="/html/head/link" />
   <prepend content="link[rel *= 'kinetic-stylesheet']" theme="/html/head/link" />
