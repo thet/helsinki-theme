@@ -58,11 +58,12 @@ h4 {
 
 a { text-decoration:underline;
     color:#636363; }
+#content-main a { font-weight:bold; }
 a:hover,
 #column-1 .navTreeCurrentItem, 
 #column-1 .navTreeItemInPath { 
     /*color:red;*/
-    color:black; }
+    color:black !important; }
 
 .formTabs a:hover, #edit-bar a:hover, #toolbox a:hover {
     text-shadow:none;
@@ -363,10 +364,9 @@ fieldset, .editionComment {
 
 /* text shadows */
 #metamenu .currentLanguage a, 
-a:hover,
-#column-1 .navTreeCurrentItem, 
 ul#navigation ul li a.navTreeCurrentItem, 
 ul#navigation ul li a.navTreeItemInPath, 
+#column-1 .navTreeCurrentItem,
 .text_shadow_1 {
     text-shadow:
         -1px 0px 0px #FBD62A,
@@ -397,6 +397,37 @@ ul#navigation ul li a.navTreeItemInPath,
         -1px -1px 0px #FBD62A,
         1px 1px 0px #FBD62A; }
 
+a:hover,
+.text_shadow_1_grey {
+    text-shadow:
+        -1px 0px 0px #BBB,
+        1px 0px 0px #BBB,
+        0px -1px 0px #BBB,
+        0px 1px 0px #BBB,
+        -1px 1px 0px #BBB,
+        1px -1px 0px #BBB,
+        -1px -1px 0px #BBB,
+        1px 1px 0px #BBB;
+    /* horizontal-offset vertical-offset 'blur' colour */
+    -moz-text-shadow:
+        -1px 0px 0px #BBB,
+        1px 0px 0px #BBB,
+        0px -1px 0px #BBB,
+        0px 1px 0px #BBB,
+        -1px 1px 0px #BBB,
+        1px -1px 0px #BBB,
+        -1px -1px 0px #BBB,
+        1px 1px 0px #BBB;
+    -webkit-text-shadow:
+        -1px 0px 0px #BBB,
+        1px 0px 0px #BBB,
+        0px -1px 0px #BBB,
+        0px 1px 0px #BBB,
+        -1px 1px 0px #BBB,
+        1px -1px 0px #BBB,
+        -1px -1px 0px #BBB,
+        1px 1px 0px #BBB; }
+    
 #content-main h1,
 .text_shadow_2 {
     text-shadow:
