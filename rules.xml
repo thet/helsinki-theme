@@ -45,8 +45,8 @@
   <drop content="style[media = 'all']" />
   <drop
     if-content="not:body.template-atct_edit"
-    theme="link[href *= 'calendar-system.css']" />
-  <drop theme="link[href *= 'plonebase.css']" />
+    theme="link[href *= 'calendar-system']" />
+  <drop theme="link[href *= 'plonebase']" />
   
   <!-- Add in the Plone-created CSS, KSS and JS in addition to the static ones -->
   <prepend content="/html/head/style" theme="/html/head/link" />
@@ -93,7 +93,7 @@
 
   <!--navigation -->
   <drop theme="children:#navigation" />
-  <append content="children:#portal-column-two .portletNavigationTree ul.navTreeLevel0"
+  <append content="children:#portal-column-two dl.portletNavigationTree ul.navTreeLevel0"
       theme="children:#navigation" />
   <drop content="#portal-column-two dl.portletNavigationTree" />
 
