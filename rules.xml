@@ -23,7 +23,7 @@
   programmschienen
   programmflyer
 -->
-<proxy path="/programm/tagesansicht" class="common program">
+<proxy path="regex:^/programm/tagesansicht/$" class="common program">
   <dest href="http://localhost:8000/program/" />
   <response rewrite-links="1" />
 </proxy>
@@ -46,7 +46,7 @@
   <response rewrite-links="1" />
 </proxy>
 
-<!-- proxy path="/" class="plone">
+<!-- proxy path="/" class="common plone">
   <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/" />
 </proxy -->
 <proxy path="/" class="common plone">
@@ -72,7 +72,7 @@
   <!--navigation -->
   <drop theme="children:#navigation" />
   <append
-    href="http://localhost:8080/radio-helsinki/helsinki/programm/"
+    href="/programm/"
     content="children:#portal-column-two dl.portletNavigationTree ul.navTreeLevel0"
     theme="children:#navigation" />
 
