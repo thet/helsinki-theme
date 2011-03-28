@@ -183,8 +183,6 @@
   <drop theme="children:#column-2" />
   <replace content="children:#portal-column-one" theme="children:#column-1" />
   <replace content="children:#portal-column-two" theme="children:#column-2" />
-  <!-- append href="/static/snippets.html"
-      content="tag:.portlet-inner" theme="tag:.portletHeader" /-->
 
  </rule>
 </ruleset>
