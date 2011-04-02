@@ -23,26 +23,9 @@
   programmschienen
   programmflyer
 -->
-<proxy path="regex:^/programm/tagesansicht/$" class="common program">
-  <dest href="http://localhost:8000/program/" />
-  <response rewrite-links="1" />
-</proxy>
-<proxy path="/programm/wochenansicht" class="common program">
-  <dest href="http://localhost:8000/program/" />
-  <response rewrite-links="1" />
-</proxy>
-
-<proxy keep-host="1" path="/programm/sendungen" class="common program">
-  <dest href="http://localhost:8000/program/shows" />
-  <response rewrite-links="1" />
-</proxy>
-
-<proxy path="/programm/sendungsmacherinnen" class="common program">
-  <dest href="http://localhost:8000/program/hosts/" />
-  <response rewrite-links="1" />
-</proxy>
-<proxy path="/programm/tipps" class="common program">
-  <dest href="http://localhost:8000/program/recommendations/" />
+<!-- TODO: rewrite rules for nginx to force trailing slash on program urls -->
+<proxy path="/programtool">
+  <dest href="http://localhost:8000/program" />
   <response rewrite-links="1" />
 </proxy>
 
@@ -53,6 +36,11 @@
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/" />
 </proxy>
 
+<match path="/programm/tagesansicht/" class="common program-day" />
+<match path="/programm/wochenansicht/" class="common program-week" />
+<match path="/programm/sendungen/" class="common program-shows" />
+<match path="/programm/sendungsmacherinnen/" class="common program-hosts" />
+<match path="/programm/tipps/" class="common program-recommendations" />
 
 <!-- plone popups -->
 <match path="regex:.*contenthistorypopup.*" abort="1" />
@@ -62,33 +50,64 @@
 <match path="regex:.*/plugins/.*" abort="1" /> 
 <match path="regex:.*/image_view_fullscreen$" abort="1" /> 
 
-<!-- ###### Rules ###### -->
-<rule class="common" suppress-standard="1">
+
+<rule class="program-day" suppress-standard="1">
+  <replace
+    href="/programtool/"
+    content="children:body" theme="children:#content-main" />
 </rule>
+<rule class="program-week" suppress-standard="1">
+  <replace
+    href="/programtool/"
+    content="children:body" theme="children:#content-main" />
+</rule>
+<rule class="program-shows" suppress-standard="1">
+  <replace
+    href="/programtool/shows/"
+    content="children:body" theme="children:#content-main" />
+</rule>
+<rule class="program-hosts" suppress-standard="1">
+  <replace
+    href="/programtool/hosts/"
+    content="children:body" theme="children:#content-main" />
+</rule>
+<rule class="program-recommendations" suppress-standard="1">
+  <replace
+    href="/programtool/recommendations/"
+    content="children:body" theme="children:#content-main" />
+</rule>
+
 
 <rule class="program" suppress-standard="1">
+  <!-- options
+       1) copy all relevant rules and refer to href="/"
+       2) use different url to helsinki website
+       3) fix using <theme href="/"... -->
+  <!-- theme href="/programm/" /-->
+  <!-- theme href="http://helsinki.adm.at/programm/" /-->
+  <!-- use normal theme. register an proxy url for program. use content rules
+       with href, referring to those proxy urls.
+       rename plone paths to those of django. unify paths. show, shows -> shows -->
   <theme href="/static/index.html" />
-
-  <!--navigation -->
-  <drop theme="children:#navigation" />
-  <append
-    href="/programm/"
-    content="children:#portal-column-two dl.portletNavigationTree ul.navTreeLevel0"
-    theme="children:#navigation" />
-
+  <!-- charset ok -->
+  <append href="/programm/recommendations_box/"
+    content="children:body"
+    theme="children:#column-1" />
+  <!-- charset problem -->
+  <append href="http://localhost:8000/program/recommendations_box/"
+    content="children:body"
+    theme="children:#column-1" />
   <replace content="children:body" theme="children:#content-main" />
-
 </rule>
 
-
-<rule class="plone" suppress-standard="1">
+<rule class="common" suppress-standard="1">
   <theme href="/static/index.html" />
 
   <drop theme="/html/head/meta" />
 
   <replace content="/html/head/title" theme="/html/head/title" />
-  <append content="/html/head/meta" theme="children:/html/head" />
   <append content="/html/head/base" theme="children:/html/head" />
+  <append content="/html/head/meta" theme="children:/html/head" />
   <append content="link[rel *= 'kss-base-url']" theme="children:/html/head" />
 
   <!-- workaround jscalendar/calendar-system.css bug
@@ -97,22 +116,12 @@
   <drop
     if-content="not:body.template-atct_edit"
     theme="link[href *= 'calendar-system']" />
-  <drop theme="link[href *= 'plonebase']" />
   
   <!-- Add in the Plone-created CSS, KSS and JS in addition to the static ones -->
+  <drop theme="link[href *= 'plonebase']" />
   <prepend content="/html/head/style" theme="/html/head/link" />
-  <drop content="link[href *= 'public']" />
-  <drop content="link[href *= 'columns']" />
-  <drop content="link[href *= 'portlets']" />
-  <drop content="link[href *= 'deprecated']" />
-  <drop content="link[href *= 'navtree']" />
-  <drop content="link[href *= 'invisibles']" />
-  <drop content="link[href *= 'print']" />
-  <drop content="link[href *= 'mobile']" />
+  <!-- drop public, columns, portlets, deprecated, navtree, invisibles, print, mobile -->
   <prepend content="link[href *= 'css']" theme="/html/head/link" />
-
-
-
 
   <prepend content="link[href *= 'ploneKss']" theme="/html/head/link" />
   <prepend content="link[rel *= 'kinetic-stylesheet']" theme="/html/head/link" />
@@ -123,7 +132,13 @@
   <append content="link[rel = 'contents']" theme="children:/html/head" />
   <append content="link[rel = 'search']" theme="children:/html/head" />
 
-  <!-- #### Header #### -->
+  <!-- theme element droppings -->
+  <drop theme="children:#navigation" />
+  <drop theme="children:#portal-breadcrumbs" />
+  <drop theme="#content-main h1" />
+  <drop theme="#content-main div.documentDescription" />
+  <drop theme="children:#column-1" />
+  <drop theme="children:#column-2" />
 
   <replace content="attributes(class,dir):/html/body" theme="attributes:/html/body" />
 
@@ -143,46 +158,38 @@
   <replace content="#portal-siteactions" theme="#portal-siteactions" />
 
   <!--navigation -->
-  <drop theme="children:#navigation" />
   <append content="children:#portal-column-two dl.portletNavigationTree ul.navTreeLevel0"
       theme="children:#navigation" />
   <drop content="#portal-column-two dl.portletNavigationTree" />
 
-  
- 
-  <!-- #### main content #### -->
-  <drop theme="children:#portal-breadcrumbs" />
   <append content="children:#portal-breadcrumbs" theme="children:#portal-breadcrumbs" />
-  
-  <append content="attributes(class):div.documentEditable" theme="attributes(class):#content-main" />
-  <drop theme="#content-main h1" />
-  <drop theme="#content-main div.documentDescription" />
 
+  <!-- teaser on startpage -->
   <drop theme="children:#teaser-main" />
   <drop if-content="not:#portal-column-one dl.portletTeaser"
       theme="#teaser-main" />
   <append content="children:#portal-column-one dl.portletTeaser dd" theme="children:#content-main #teaser-main" />
   <drop content="#portal-column-one dl.portletTeaser" />
-  
+ 
+  <!-- Portlets -->
+  <drop content="tag:div[id *= 'portletwrapper']" />
+  <drop content="span.portletTopLeft" />
+  <drop content="span.portletTopRight" />
+  <replace content="children:#portal-column-one" theme="children:#column-1" />
+  <replace content="children:#portal-column-two" theme="children:#column-2" />
+
+</rule>
+
+<rule class="plone" suppress-standard="1">
+
+  <!-- main content -->
+  <append content="attributes(class):div.documentEditable" theme="attributes(class):#content-main" />
+
   <append content=".portalMessage" theme="children:#content-main" />
   <append content="#content h1" theme="children:#content-main" />
   <append content="#plone-document-byline" theme="children:#content-main" />
   <append content="#edit-bar" theme="children:#content-main" />
   <append content="#content" theme="children:#content-main" />
-
-  <!-- append content="div[id ^= 'pb_']" theme="#footer" />
-  <append content="div[id ^= 'lb']" theme="#footer" / -->
-
-  <!-- #### Portlets and Viewlets #### -->
-
-  <!-- Portlets Prepare -->
-  <drop content="tag:div[id *= 'portletwrapper']" />
-  <drop content="span.portletTopLeft" />
-  <drop content="span.portletTopRight" />
-  <drop theme="children:#column-1" />
-  <drop theme="children:#column-2" />
-  <replace content="children:#portal-column-one" theme="children:#column-1" />
-  <replace content="children:#portal-column-two" theme="children:#column-2" />
 
  </rule>
 </ruleset>
