@@ -68,7 +68,7 @@
 
 <rule class="program" suppress-standard="1">
   <!-- rename plone paths to those of django. unify paths. show, shows -> shows -->
-  <theme href="http://localhost:8880/programm/" />
+  <theme href="/programm/?deliv_force_external=1" />
   <append href="/programm/tipps_portlet/"
     content="children:body"
     theme="children:#column-1" />
