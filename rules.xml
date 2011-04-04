@@ -48,6 +48,10 @@
   <dest href="http://localhost:8000/program/recommendations_box" />
   <response rewrite-links="1" />
 </proxy>
+<proxy path="/programm/onair_portlet" class="program">
+  <dest href="http://localhost:8000/program/current_box" />
+  <response rewrite-links="1" />
+</proxy>
 
 
 <!-- proxy path="/" class="common plone">
@@ -69,6 +73,9 @@
 <rule class="program" suppress-standard="1">
   <!-- rename plone paths to those of django. unify paths. show, shows -> shows -->
   <theme href="/programm/?deliv_force_external=1" />
+  <append href="/programm/onair_portlet/"
+    content="children:body"
+    theme="children:#column-1" />
   <append href="/programm/tipps_portlet/"
     content="children:body"
     theme="children:#column-1" />
