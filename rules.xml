@@ -24,15 +24,31 @@
   programmflyer
 -->
 <!-- TODO: rewrite rules for nginx to force trailing slash on program urls -->
-<proxy path="/programtool">
+<proxy path="/programm/tagesansicht" class="program">
   <dest href="http://localhost:8000/program" />
+  <response rewrite-links="1" />
+</proxy>
+<proxy path="/programm/wochenansicht" class="program">
+  <dest href="http://localhost:8000/program" />
+  <response rewrite-links="1" />
+</proxy>
+<proxy path="/programm/sendungen" class="program">
+  <dest href="http://localhost:8000/program/shows" />
+  <response rewrite-links="1" />
+</proxy>
+<proxy path="/programm/sendungsmacherinnen" class="program">
+  <dest href="http://localhost:8000/program/hosts" />
+  <response rewrite-links="1" />
+</proxy>
+<proxy path="/programm/tipps" class="program">
+  <dest href="http://localhost:8000/program/recommendations" />
+  <response rewrite-links="1" />
+</proxy>
+<proxy path="/programm/tipps_portlet" class="program">
+  <dest href="http://localhost:8000/program/recommendations_box" />
   <response rewrite-links="1" />
 </proxy>
 
-<proxy path="/programm/tagesansicht" class="program-day">
-  <dest href="http://localhost:8000/program" />
-  <response rewrite-links="1" />
-</proxy>
 
 <!-- proxy path="/" class="common plone">
   <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/" />
@@ -40,12 +56,6 @@
 <proxy path="/" class="common plone">
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/" />
 </proxy>
-
-<!-- match path="/programm/tagesansicht/" class="common program-day" />
-<match path="/programm/wochenansicht/" class="common program-week" />
-<match path="/programm/sendungen/" class="common program-shows" />
-<match path="/programm/sendungsmacherinnen/" class="common program-hosts" />
-<match path="/programm/tipps/" class="common program-recommendations" /-->
 
 <!-- plone popups -->
 <match path="regex:.*contenthistorypopup.*" abort="1" />
@@ -56,140 +66,100 @@
 <match path="regex:.*/image_view_fullscreen$" abort="1" /> 
 
 
-<!-- rule class="program-day" suppress-standard="1">
-  <replace
-    href="/programtool/"
-    content="children:body" theme="children:#content-main" />
-</rule>
-<rule class="program-week" suppress-standard="1">
-  <replace
-    href="/programtool/"
-    content="children:body" theme="children:#content-main" />
-</rule>
-<rule class="program-shows" suppress-standard="1">
-  <replace
-    href="/programtool/shows/"
-    content="children:body" theme="children:#content-main" />
-</rule>
-<rule class="program-hosts" suppress-standard="1">
-  <replace
-    href="/programtool/hosts/"
-    content="children:body" theme="children:#content-main" />
-</rule>
-<rule class="program-recommendations" suppress-standard="1">
-  <replace
-    href="/programtool/recommendations/"
-    content="children:body" theme="children:#content-main" />
-</rule-->
-
-<rule class="program-day" suppress-standard="1">
-  <theme href="/programm/?deliv_external_req=1" />
-  <replace content="children:body" theme="children:#content-main" />
-</rule>
-
 <rule class="program" suppress-standard="1">
-  <!-- options
-       1) copy all relevant rules and refer to href="/"
-       2) use different url to helsinki website
-       3) fix using <theme href="/"... -->
-  <!-- theme href="/programm/" /-->
-  <!-- theme href="http://helsinki.adm.at/programm/" /-->
-  <!-- use normal theme. register an proxy url for program. use content rules
-       with href, referring to those proxy urls.
-       rename plone paths to those of django. unify paths. show, shows -> shows -->
-  <theme href="/static/index.html" />
-  <!-- charset ok -->
-  <append href="/programm/recommendations_box/"
-    content="children:body"
-    theme="children:#column-1" />
-  <!-- charset problem -->
-  <append href="http://localhost:8000/program/recommendations_box/"
+  <!-- rename plone paths to those of django. unify paths. show, shows -> shows -->
+  <theme href="http://localhost:8880/programm/" />
+  <append href="/programm/tipps_portlet/"
     content="children:body"
     theme="children:#column-1" />
   <replace content="children:body" theme="children:#content-main" />
 </rule>
 
-<rule class="common" suppress-standard="1" collapse-sources="1">
+
+<rule class="common" suppress-standard="1">
   <theme href="/static/index.html" />
 
-  <drop theme="/html/head/meta" collapse-sources="1"/>
+  <drop theme="/html/head/meta"/>
 
-  <replace content="/html/head/title" theme="/html/head/title" collapse-sources="1"/>
-  <append content="/html/head/base" theme="children:/html/head" collapse-sources="1"/>
-  <append content="/html/head/meta" theme="children:/html/head" collapse-sources="1"/>
-  <append content="link[rel *= 'kss-base-url']" theme="children:/html/head" collapse-sources="1"/>
+  <replace content="/html/head/title" theme="/html/head/title"/>
+  <append content="/html/head/base" theme="children:/html/head"/>
+  <append content="/html/head/meta" theme="children:/html/head"/>
+  <append content="link[rel *= 'kss-base-url']" theme="children:/html/head"/>
 
   <!-- workaround jscalendar/calendar-system.css bug
        see: http://blog.jazkarta.com/2010/04/02/deliverance-great-plone-theming-no-zope-after-taste/ -->
-  <drop content="style[media = 'all']" collapse-sources="1"/>
+  <drop content="style[media = 'all']"/>
   <drop
     if-content="not:body.template-atct_edit"
-    theme="link[href *= 'calendar-system']" collapse-sources="1"/>
+    theme="link[href *= 'calendar-system']"/>
   
   <!-- Add in the Plone-created CSS, KSS and JS in addition to the static ones -->
-  <drop theme="link[href *= 'plonebase']" collapse-sources="1"/>
-  <prepend content="/html/head/style" theme="/html/head/link" collapse-sources="1"/>
+  <drop theme="link[href *= 'plonebase']"/>
+  <prepend content="/html/head/style" theme="/html/head/link"/>
   <!-- drop public, columns, portlets, deprecated, navtree, invisibles, print, mobile -->
-  <prepend content="link[href *= 'css']" theme="/html/head/link" collapse-sources="1"/>
+  <prepend content="link[href *= 'css']" theme="/html/head/link"/>
 
-  <prepend content="link[href *= 'ploneKss']" theme="/html/head/link" collapse-sources="1"/>
-  <prepend content="link[rel *= 'kinetic-stylesheet']" theme="/html/head/link" collapse-sources="1"/>
-  <prepend content="/html/head/script" theme="/html/head/link" collapse-sources="1"/>
+  <prepend content="link[href *= 'ploneKss']" theme="/html/head/link"/>
+  <prepend content="link[rel *= 'kinetic-stylesheet']" theme="/html/head/link"/>
+  <prepend content="/html/head/script" theme="/html/head/link"/>
 
-  <append content="link[rel = 'author']" theme="children:/html/head" collapse-sources="1"/>
-  <append content="link[rel = 'home']" theme="children:/html/head" collapse-sources="1"/>
-  <append content="link[rel = 'contents']" theme="children:/html/head" collapse-sources="1"/>
-  <append content="link[rel = 'search']" theme="children:/html/head" collapse-sources="1"/>
+  <append content="link[rel = 'author']" theme="children:/html/head"/>
+  <append content="link[rel = 'home']" theme="children:/html/head"/>
+  <append content="link[rel = 'contents']" theme="children:/html/head"/>
+  <append content="link[rel = 'search']" theme="children:/html/head"/>
 
   <!-- theme element droppings -->
-  <drop theme="children:#navigation" collapse-sources="1"/>
-  <drop theme="children:#portal-breadcrumbs" collapse-sources="1"/>
-  <drop theme="#content-main h1" collapse-sources="1"/>
-  <drop theme="#content-main div.documentDescription" collapse-sources="1"/>
-  <drop theme="children:#column-1" collapse-sources="1"/>
-  <drop theme="children:#column-2" collapse-sources="1"/>
+  <drop theme="children:#navigation"/>
+  <drop theme="children:#portal-breadcrumbs"/>
+  <drop theme="#content-main h1"/>
+  <drop theme="#content-main div.documentDescription"/>
+  <drop theme="children:#column-1"/>
+  <drop theme="children:#column-2"/>
 
-  <replace content="attributes(class,dir):/html/body" theme="attributes:/html/body" collapse-sources="1"/>
+  <replace content="attributes(class,dir):/html/body" theme="attributes:/html/body"/>
 
   <!-- Accessibility -->
-  <prepend content="#portal-header > p.hiddenStructure" theme="children:body"  collapse-sources="1"/>
+  <prepend content="#portal-header > p.hiddenStructure" theme="children:body"/>
 
   <!-- Set correct Link for the logo -->
-  <replace content="attributes:#portal-logo" theme="attributes:#logo a" collapse-sources="1"/>
+  <replace content="attributes:#portal-logo" theme="attributes:#logo a"/>
 
   <!-- Search box -->
-  <drop content="#portal-searchbox div.searchSection" collapse-sources="1"/>
-  <drop content="tag:.LSBox" collapse-sources="1"/>
-  <replace content="children:#portal-searchbox" theme="children:#searchbox" collapse-sources="1"/>
+  <drop content="#portal-searchbox div.searchSection"/>
+  <drop content="tag:.LSBox"/>
+  <replace content="children:#portal-searchbox" theme="children:#searchbox"/>
 
   <!-- metamenu -->
-  <replace content="children:#portal-languageselector" theme="children:#lang" collapse-sources="1"/>
-  <replace content="#portal-siteactions" theme="#portal-siteactions" collapse-sources="1"/>
+  <replace content="children:#portal-languageselector" theme="children:#lang"/>
+  <replace content="#portal-siteactions" theme="#portal-siteactions"/>
 
   <!--navigation -->
-  <append content="children:#portal-column-two dl.portletNavigationTree ul.navTreeLevel0"
-      theme="children:#navigation" collapse-sources="1"/>
-  <drop content="#portal-column-two dl.portletNavigationTree" collapse-sources="1"/>
+  <append
+      content="children:#portal-column-two dl.portletNavigationTree ul.navTreeLevel0"
+      theme="children:#navigation"/>
+  <drop content="#portal-column-two dl.portletNavigationTree"/>
 
-  <append content="children:#portal-breadcrumbs" theme="children:#portal-breadcrumbs" collapse-sources="1"/>
+  <append content="children:#portal-breadcrumbs" theme="children:#portal-breadcrumbs"/>
 
   <!-- teaser on startpage -->
-  <drop theme="children:#teaser-main" collapse-sources="1"/>
+  <drop theme="children:#teaser-main"/>
   <drop if-content="not:#portal-column-one dl.portletTeaser"
-      theme="#teaser-main" collapse-sources="1"/>
-  <append content="children:#portal-column-one dl.portletTeaser dd" theme="children:#content-main #teaser-main" />
-  <drop content="#portal-column-one dl.portletTeaser" collapse-sources="1"/>
+      theme="#teaser-main"/>
+  <append
+      content="children:#portal-column-one dl.portletTeaser dd"
+      theme="children:#content-main #teaser-main" />
+  <drop content="#portal-column-one dl.portletTeaser"/>
  
   <!-- Portlets -->
-  <drop content="tag:div[id *= 'portletwrapper']" collapse-sources="1"/>
-  <drop content="span.portletTopLeft" collapse-sources="1"/>
-  <drop content="span.portletTopRight" collapse-sources="1"/>
-  <replace content="children:#portal-column-one" theme="children:#column-1" collapse-sources="1"/>
-  <replace content="children:#portal-column-two" theme="children:#column-2" collapse-sources="1"/>
+  <drop content="tag:div[id *= 'portletwrapper']"/>
+  <drop content="span.portletTopLeft"/>
+  <drop content="span.portletTopRight"/>
+  <replace content="children:#portal-column-one" theme="children:#column-1"/>
+  <replace content="children:#portal-column-two" theme="children:#column-2"/>
 
 </rule>
 
-<rule class="plone" suppress-standard="1">
+<rule class="plone">
 
   <!-- main content -->
   <append content="attributes(class):div.documentEditable" theme="attributes(class):#content-main" />
@@ -199,7 +169,6 @@
   <append content="#plone-document-byline" theme="children:#content-main" />
   <append content="#edit-bar" theme="children:#content-main" />
   <append content="#content" theme="children:#content-main" />
+</rule>
 
- </rule>
 </ruleset>
-
