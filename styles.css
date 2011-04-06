@@ -75,7 +75,12 @@ a:hover,
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
-textarea:focus { background-color:#EEE; }
+textarea:focus,
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="search"]:hover,
+textarea:hover
+{ background-color:#EEE; }
 
 /*.statePublished { color:black !important; }
 a.statePublished { color:#636363 !important; }
