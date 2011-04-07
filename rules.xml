@@ -14,16 +14,6 @@
   <dest href="{here}" />
 </proxy>
 
-<!--
-  tagesansicht
-  wochenansicht
-  sendungen
-  sendungsmachende
-  programmhinweise
-  programmschienen
-  programmflyer
--->
-
 <proxy path="/programm/folder_contents" class="common plone">
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/folder_contents" />
 </proxy>
@@ -31,39 +21,16 @@
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/programmflyer" />
 </proxy>
 
-<!-- TODO: rewrite rules for nginx to force trailing slash on program urls -->
 <proxy path="/programm" class="program">
   <dest href="http://localhost:8000/program" />
   <response rewrite-links="1" />
 </proxy>
-<proxy path="/programm/tagesansicht" class="program">
-  <dest href="http://localhost:8000/program" />
-  <response rewrite-links="1" />
-</proxy>
-<proxy path="/programm/wochenansicht" class="program">
-  <dest href="http://localhost:8000/program" />
-  <response rewrite-links="1" />
-</proxy>
-<proxy path="/programm/sendungen" class="program">
-  <dest href="http://localhost:8000/program/shows" />
-  <response rewrite-links="1" />
-</proxy>
-<proxy path="/programm/sendungsmacherinnen" class="program">
-  <dest href="http://localhost:8000/program/hosts" />
-  <response rewrite-links="1" />
-</proxy>
-<proxy path="/programm/tipps" class="program">
-  <dest href="http://localhost:8000/program/recommendations" />
-  <response rewrite-links="1" />
-</proxy>
-<proxy path="/programm/tipps_portlet" class="program">
-  <dest href="http://localhost:8000/program/recommendations_box" />
-  <response rewrite-links="1" />
-</proxy>
-<proxy path="/programm/onair_portlet" class="program">
-  <dest href="http://localhost:8000/program/current_box" />
-  <response rewrite-links="1" />
-</proxy>
+<match path="/programm/today" class="program today" />
+<match path="/programm/week" class="program week" />
+<match path="/programm/shows" class="program shows" />
+<match path="/programm/hosts" class="program hosts" />
+<match path="/programm/tips" class="program tips" />
+<match path="/programm/topics" class="program topics" />
 
 
 <!-- proxy path="/" class="common plone">
@@ -82,14 +49,55 @@
 <match path="regex:.*/image_view_fullscreen$" abort="1" /> 
 
 
+
+<!--
+/programm/today
+/programm/week
+/programm/shows
+/programm/hosts
+/programm/tips
+/programm/topics
+/programm/programmflyer
+-->
+<rule class="today" suppress-standard="1">
+  <append href="/static/snippets.html"
+    content="attributes(class):#nav-selected-classes"
+    theme="attributes(class):#navigation li.section-today a"/>
+</rule>
+<rule class="week" suppress-standard="1">
+  <append href="/static/snippets.html"
+    content="attributes(class):#nav-selected-classes"
+    theme="attributes(class):#navigation li.section-week a"/>
+</rule>
+<rule class="shows" suppress-standard="1">
+  <append href="/static/snippets.html"
+    content="attributes(class):#nav-selected-classes"
+    theme="attributes(class):#navigation li.section-shows a"/>
+</rule>
+<rule class="hosts" suppress-standard="1">
+  <append href="/static/snippets.html"
+    content="attributes(class):#nav-selected-classes"
+    theme="attributes(class):#navigation li.section-hosts a"/>
+</rule>
+<rule class="tips" suppress-standard="1">
+  <append href="/static/snippets.html"
+    content="attributes(class):#nav-selected-classes"
+    theme="attributes(class):#navigation li.section-tips a"/>
+</rule>
+<rule class="topics" suppress-standard="1">
+  <append href="/static/snippets.html"
+    content="attributes(class):#nav-selected-classes"
+    theme="attributes(class):#navigation li.section-topics a"/>
+</rule>
+
 <rule class="program" suppress-standard="1">
   <!-- rename plone paths to those of django. unify paths. show, shows -> shows -->
   <theme href="/programm/programmflyer?deliv_force_external=1;deliv_full_headers=1" />
-  <drop theme="attributes(class):#navigation li.section-programmflyer a"/>
-  <append href="/programm/current_box/"
+  <drop theme="attributes(class):#navigation li a"/>
+  <prepend href="/programm/tips_box/"
     content="children:body"
     theme="children:#column-1" />
-  <append href="/programm/tips_box/"
+  <prepend href="/programm/current_box/"
     content="children:body"
     theme="children:#column-1" />
   <replace content="children:body" theme="children:#content-main" />
