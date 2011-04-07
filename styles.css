@@ -66,6 +66,8 @@ a:hover,
 #column-1 .navTreeItemInPath { 
     /*color:red;*/
     color:black !important; }
+#column-1 dt a, #column-2 dt a { color:black; }
+
 
 .formTabs a:hover, #edit-bar a:hover, #toolbox a:hover {
     text-shadow:none;

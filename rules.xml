@@ -14,6 +14,7 @@
   <dest href="{here}" />
 </proxy>
 
+<!-- no django content, deliver it from plone -->
 <proxy path="/programm/folder_contents" class="common plone">
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/folder_contents" />
 </proxy>
@@ -21,6 +22,11 @@
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/programmflyer" />
 </proxy>
 
+<!-- django proxy and matches -->
+<proxy path="/programm/admin" class="dj-admin">
+  <dest href="http://localhost:8000/admin" />
+  <response rewrite-links="1" />
+</proxy>
 <proxy path="/programm" class="program">
   <dest href="http://localhost:8000/program" />
   <response rewrite-links="1" />
@@ -33,32 +39,31 @@
 <match path="/programm/topics" class="program topics" />
 
 
+<!-- plone proxy and matches -->
 <!-- proxy path="/" class="common plone">
   <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/" />
 </proxy -->
 <proxy path="/" class="common plone">
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/" />
 </proxy>
-
 <!-- plone popups -->
 <match path="regex:.*contenthistorypopup.*" abort="1" />
+<match path="regex:.*/image_view_fullscreen$" abort="1" /> 
 <!-- TinyMCE -->
 <match path="regex:^/portal_javascripts/.*" abort="1" />
 <match path="regex:.*/themes/advanced/.*" abort="1" />
 <match path="regex:.*/plugins/.*" abort="1" /> 
-<match path="regex:.*/image_view_fullscreen$" abort="1" /> 
 
 
+<!-- programmverwaltung -->
+<rule class="dj-admin" suppress-standard="1">
+  <theme href="/programm/programmflyer?deliv_force_external=1;deliv_full_headers=1" />
+  <drop theme="attributes(class):#navigation li a"/>
+  <append href="/static/snippets.html"
+      content="link[href *= 'djangoadmin.css']" theme="/html/head/link[last()]"/>
+  <replace content="children:body" theme="children:#content-main" />
+</rule>
 
-<!--
-/programm/today
-/programm/week
-/programm/shows
-/programm/hosts
-/programm/tips
-/programm/topics
-/programm/programmflyer
--->
 <rule class="today" suppress-standard="1">
   <append href="/static/snippets.html"
     content="attributes(class):#nav-selected-classes"
@@ -104,6 +109,7 @@
 </rule>
 
 
+<!-- plone -->
 <rule class="common" suppress-standard="1">
   <theme href="/static/index.html" />
 
@@ -188,10 +194,8 @@
 </rule>
 
 <rule class="plone">
-
   <!-- main content -->
   <append content="attributes(class):div.documentEditable" theme="attributes(class):#content-main" />
-
   <append content=".portalMessage" theme="children:#content-main" />
   <append content="#content h1" theme="children:#content-main" />
   <append content="#plone-document-byline" theme="children:#content-main" />
