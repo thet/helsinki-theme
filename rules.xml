@@ -129,13 +129,20 @@
   
   <!-- Add in the Plone-created CSS, KSS and JS in addition to the static ones -->
   <drop theme="link[href *= 'plonebase']"/>
-  <prepend content="/html/head/style" theme="/html/head/link"/>
-  <!-- drop public, columns, portlets, deprecated, navtree, invisibles, print, mobile -->
-  <prepend content="link[href *= 'css']" theme="/html/head/link"/>
-
-  <prepend content="link[href *= 'ploneKss']" theme="/html/head/link"/>
-  <prepend content="link[rel *= 'kinetic-stylesheet']" theme="/html/head/link"/>
-  <prepend content="/html/head/script" theme="/html/head/link"/>
+  
+  <drop content="link[href *= 'public']"/>
+  <drop content="link[href *= 'columns']"/>
+  <drop content="link[href *= 'portlets']"/>
+  <drop content="link[href *= 'deprecated']"/>
+  <drop content="link[href *= 'navtree']"/>
+  <drop content="link[href *= 'invisibles']"/>
+  <drop content="link[href *= 'print']"/>
+  <drop content="link[href *= 'mobile']"/>
+  
+  <prepend content="/html/head/style" theme="/html/head/link[1]"/>
+  <prepend content="link[href *= 'css']" theme="/html/head/link[1]"/>
+  <prepend content="link[rel *= 'kinetic-stylesheet']" theme="/html/head/link[1]"/>
+  <prepend content="/html/head/script" theme="/html/head/link[1]"/>
 
   <append content="link[rel = 'author']" theme="children:/html/head"/>
   <append content="link[rel = 'home']" theme="children:/html/head"/>
