@@ -154,8 +154,8 @@
   
   <prepend content="/html/head/style" theme="/html/head/link[1]"/>
   <prepend content="link[href *= 'css']" theme="/html/head/link[1]"/>
-  <prepend content="link[rel *= 'kinetic-stylesheet']" theme="/html/head/link[1]"/>
-  <prepend content="/html/head/script" theme="/html/head/link[1]"/>
+  <prepend content="link[rel *= 'kinetic-stylesheet']" theme="/html/head/link"/>
+  <prepend content="/html/head/script" theme="/html/head/link"/>
 
   <append content="link[rel = 'author']" theme="children:/html/head"/>
   <append content="link[rel = 'home']" theme="children:/html/head"/>
