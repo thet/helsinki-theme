@@ -58,7 +58,7 @@
 <!-- programmverwaltung -->
 <rule class="dj-admin" suppress-standard="1">
   <theme href="/programm/programmflyer?deliv_force_external=1;deliv_full_headers=1" />
-  <drop theme="attributes(class):#navigation li a"/>
+  <drop theme="attributes(class):#the_navigation li a"/>
   <drop content="#footer"/>
   <append href="/static/snippets.html"
       content="link[href *= 'djangoadmin.css']" theme="/html/head/link[last()]"/>
@@ -68,38 +68,38 @@
 <rule class="today" suppress-standard="1">
   <append href="/static/snippets.html"
     content="attributes(class):#nav-selected-classes"
-    theme="attributes(class):#navigation li.section-today a"/>
+    theme="attributes(class):#the_navigation li.section-today a"/>
 </rule>
 <rule class="week" suppress-standard="1">
   <append href="/static/snippets.html"
     content="attributes(class):#nav-selected-classes"
-    theme="attributes(class):#navigation li.section-week a"/>
+    theme="attributes(class):#the_navigation li.section-week a"/>
 </rule>
 <rule class="shows" suppress-standard="1">
   <append href="/static/snippets.html"
     content="attributes(class):#nav-selected-classes"
-    theme="attributes(class):#navigation li.section-shows a"/>
+    theme="attributes(class):#the_navigation li.section-shows a"/>
 </rule>
 <rule class="hosts" suppress-standard="1">
   <append href="/static/snippets.html"
     content="attributes(class):#nav-selected-classes"
-    theme="attributes(class):#navigation li.section-hosts a"/>
+    theme="attributes(class):#the_navigation li.section-hosts a"/>
 </rule>
 <rule class="tips" suppress-standard="1">
   <append href="/static/snippets.html"
     content="attributes(class):#nav-selected-classes"
-    theme="attributes(class):#navigation li.section-tips a"/>
+    theme="attributes(class):#the_navigation li.section-tips a"/>
 </rule>
 <rule class="topics" suppress-standard="1">
   <append href="/static/snippets.html"
     content="attributes(class):#nav-selected-classes"
-    theme="attributes(class):#navigation li.section-topics a"/>
+    theme="attributes(class):#the_navigation li.section-topics a"/>
 </rule>
 
 <rule class="program" suppress-standard="1">
   <!-- rename plone paths to those of django. unify paths. show, shows -> shows -->
   <theme href="/programm/programmflyer?deliv_force_external=1;deliv_full_headers=1" />
-  <drop theme="attributes(class):#navigation li a"/>
+  <drop theme="attributes(class):#the_navigation li a"/>
   <prepend href="/programm/tips_box/"
     content="children:body"
     theme="children:#column-1" />
@@ -151,7 +151,7 @@
   <append content="link[rel = 'search']" theme="children:/html/head"/>
 
   <!-- theme element droppings -->
-  <drop theme="children:#navigation"/>
+  <drop theme="children:#the_navigation"/>
   <drop theme="children:#portal-breadcrumbs"/>
   <drop theme="#column-main h1"/>
   <drop theme="#column-main div.documentDescription"/>
@@ -163,22 +163,22 @@
   <!-- Accessibility -->
   <prepend content="#portal-header > p.hiddenStructure" theme="children:body"/>
 
-  <!-- Set correct Link for the logo -->
-  <replace content="attributes:#portal-logo" theme="attributes:#logo a"/>
+  <!-- Set correct Link for the the_logo -->
+  <replace content="attributes:#portal-logo" theme="attributes:#the_logo a"/>
 
   <!-- Search box -->
   <drop content="#portal-searchbox div.searchSection"/>
   <drop content="tag:.LSBox"/>
-  <replace content="children:#portal-searchbox" theme="children:#searchbox"/>
+  <replace content="children:#portal-searchbox" theme="children:#the_searchbox"/>
 
   <!-- metamenu -->
-  <replace content="children:#portal-languageselector" theme="children:#lang"/>
+  <replace content="children:#portal-languageselector" theme="children:#the_lang"/>
   <replace content="#portal-siteactions" theme="#portal-siteactions"/>
 
-  <!--navigation -->
+  <!--the_navigation -->
   <append
       content="children:#portal-column-two dl.portletNavigationTree ul.navTreeLevel0"
-      theme="children:#navigation"/>
+      theme="children:#the_navigation"/>
   <drop content="#portal-column-two dl.portletNavigationTree"/>
 
   <append content="children:#portal-breadcrumbs" theme="children:#portal-breadcrumbs"/>
