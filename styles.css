@@ -532,10 +532,29 @@ ul#the_navigation > li > a,
         3px 3px 0px white; }
 
 /* program */
-.p-format-experimentell { background-color:#A9C03E; }
-.p-format-feature-magazin { background-color:#E54748; }
-.p-format-horspiel-literatur { background-color:#C97485; }
-.p-format-musiksendung { background-color:#F9A937; }
-.p-format-talk { background-color:#FAE24F; }
-.p-format-unmoderiertes-musikprogramm { background-color:#ECD4AD; }
-.p-format-vortrag-diskussion { background-color:#A57397; }
+.bcformat-experimentell { background-color:#A9C03E; }
+.bcformat-feature-magazin { background-color:#E54748; }
+.bcformat-horspiel-literatur { background-color:#C97485; }
+.bcformat-musiksendung { background-color:#F9A937; }
+.bcformat-talk { background-color:#FAE24F; }
+.bcformat-unmoderiertes-musikprogramm { background-color:#ECD4AD; }
+.bcformat-vortrag-diskussion { background-color:#A57397; }
+
+/* broadcastformats box */
+.portletItem.bcformat { min-height:20px; margin-bottom:5px; }
+
+/* showlist */
+#timeslots .timeslot {
+   min-height:30px;
+   clear:both; }
+#timeslots .start,
+#timeslots .show-abbrevs {
+    float:left; }
+#timeslots .start { width:60px; }
+#timeslots .show-abbrevs {
+    width:60px; }
+#timeslots .show {
+    width:431px;
+    margin-left:120px; }
+
+
