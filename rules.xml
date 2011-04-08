@@ -59,9 +59,10 @@
 <rule class="dj-admin" suppress-standard="1">
   <theme href="/programm/programmflyer?deliv_force_external=1;deliv_full_headers=1" />
   <drop theme="attributes(class):#navigation li a"/>
+  <drop content="#footer"/>
   <append href="/static/snippets.html"
       content="link[href *= 'djangoadmin.css']" theme="/html/head/link[last()]"/>
-  <replace content="children:body" theme="children:#content-main" />
+  <replace content="children:body" theme="children:#column-main" />
 </rule>
 
 <rule class="today" suppress-standard="1">
@@ -105,7 +106,7 @@
   <prepend href="/programm/current_box/"
     content="children:body"
     theme="children:#column-1" />
-  <replace content="children:body" theme="children:#content-main" />
+  <replace content="children:body" theme="children:#column-main" />
 </rule>
 
 
@@ -152,8 +153,8 @@
   <!-- theme element droppings -->
   <drop theme="children:#navigation"/>
   <drop theme="children:#portal-breadcrumbs"/>
-  <drop theme="#content-main h1"/>
-  <drop theme="#content-main div.documentDescription"/>
+  <drop theme="#column-main h1"/>
+  <drop theme="#column-main div.documentDescription"/>
   <drop theme="children:#column-1"/>
   <drop theme="children:#column-2"/>
 
@@ -188,7 +189,7 @@
       theme="#teaser-main"/>
   <append
       content="children:#portal-column-one dl.portletTeaser dd"
-      theme="children:#content-main #teaser-main" />
+      theme="children:#column-main #teaser-main" />
   <drop content="#portal-column-one dl.portletTeaser"/>
  
   <!-- Portlets -->
@@ -202,12 +203,12 @@
 
 <rule class="plone">
   <!-- main content -->
-  <append content="attributes(class):div.documentEditable" theme="attributes(class):#content-main" />
-  <append content=".portalMessage" theme="children:#content-main" />
-  <append content="#content h1" theme="children:#content-main" />
-  <append content="#plone-document-byline" theme="children:#content-main" />
-  <append content="#edit-bar" theme="children:#content-main" />
-  <append content="#content" theme="children:#content-main" />
+  <append content="attributes(class):div.documentEditable" theme="attributes(class):#column-main" />
+  <append content=".portalMessage" theme="children:#column-main" />
+  <append content="#content h1" theme="children:#column-main" />
+  <append content="#plone-document-byline" theme="children:#column-main" />
+  <append content="#edit-bar" theme="children:#column-main" />
+  <append content="#content" theme="children:#column-main" />
 </rule>
 
 </ruleset>

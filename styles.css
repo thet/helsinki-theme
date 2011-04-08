@@ -1,10 +1,10 @@
 .portletTeaser dt { display:none; }
-.portaltype-folder #content-main .parent-fieldname-title { display:none; }
-.portaltype-folder #content-main .documentFirstHeading { display:none; }
-.portaltype-topic #content-main .parent-fieldname-title { display:none; }
-.portaltype-topic #content-main .documentFirstHeading { display:none; }
-.portaltype-folderish-document #content-main .parent-fieldname-title { display:none; }
-.portaltype-folderish-document #content-main .documentFirstHeading { display:none; }
+.portaltype-folder #column-main .parent-fieldname-title { display:none; }
+.portaltype-folder #column-main .documentFirstHeading { display:none; }
+.portaltype-topic #column-main .parent-fieldname-title { display:none; }
+.portaltype-topic #column-main .documentFirstHeading { display:none; }
+.portaltype-folderish-document #column-main .parent-fieldname-title { display:none; }
+.portaltype-folderish-document #column-main .documentFirstHeading { display:none; }
 
 body { font-size:75%; }
 html>body { font-size:12px; }
@@ -60,7 +60,7 @@ h4 {
 
 a { text-decoration:underline;
     color:#636363; }
-#content-main a { font-weight:bold; }
+#column-main a { font-weight:bold; }
 a:hover,
 #column-1 .navTreeCurrentItem, 
 #column-1 .navTreeItemInPath { 
@@ -257,10 +257,10 @@ ul#navigation ul li a:hover {
     clear:both;
     /*position:relative;
     margin:6px 0 24px 0;*/ }
-#content-main, #column-1, #column-2 {
+#column-main, #column-1, #column-2 {
     float:left;
     margin-top:12px; }
-#content-main {
+#column-main {
     position:relative;
     left:223px;
     width:551px;
@@ -437,7 +437,7 @@ a:hover,
         -1px -1px 0px #BBB,
         1px 1px 0px #BBB; }
     
-#content-main h1,
+#column-main h1,
 .text_shadow_2 {
     text-shadow:
         -2px 0px 0px #FBD62A,

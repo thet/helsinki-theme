@@ -3,12 +3,7 @@
     left: -737px;
 } 
 #column-2 { display:none; }
-#content-main #content-main {
-    position:static;
-    left:auto;
-    width:auto; }
-
-#content-main {
+#column-main {
     left: 223px;
     margin-right:0px;
     position: relative;
