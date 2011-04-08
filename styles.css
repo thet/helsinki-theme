@@ -69,7 +69,8 @@ a:hover,
 #column-1 dt a, #column-2 dt a { color:black; }
 
 
-.formTabs a:hover, #edit-bar a:hover, #the_toolbox a:hover {
+.formTabs a:hover, #edit-bar a:hover,
+#the_toolbox a:hover, #the_footer a:hover {
     text-shadow:none;
     -moz-text-shadow:none;
     -webkit-text-shadow:none; }
@@ -271,7 +272,19 @@ ul#the_navigation ul li a:hover {
     width:213px;
     margin-right:10px; }
 #column-2 { width:176px; }
-#the_footer { clear:both; }
+#the_footer {
+    clear:both;
+    height:20px;
+    background:black;
+    padding:4px 0 0 6px;
+    color:white;
+    font-size:12px;
+    text-align:center; }
+#the_footer a {
+    color:white;
+    text-transform:uppercase; }
+#the_footer a:hover {
+    color:#FBD62A !important; }
 
 /* portlets */
 #column-1, #column-2 { overflow:hidden; }
