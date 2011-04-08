@@ -56,10 +56,13 @@
 
 
 <!-- programmverwaltung -->
+<!-- TODO: submitting does not work... -->
 <rule class="dj-admin" suppress-standard="1">
   <theme href="/programm/programmflyer?deliv_force_external=1;deliv_full_headers=1" />
   <drop theme="attributes(class):#the_navigation li a"/>
   <drop content="#footer"/>
+  <drop content=".object-tools .viewsitelink" />
+  <prepend content="link[href *= 'css']" theme="/html/head/link[1]"/>
   <append href="/static/snippets.html"
       content="link[href *= 'djangoadmin.css']" theme="/html/head/link[last()]"/>
   <replace content="children:body" theme="children:#column-main" />
