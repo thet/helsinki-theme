@@ -22,10 +22,6 @@
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/programmflyer" />
 </proxy>
 
-<!-- django proxies w/out rewrites (return only relative links) -->
-<proxy path="/programm/bcformats_box" class="program">
-  <dest href="http://localhost:8000/program/bcformats_box" />
-</proxy>
 <!-- django proxy and matches with rewrites -->
 <proxy path="/programm/admin" class="dj-admin">
   <dest href="http://localhost:8000/admin" />
@@ -76,25 +72,16 @@
   <append href="/static/snippets.html"
     content="attributes(class):#nav-selected-classes"
     theme="attributes(class):#the_navigation li.section-today a"/>
-  <prepend href="/programm/bcformats_box/?deliv_full_headers=1"
-    content="children:body"
-    theme="children:#column-2" />
 </rule>
 <rule class="week" suppress-standard="1">
   <append href="/static/snippets.html"
     content="attributes(class):#nav-selected-classes"
     theme="attributes(class):#the_navigation li.section-week a"/>
-  <prepend href="/programm/bcformats_box/"
-    content="children:body"
-    theme="children:#column-2" />
 </rule>
 <rule class="shows" suppress-standard="1">
   <append href="/static/snippets.html"
     content="attributes(class):#nav-selected-classes"
     theme="attributes(class):#the_navigation li.section-shows a"/>
-  <prepend href="/programm/bcformats_box/?deliv_full_headers=1"
-    content="children:body"
-    theme="children:#column-2" />
 </rule>
 <rule class="hosts" suppress-standard="1">
   <append href="/static/snippets.html"
@@ -122,7 +109,13 @@
   <prepend href="/programm/current_box/"
     content="children:body"
     theme="children:#column-1" />
-  <replace content="children:body" theme="children:#column-main" />
+  <prepend if-content="#filter-topic"
+    content="children:#filter-topic"
+    theme="children:#column-1"/>
+  <prepend if-content="#filter-format"
+    content="children:#filter-format"
+    theme="children:#column-2"/>
+  <replace content="children:#content-main" theme="children:#column-main" />
 </rule>
 
 

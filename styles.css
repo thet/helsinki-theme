@@ -546,13 +546,17 @@ ul#the_navigation > li > a,
         3px 3px 0px white; }
 
 /* program */
-.bcformat-experimentell { background-color:#A9C03E; }
-.bcformat-feature-magazin { background-color:#E54748; }
-.bcformat-horspiel-literatur { background-color:#C97485; }
-.bcformat-musiksendung { background-color:#F9A937; }
-.bcformat-talk { background-color:#FAE24F; }
-.bcformat-unmoderiertes-musikprogramm { background-color:#ECD4AD; }
-.bcformat-vortrag-diskussion { background-color:#A57397; }
+.bf-experimentell { background-color:#A9C03E; }
+.bf-feature-magazin { background-color:#E54748; }
+.bf-horspiel-literatur { background-color:#C97485; }
+.bf-musiksendung { background-color:#F9A937; }
+.bf-talk { background-color:#FAE24F; }
+.bf-unmoderiertes-musikprogramm { background-color:#ECD4AD; }
+.bf-vortrag-diskussion { background-color:#A57397; }
+
+
+.mf-L { background-color:#A57397; }
+
 
 /* broadcastformats box */
 .portletItem.bcformat { min-height:20px; margin-bottom:5px; }
