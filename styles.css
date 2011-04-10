@@ -554,6 +554,13 @@ ul#the_navigation > li > a,
 .bf-unmoderiertes-musikprogramm { background-color:#ECD4AD; }
 .bf-vortrag-diskussion { background-color:#A57397; }
 
+.filterbox li a {
+    height:17px;
+    background-repeat:no-repeat;
+    background-position:left center;
+    padding-left:20px; }
+.filterbox li.mf-E a { background-image:url(img/topics-17/b-e.png); }
+.filterbox li.mf-E a:hover { background-image:url(img/topics-17/b-e-over.png); }
 
 .mf-L { background-color:#A57397; }
 
