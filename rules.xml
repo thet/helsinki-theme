@@ -22,7 +22,11 @@
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/programmflyer" />
 </proxy>
 
-<!-- django proxy and matches -->
+<!-- django proxies w/out rewrites (return only relative links) -->
+<proxy path="/programm/bcformats_box" class="program">
+  <dest href="http://localhost:8000/program/bcformats_box" />
+</proxy>
+<!-- django proxy and matches with rewrites -->
 <proxy path="/programm/admin" class="dj-admin">
   <dest href="http://localhost:8000/admin" />
   <response rewrite-links="1" />
@@ -72,7 +76,7 @@
   <append href="/static/snippets.html"
     content="attributes(class):#nav-selected-classes"
     theme="attributes(class):#the_navigation li.section-today a"/>
-  <prepend href="/programm/bcformats_box/"
+  <prepend href="/programm/bcformats_box/?deliv_full_headers=1"
     content="children:body"
     theme="children:#column-2" />
 </rule>
@@ -88,7 +92,7 @@
   <append href="/static/snippets.html"
     content="attributes(class):#nav-selected-classes"
     theme="attributes(class):#the_navigation li.section-shows a"/>
-  <prepend href="/programm/bcformats_box/"
+  <prepend href="/programm/bcformats_box/?deliv_full_headers=1"
     content="children:body"
     theme="children:#column-2" />
 </rule>
