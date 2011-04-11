@@ -554,15 +554,62 @@ ul#the_navigation > li > a,
 .bf-unmoderiertes-musikprogramm { background-color:#ECD4AD; }
 .bf-vortrag-diskussion { background-color:#A57397; }
 
+dl.filterbox li { line-height:1em; }
 .filterbox li a {
     height:17px;
     background-repeat:no-repeat;
     background-position:left center;
     padding-left:20px; }
-.filterbox li.mf-E a { background-image:url(img/topics-17/b-e.png); }
-.filterbox li.mf-E a:hover { background-image:url(img/topics-17/b-e-over.png); }
+.filterbox li.mf-E a { background-image:url(img/topics-11/b-e.png); }
+.filterbox li.mf-E a:hover { background-image:url(img/topics-11/b-e-over.png); }
+.filterbox li.mf-Ex a { background-image:url(img/topics-11/b-ex.png); }
+.filterbox li.mf-Ex a:hover { background-image:url(img/topics-11/b-ex-over.png); }
+.filterbox li.mf-H a { background-image:url(img/topics-11/b-h.png); }
+.filterbox li.mf-H a:hover { background-image:url(img/topics-11/b-h-over.png); }
+.filterbox li.mf-J a { background-image:url(img/topics-11/b-j.png); }
+.filterbox li.mf-J a:hover { background-image:url(img/topics-11/b-j-over.png); }
+.filterbox li.mf-K a { background-image:url(img/topics-11/b-k.png); }
+.filterbox li.mf-K a:hover { background-image:url(img/topics-11/b-k-over.png); }
+.filterbox li.mf-M a { background-image:url(img/topics-11/b-m.png); }
+.filterbox li.mf-M a:hover { background-image:url(img/topics-11/b-m-over.png); }
+.filterbox li.mf-O a { background-image:url(img/topics-11/b-o.png); }
+.filterbox li.mf-O a:hover { background-image:url(img/topics-11/b-o-over.png); }
+.filterbox li.mf-R a { background-image:url(img/topics-11/b-r.png); }
+.filterbox li.mf-R a:hover { background-image:url(img/topics-11/b-r-over.png); }
+.filterbox li.mf-Re a { background-image:url(img/topics-11/b-re.png); }
+.filterbox li.mf-Re a:hover { background-image:url(img/topics-11/b-re-over.png); }
+.filterbox li.mf-V a { background-image:url(img/topics-11/b-v.png); }
+.filterbox li.mf-V a:hover { background-image:url(img/topics-11/b-v-over.png); }
 
-.mf-L { background-color:#A57397; }
+.filterbox li.si-F a { background-image:url(img/topics-11/s-f.png); }
+.filterbox li.si-F a:hover { background-image:url(img/topics-11/s-f-over.png); }
+.filterbox li.si-I a { background-image:url(img/topics-11/s-i.png); }
+.filterbox li.si-I a:hover { background-image:url(img/topics-11/s-i-over.png); }
+.filterbox li.si-L a { background-image:url(img/topics-11/s-l.png); }
+.filterbox li.si-L a:hover { background-image:url(img/topics-11/s-l-over.png); }
+.filterbox li.si-M a { background-image:url(img/topics-11/s-m.png); }
+.filterbox li.si-M a:hover { background-image:url(img/topics-11/s-m-over.png); }
+.filterbox li.si-Mi a { background-image:url(img/topics-11/s-mi.png); }
+.filterbox li.si-Mi a:hover { background-image:url(img/topics-11/s-mi-over.png); }
+.filterbox li.si-Ö a { background-image:url(img/topics-11/s-oe.png); }
+.filterbox li.si-Ö a:hover { background-image:url(img/topics-11/s-oe-over.png); }
+.filterbox li.si-U a { background-image:url(img/topics-11/s-ue.png); }
+.filterbox li.si-U a:hover { background-image:url(img/topics-11/s-ue-over.png); }
+.filterbox li.si-W a { background-image:url(img/topics-11/s-w.png); }
+.filterbox li.si-W a:hover { background-image:url(img/topics-11/s-w-over.png); }
+
+.filterbox li.st-K a { background-image:url(img/topics-11/r-k.png); }
+.filterbox li.st-K a:hover { background-image:url(img/topics-11/r-k-over.png); }
+.filterbox li.st-N a { background-image:url(img/topics-11/r-n.png); }
+.filterbox li.st-N a:hover { background-image:url(img/topics-11/r-n-over.png); }
+.filterbox li.st-P a { background-image:url(img/topics-11/r-p.png); }
+.filterbox li.st-P a:hover { background-image:url(img/topics-11/r-p-over.png); }
+.filterbox li.st-S a { background-image:url(img/topics-11/r-s.png); }
+.filterbox li.st-S a:hover { background-image:url(img/topics-11/r-s-over.png); }
+.filterbox li.st-W a { background-image:url(img/topics-11/r-w.png); }
+.filterbox li.st-W a:hover { background-image:url(img/topics-11/r-w-over.png); }
+
+
 
 
 /* broadcastformats box */
