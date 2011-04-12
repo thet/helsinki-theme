@@ -614,14 +614,25 @@ dl.filterbox li { line-height:1em; }
 /* broadcastformats box */
 .portletItem.bcformat { min-height:20px; margin-bottom:5px; }
 
+#timeslots .show-start { font-size:1em; }
+#timeslots h3 {
+    margin-top:0;
+    font-weight:normal;
+    font-size:1em; }
+#timeslots p {
+    margin-top:0;
+    margin-bottom:0.643em;
+    font-size:0.9em; }
+
 /* showlist */
 #timeslots .timeslot {
-   min-height:30px;
-   clear:both; }
-#timeslots .start,
+    padding:3px 3px;
+    min-height:30px;
+    clear:both; }
+#timeslots .show-start,
 #timeslots .show-abbrevs {
     float:left; }
-#timeslots .start { width:60px; }
+#timeslots .show-start { width:60px; }
 #timeslots .show-abbrevs {
     width:60px; }
 #timeslots .show {
