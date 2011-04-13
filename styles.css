@@ -147,15 +147,15 @@ a.statePublished:hover { color:black !important; }
     color:white;
     font-weight:bold;
     text-transform:uppercase; }
-#livestream {
+#livestream a {
     background:url(img/nowplay.png) no-repeat left center;
     padding-left:20px; }
-#livestream:hover {
+#livestream a:hover {
     background-image:url(img/nowplay-over.png); }
-#onair {
+#onair a {
     background:url(img/onair.png) no-repeat left center;
     padding-left:13px; }
-#onair:hover {
+#onair a:hover {
     background-image:url(img/onair-over.png); }
 #onair input { width:348px; }
 
