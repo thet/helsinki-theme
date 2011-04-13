@@ -298,7 +298,7 @@ ul#the_navigation ul li a:hover {
     line-height:1.4em; }
 #column-1 dd, #column-2 dd { font-size:95%; }
 
-#column-1 dl.portlet {
+#column-1 dl {
     background:url(img/pkt.png) repeat;
     padding:10px; }
 #column-1 dl > * {
@@ -372,6 +372,7 @@ fieldset, .editionComment {
     font-size:20px;
     line-height:24px;
     text-transform:uppercase; }
+
 .portlet-static-mach-mit dd p { background-image:url(img/str-quer-spiegel.png); }
 .portlet-static-mach-mit dd p+p { background-image:url(img/str-vert.png); }
 .portlet-static-mach-mit dd p+p+p { background-image:url(img/pkt.png); }
@@ -383,6 +384,36 @@ fieldset, .editionComment {
 .portlet-static-mach-mit dd p+p+p+p+p+p+p+p+p { background-image:url(img/str-quer.png); }
 .portlet-static-mach-mit dd p+p+p+p+p+p+p+p+p+p { background-image:url(img/str-quer-spiegel.png); }
 .portlet-static-mach-mit dd p+p+p+p+p+p+p+p+p+p+p { background-image:url(img/str-vert.png); }
+
+
+#column-1 dl { background-image:url(img/pkt.png); }
+#column-1 dl+dl { background-image:url(img/str-quer-spiegel.png); }
+#column-1 dl+dl+dl { background-image:url(img/str-vert.png); }
+#column-1 dl+dl+dl+dl { background-image:url(img/str-quer.png); }
+#column-1 dl+dl+dl+dl+dl { background-image:url(img/pkt.png); }
+#column-1 dl+dl+dl+dl+dl+dl { background-image:url(img/str-quer-spiegel.png); }
+#column-1 dl+dl+dl+dl+dl+dl+dl { background-image:url(img/str-vert.png); }
+#column-1 dl+dl+dl+dl+dl+dl+dl+dl { background-image:url(img/str-quer.png); }
+#column-1 dl+dl+dl+dl+dl+dl+dl+dl+dl { background-image:url(img/pkt.png); }
+#column-1 dl+dl+dl+dl+dl+dl+dl+dl+dl+dl { background-image:url(img/str-quer-spiegel.png); }
+#column-1 dl+dl+dl+dl+dl+dl+dl+dl+dl+dl+dl { background-image:url(img/str-vert.png); }
+#column-1 dl+dl+dl+dl+dl+dl+dl+dl+dl+dl+dl+dl { background-image:url(img/str-quer.png); }
+
+#column-2 dl dt { background-image:url(img/str-vert.png); }
+#column-2 dl+dl dt { background-image:url(img/str-quer-spiegel.png); }
+#column-2 dl+dl+dl dt { background-image:url(img/str-quer.png); }
+#column-2 dl+dl+dl+dl dt { background-image:url(img/pkt.png); }
+#column-2 dl+dl+dl+dl+dl dt { background-image:url(img/str-vert.png); }
+#column-2 dl+dl+dl+dl+dl+dl dt { background-image:url(img/str-quer-spiegel.png); }
+#column-2 dl+dl+dl+dl+dl+dl+dl dt { background-image:url(img/str-quer.png); }
+#column-2 dl+dl+dl+dl+dl+dl+dl+dl dt { background-image:url(img/pkt.png); }
+#column-2 dl+dl+dl+dl+dl+dl+dl+dl+dl dt { background-image:url(img/str-vert.png); }
+#column-2 dl+dl+dl+dl+dl+dl+dl+dl+dl+dl dt { background-image:url(img/str-quer-spiegel.png); }
+#column-2 dl+dl+dl+dl+dl+dl+dl+dl+dl+dl+dl dt { background-image:url(img/str-quer.png); }
+#column-2 dl+dl+dl+dl+dl+dl+dl+dl+dl+dl+dl+dl dt { background-image:url(img/pkt.png); }
+
+
+
 
 
 /* text shadows */
