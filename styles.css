@@ -588,58 +588,64 @@ ul#the_navigation > li > a,
 .bf-vortrag-diskussion { background-color:#A57397; }
 
 dl.filterbox li { line-height:1em; }
-.filteritem {
+.abbrev {
+    display: inline-block;
+    float: left;
+    width: 11px;
+    height: 11px;
+    margin-bottom: 2px;
+    margin-right: 2px;
     background-repeat:no-repeat;
-    background-position:left center;
-    padding-left:20px; }
-.filteritem.mf-E { background-image:url(img/topics-11/b-e.png); }
-.filteritem.mf-E:hover { background-image:url(img/topics-11/b-e-over.png); }
-.filteritem.mf-Ex { background-image:url(img/topics-11/b-ex.png); }
-.filteritem.mf-Ex:hover { background-image:url(img/topics-11/b-ex-over.png); }
-.filteritem.mf-H { background-image:url(img/topics-11/b-h.png); }
-.filteritem.mf-H:hover { background-image:url(img/topics-11/b-h-over.png); }
-.filteritem.mf-J { background-image:url(img/topics-11/b-j.png); }
-.filteritem.mf-J:hover { background-image:url(img/topics-11/b-j-over.png); }
-.filteritem.mf-K { background-image:url(img/topics-11/b-k.png); }
-.filteritem.mf-K:hover { background-image:url(img/topics-11/b-k-over.png); }
-.filteritem.mf-M { background-image:url(img/topics-11/b-m.png); }
-.filteritem.mf-M:hover { background-image:url(img/topics-11/b-m-over.png); }
-.filteritem.mf-O { background-image:url(img/topics-11/b-o.png); }
-.filteritem.mf-O:hover { background-image:url(img/topics-11/b-o-over.png); }
-.filteritem.mf-R { background-image:url(img/topics-11/b-r.png); }
-.filteritem.mf-R:hover { background-image:url(img/topics-11/b-r-over.png); }
-.filteritem.mf-Re { background-image:url(img/topics-11/b-re.png); }
-.filteritem.mf-Re:hover { background-image:url(img/topics-11/b-re-over.png); }
-.filteritem.mf-V { background-image:url(img/topics-11/b-v.png); }
-.filteritem.mf-V:hover { background-image:url(img/topics-11/b-v-over.png); }
+    background-position:left center; }
+.abbrev span { display:none; }
+.mf-E { background-image:url(img/topics-11/b-e.png); }
+.filterbox .mf-E:hover { background-image:url(img/topics-11/b-e-over.png); }
+.mf-Ex { background-image:url(img/topics-11/b-ex.png); }
+.filterbox .mf-Ex:hover { background-image:url(img/topics-11/b-ex-over.png); }
+.mf-H { background-image:url(img/topics-11/b-h.png); }
+.filterbox .mf-H:hover { background-image:url(img/topics-11/b-h-over.png); }
+.mf-J { background-image:url(img/topics-11/b-j.png); }
+.filterbox .mf-J:hover { background-image:url(img/topics-11/b-j-over.png); }
+.mf-K { background-image:url(img/topics-11/b-k.png); }
+.filterbox .mf-K:hover { background-image:url(img/topics-11/b-k-over.png); }
+.mf-M { background-image:url(img/topics-11/b-m.png); }
+.filterbox .mf-M:hover { background-image:url(img/topics-11/b-m-over.png); }
+.mf-O { background-image:url(img/topics-11/b-o.png); }
+.filterbox .mf-O:hover { background-image:url(img/topics-11/b-o-over.png); }
+.mf-R { background-image:url(img/topics-11/b-r.png); }
+.filterbox .mf-R:hover { background-image:url(img/topics-11/b-r-over.png); }
+.mf-Re { background-image:url(img/topics-11/b-re.png); }
+.filterbox .mf-Re:hover { background-image:url(img/topics-11/b-re-over.png); }
+.mf-V { background-image:url(img/topics-11/b-v.png); }
+.filterbox .mf-V:hover { background-image:url(img/topics-11/b-v-over.png); }
 
-.filteritem.si-F { background-image:url(img/topics-11/s-f.png); }
-.filteritem.si-F:hover { background-image:url(img/topics-11/s-f-over.png); }
-.filteritem.si-I { background-image:url(img/topics-11/s-i.png); }
-.filteritem.si-I:hover { background-image:url(img/topics-11/s-i-over.png); }
-.filteritem.si-L { background-image:url(img/topics-11/s-l.png); }
-.filteritem.si-L:hover { background-image:url(img/topics-11/s-l-over.png); }
-.filteritem.si-M { background-image:url(img/topics-11/s-m.png); }
-.filteritem.si-M:hover { background-image:url(img/topics-11/s-m-over.png); }
-.filteritem.si-Mi { background-image:url(img/topics-11/s-mi.png); }
-.filteritem.si-Mi:hover { background-image:url(img/topics-11/s-mi-over.png); }
-.filteritem.si-Ö { background-image:url(img/topics-11/s-oe.png); }
-.filteritem.si-Ö:hover { background-image:url(img/topics-11/s-oe-over.png); }
-.filteritem.si-U { background-image:url(img/topics-11/s-ue.png); }
-.filteritem.si-U:hover { background-image:url(img/topics-11/s-ue-over.png); }
-.filteritem.si-W { background-image:url(img/topics-11/s-w.png); }
-.filteritem.si-W:hover { background-image:url(img/topics-11/s-w-over.png); }
+.si-F { background-image:url(img/topics-11/s-f.png); }
+.filterbox .si-F:hover { background-image:url(img/topics-11/s-f-over.png); }
+.si-I { background-image:url(img/topics-11/s-i.png); }
+.filterbox .si-I:hover { background-image:url(img/topics-11/s-i-over.png); }
+.si-L { background-image:url(img/topics-11/s-l.png); }
+.filterbox .si-L:hover { background-image:url(img/topics-11/s-l-over.png); }
+.si-M { background-image:url(img/topics-11/s-m.png); }
+.filterbox .si-M:hover { background-image:url(img/topics-11/s-m-over.png); }
+.si-Mi { background-image:url(img/topics-11/s-mi.png); }
+.filterbox .si-Mi:hover { background-image:url(img/topics-11/s-mi-over.png); }
+.si-Ö { background-image:url(img/topics-11/s-oe.png); }
+.filterbox .si-Ö:hover { background-image:url(img/topics-11/s-oe-over.png); }
+.si-U { background-image:url(img/topics-11/s-ue.png); }
+.filterbox .si-U:hover { background-image:url(img/topics-11/s-ue-over.png); }
+.si-W { background-image:url(img/topics-11/s-w.png); }
+.filterbox .si-W:hover { background-image:url(img/topics-11/s-w-over.png); }
 
-.filteritem.st-K { background-image:url(img/topics-11/r-k.png); }
-.filteritem.st-K:hover { background-image:url(img/topics-11/r-k-over.png); }
-.filteritem.st-N { background-image:url(img/topics-11/r-n.png); }
-.filteritem.st-N:hover { background-image:url(img/topics-11/r-n-over.png); }
-.filteritem.st-P { background-image:url(img/topics-11/r-p.png); }
-.filteritem.st-P:hover { background-image:url(img/topics-11/r-p-over.png); }
-.filteritem.st-S { background-image:url(img/topics-11/r-s.png); }
-.filteritem.st-S:hover { background-image:url(img/topics-11/r-s-over.png); }
-.filteritem.st-W { background-image:url(img/topics-11/r-w.png); }
-.filteritem.st-W:hover { background-image:url(img/topics-11/r-w-over.png); }
+.st-K { background-image:url(img/topics-11/r-k.png); }
+.filterbox .st-K:hover { background-image:url(img/topics-11/r-k-over.png); }
+.st-N { background-image:url(img/topics-11/r-n.png); }
+.filterbox .st-N:hover { background-image:url(img/topics-11/r-n-over.png); }
+.st-P { background-image:url(img/topics-11/r-p.png); }
+.filterbox .st-P:hover { background-image:url(img/topics-11/r-p-over.png); }
+.st-S { background-image:url(img/topics-11/r-s.png); }
+.filterbox .st-S:hover { background-image:url(img/topics-11/r-s-over.png); }
+.st-W { background-image:url(img/topics-11/r-w.png); }
+.filterbox .st-W:hover { background-image:url(img/topics-11/r-w-over.png); }
 
 
 
@@ -647,29 +653,36 @@ dl.filterbox li { line-height:1em; }
 /* broadcastformats box */
 .portletItem.bcformat { min-height:20px; margin-bottom:5px; }
 
-#timeslots .show-start { font-size:1em; }
-#timeslots h3 {
+.show-start { font-size:1em; }
+#timeslots h3,
+#shows h3 {
     margin-top:0;
     font-weight:normal;
     font-size:1em; }
+#shows p,
 #timeslots p {
     margin-top:0;
     margin-bottom:0.643em;
     font-size:0.9em; }
 
 /* showlist */
+#shows .show,
 #timeslots .timeslot {
     padding:3px 3px;
     min-height:30px;
-    clear:both; }
-#timeslots .show-start,
-#timeslots .show-abbrevs {
+    clear:both; 
+    border-bottom:1px solid white; }
+.show-start,
+.show-abbrevs {
     float:left; }
-#timeslots .show-start { width:60px; }
-#timeslots .show-abbrevs {
+.show-start { width:60px; }
+.show-abbrevs {
     width:60px; }
-#timeslots .show {
+#timeslots .show-detail {
     width:431px;
     margin-left:120px; }
+#shows .show-detail {
+    width:491px;
+    margin-left:60px; }
 
 
