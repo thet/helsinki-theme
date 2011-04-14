@@ -703,3 +703,7 @@ div.weekday {
     min-height:30px;
     border-bottom:1px solid white; }
 
+
+/* show detail */
+.show-detail-header {
+    padding:10px; }
