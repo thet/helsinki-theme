@@ -77,6 +77,11 @@
   <append href="/static/snippets.html"
     content="attributes(class):#nav-selected-classes"
     theme="attributes(class):#the_navigation li.section-week a"/>
+  <replace href="/static/snippets.html"
+    content="attributes:#column-main"
+    theme="attributes:#column-main"/>
+  <drop theme="#column-1"/>
+  <drop theme="#column-2"/>
 </rule>
 <rule class="shows" suppress-standard="1">
   <append href="/static/snippets.html"

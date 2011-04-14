@@ -288,6 +288,10 @@ ul#the_navigation ul li a:hover {
     text-transform:uppercase; }
 #the_footer a:hover {
     color:#FBD62A !important; }
+#column-main.fullwidth {
+    left:0;
+    margin-right:0;
+    width:960px; }
 
 /* portlets */
 #column-1, #column-2 { overflow:hidden; }
@@ -688,4 +692,14 @@ dl.filterbox li { line-height:1em; }
     width:491px;
     margin-left:60px; }
 
+/* weekschedule */
+div.weekday {
+    width:130px;
+    float:left; }
+#weekday-starts {
+    width:50px;
+    float:left; }
+.weekday .timeslot {
+    min-height:30px;
+    border-bottom:1px solid white; }
 
