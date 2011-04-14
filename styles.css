@@ -588,13 +588,16 @@ ul#the_navigation > li > a,
 .bf-vortrag-diskussion { background-color:#A57397; }
 
 dl.filterbox li { line-height:1em; }
-.abbrev {
+
+.filterbox .abbrev { padding-left:20px; }
+.show-abbrevs .abbrev {
     display: inline-block;
     float: left;
     width: 11px;
     height: 11px;
     margin-bottom: 2px;
-    margin-right: 2px;
+    margin-right: 2px; }
+.abbrev {
     background-repeat:no-repeat;
     background-position:left center; }
 .abbrev span { display:none; }
