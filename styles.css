@@ -54,6 +54,8 @@ h4 {
     margin-bottom: 0.643em;
     text-transform:uppercase; }
 
+#column-main > h2:first-of-type { margin-top:0; }
+
 .documentDescription { font-weight:bold; }
 .documentByLine { font-size:smaller; }
 
