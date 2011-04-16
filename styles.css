@@ -100,7 +100,9 @@ a.statePublished:hover { color:black !important; }
 
 /* top layout */
 #the_metamenu {
-    height:24px; }
+    /* height 24px */
+    height:21px;
+    padding-top:3px; }
 #the_logo {
     width:176px;
     height:176px;
