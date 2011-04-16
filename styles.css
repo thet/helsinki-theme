@@ -10,8 +10,12 @@ body { font-size:75%; }
 html>body { font-size:12px; }
 body.largeText { font-size:12px; }
 body.smallText { font-size:12px; }
-body.largeText #the_main { font-size:125%; }
-body.smallText #the_main { font-size:85%; }
+body.largeText #the_main {
+    font-size:125%;
+    line-height:1.6em; }
+body.smallText #the_main {
+    font-size:85%;
+    line-height:1.3em; }
 
 body {
 	background: white;
