@@ -8,6 +8,11 @@
 
 body { font-size:75%; }
 html>body { font-size:12px; }
+body.largeText { font-size:12px; }
+body.smallText { font-size:12px; }
+body.largeText #the_main { font-size:125%; }
+body.smallText #the_main { font-size:85%; }
+
 body {
 	background: white;
 	padding:0px 63px 0;
@@ -92,14 +97,25 @@ a.statePublished { color:#636363 !important; }
 a.statePublished:hover { color:black !important; }
 */
 
-/* common horizontal lists */
+
+/* top layout */
+#the_metamenu {
+    height:24px; }
+#the_logo {
+    width:176px;
+    height:176px;
+    float:right;
+    margin-left:6px; }
+#the_header { 
+    width:778px; }
+
+/* common */
 #the_metamenu li,
 #the_navigation li { display:inline; }
+#the_lang a, #the_metamenu a, #the_logo a, #the_header a { text-decoration:none; }
 
 
 /* the metamenu */
-#the_lang a, #the_metamenu a, #the_logo a, #the_header a { text-decoration:none; }
-#the_metamenu { height:24px; }
 #the_metamenu a:hover, #the_metamenu .currentLanguage a { color:black; }
 #the_lang { float:left; width:20%; }
 #portal-siteactions { float:left; width:80%; text-align:right; }
@@ -111,13 +127,8 @@ a.statePublished:hover { color:black !important; }
 #the_metamenu #portal-siteactions li { margin-right:6px; }
 
 
-/* the_toolbox */
-#the_logo {
-    width:176px;
-    height:176px;
-    float:right;
-    margin-left:6px; }
-#the_header { width:778px; }
+
+/* the toolbox */
 #the_toolbox {
     /* height:3px
      */
