@@ -48,6 +48,8 @@
   <!--dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/" /-->
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/" />
 </proxy>
+<match path="regex:^/$" class="common plone programblocks" />
+<match path="/info" class="common plone programblocks" />
 <!-- plone popups -->
 <match path="regex:.*contenthistorypopup.*" abort="1" />
 <match path="regex:.*/image_view_fullscreen$" abort="1" /> 
@@ -125,6 +127,14 @@
   <replace content="children:#content-main" theme="children:#column-main" />
 </rule>
 
+<rule class="programblocks" suppress-standard="1">
+  <prepend href="/programm/tips_box/"
+    content="children:body"
+    theme="children:#column-1" />
+  <prepend href="/programm/current_box/"
+    content="children:body"
+    theme="children:#column-1" />
+</rule>
 
 <!-- plone -->
 <rule class="common" suppress-standard="1">
