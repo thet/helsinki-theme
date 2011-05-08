@@ -23,6 +23,10 @@
   <!--dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/programmflyer" /-->
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/programmflyer" />
 </proxy>
+<proxy path="/programm/programmverwaltung" class="common plone">
+  <!--dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/programmflyer" /-->
+  <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/programmflyer" />
+</proxy>
 
 <!-- django proxy and matches with rewrites -->
 <proxy path="/programm/admin" class="dj-admin">
