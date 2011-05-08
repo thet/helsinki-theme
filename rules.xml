@@ -112,6 +112,7 @@
   <!-- rename plone paths to those of django. unify paths. show, shows -> shows -->
   <theme href="/programm/programmflyer?deliv_force_external=1;deliv_full_headers=1" />
   <drop theme="attributes(class):#the_navigation li a"/>
+  <drop theme="#portal-breadcrumbs"/>
   <prepend href="/programm/tips_box/"
     content="children:body"
     theme="children:#column-1" />
