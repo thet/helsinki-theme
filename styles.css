@@ -86,6 +86,10 @@ a:hover,
     -moz-text-shadow:none;
     -webkit-text-shadow:none; }
 
+#the_toolbox input:focus,
+#the_toolbox input:hover,
+#the_toolbox input[disabled="disabled"]:focus,
+#the_toolbox input[disabled="disabled"]:hover,
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
@@ -94,7 +98,7 @@ input[type="text"]:hover,
 input[type="password"]:hover,
 input[type="search"]:hover,
 textarea:hover
-{ background-color:#EEE; }
+{ background-color:#EEE !important; }
 
 /*.statePublished { color:black !important; }
 a.statePublished { color:#636363 !important; }
@@ -144,7 +148,14 @@ a.statePublished:hover { color:black !important; }
     background:black;
     padding:5px 0px 0px 6px;
     position:relative; }
-#the_toolbox input { border:1px solid black; height:21px; }
+#the_toolbox input {
+    border:1px solid black;
+    height:21px;
+    color:black;
+    background-color:white; }
+#the_toolbox input[disabled="disabled"] {
+    color:black;
+    background-color:white; }
 #livestream,
 #onair,
 #the_searchbox {  display:inline-block; }

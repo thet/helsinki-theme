@@ -14,6 +14,10 @@
   <dest href="{here}" />
 </proxy>
 
+<proxy path="/get_current">
+  <!-- dest href="https://pv.helsinki.at/nop/get_current" /-->
+  <dest href="http://localhost:8000/nop/get_current" />
+</proxy>
 <!-- no django content, deliver it from plone -->
 <proxy path="regex:\/programm\/?$" class="common plone">
   <!--dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/" /-->
