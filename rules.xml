@@ -14,6 +14,11 @@
   <dest href="{here}" />
 </proxy>
 
+<proxy path="/nowplaying" class="nowplaying">
+  <!-- dest href="https://pv.helsinki.at/nop" /-->
+  <dest href="http://localhost:8000/nop" />
+  <response rewrite-links="1" />
+</proxy>
 <proxy path="/get_current">
   <!-- dest href="https://pv.helsinki.at/nop/get_current" /-->
   <dest href="http://localhost:8000/nop/get_current" />
@@ -69,6 +74,31 @@
 <match path="regex:^/portal_javascripts/.*" abort="1" />
 <match path="regex:.*/themes/advanced/.*" abort="1" />
 <match path="regex:.*/plugins/.*" abort="1" /> 
+
+
+<match path="regex:.*css" abort="1" /> 
+<match path="regex:.*js" abort="1" /> 
+
+<rule class="nowplaying" suppress-standard="1">
+  <theme href="/livestream?deliv_force_external=1;deliv_full_headers=1" />
+  <replace content="/html/head/title" theme="/html/head/title"/>
+  <drop theme="/html/head/base"/>
+  <drop theme="#portal-breadcrumbs"/>
+  <drop content="script[src *= 'jquery.min.js']"/>
+  <drop content="script[src *= 'jquery.tools.min.js']"/>
+  
+  <append content="/html/head/script" theme="/html/head/link[last()]"/>
+  <append content="link[href *= 'css']" theme="/html/head/link[last()]"/>
+
+  <prepend href="/programm/tips_box/"
+    content="children:body"
+    theme="children:#column-1" />
+  <prepend href="/programm/current_box/"
+    content="children:body"
+    theme="children:#column-1" />
+  <replace content="children:#content-main" theme="children:#column-main" />
+</rule>
+
 
 <!-- programmverwaltung -->
 <!-- TODO: submitting does not work... -->
