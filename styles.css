@@ -127,8 +127,13 @@ a.statePublished:hover { color:black !important; }
 
 /* the metamenu */
 #the_metamenu a:hover, #the_metamenu .currentLanguage a { color:black; }
-#the_lang { float:left; width:20%; }
-#portal-siteactions { float:left; width:80%; text-align:right; }
+#the_lang {
+    float:left;
+    width:20%; }
+#portal-siteactions {
+    /*float:left;
+    width:80%;*/ /* fix until language selector becomes active again */
+    text-align:right; }
 #the_metamenu a {
     color:#636363;
     font-weight:bold;

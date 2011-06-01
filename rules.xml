@@ -243,7 +243,13 @@
   <replace content="children:#portal-searchbox" theme="children:#the_searchbox"/>
 
   <!-- metamenu -->
-  <replace content="children:#portal-languageselector" theme="children:#the_lang"/>
+  <drop
+    if-content="not:#portal-languageselector"
+    theme="#the_lang"/>
+  <replace
+    if-content="#portal-languageselector"
+    content="children:#portal-languageselector"
+    theme="children:#the_lang"/>
   <replace content="#portal-siteactions" theme="#portal-siteactions"/>
 
   <!--the_navigation -->
