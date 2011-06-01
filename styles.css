@@ -99,6 +99,7 @@ input[type="password"]:hover,
 input[type="search"]:hover,
 textarea:hover
 { background-color:#EEE !important; }
+#onair input:hover { cursor:default; }
 
 /*.statePublished { color:black !important; }
 a.statePublished { color:#636363 !important; }
