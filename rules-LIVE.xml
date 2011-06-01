@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset>
+<server-settings>
+  <server>localhost:8906</server>
+  <execute-pyref>false</execute-pyref>
+  <dev-allow>localhost</dev-allow>
+  <dev-user username="admin" password="admin" />
+  <display-local-files>false</display-local-files>
+  <edit-local-files>false</edit-local-files>
+</server-settings>
+
+<proxy keep-host="1" path="/static" class="static">
+  <dest href="{here}" />
+</proxy>
+
+<proxy path="/nowplaying" class="nowplaying">
+  <dest href="https://pv.helsinki.at/nop" />
+  <response rewrite-links="1" />
+</proxy>
+<proxy path="/get_current">
+  <dest href="https://pv.helsinki.at/nop/get_current" />
+</proxy>
+<!-- no django content, deliver it from plone -->
+<proxy path="regex:\/programm\/?$" class="common plone">
+  <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/" />
+</proxy>
+<proxy path="/programm/folder_contents" class="common plone">
+  <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/folder_contents" />
+</proxy>
+<proxy path="/programm/programmflyer" class="common plone">
+  <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/programmflyer" />
+</proxy>
+<proxy path="/programm/programmverwaltung" class="common plone">
+  <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/programmverwaltung" />
+</proxy>
+
+<!-- django proxy and matches with rewrites -->
+<!--proxy path="/programm/admin" class="dj-admin">
+  <dest href="https://pv.helsinki.at/admin" />
+  <response rewrite-links="1" />
+</proxy-->
+<proxy path="/programm" class="program">
+  <dest href="https://pv.helsinki.at/program" />
+  <response rewrite-links="1" />
+</proxy>
+<match path="/programm/today" class="program today" />
+<match path="/programm/week" class="program week" />
+<match path="/programm/shows" class="program shows" />
+<match path="/programm/hosts" class="program hosts" />
+<match path="/programm/tips" class="program tips" />
+<match path="/programm/topics" class="program topics" />
+
+
+<!-- plone proxy and matches -->
+<proxy path="/" class="common plone">
+  <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/" />
+</proxy>
+<match path="regex:^/$" class="common plone programblocks" />
+<match path="/info" class="common plone programblocks" />
+<!-- plone popups -->
+<match path="regex:.*contenthistorypopup.*" abort="1" />
+<match path="regex:.*/image_view_fullscreen$" abort="1" /> 
+<!-- TinyMCE -->
+<match path="regex:^/portal_javascripts/.*" abort="1" />
+<match path="regex:.*/themes/advanced/.*" abort="1" />
+<match path="regex:.*/plugins/.*" abort="1" /> 
+
+
+<match path="regex:.*css" abort="1" /> 
+<match path="regex:.*js" abort="1" /> 
+
+<rule class="nowplaying" suppress-standard="1">
+  <theme href="/livestream?deliv_force_external=1" />
+  <!-- theme href="/livestream?deliv_force_external=1;deliv_full_headers=1" /-->
+  <replace content="/html/head/title" theme="/html/head/title"/>
+  <drop theme="/html/head/base"/>
+  <drop theme="#portal-breadcrumbs"/>
+  <drop content="script[src *= 'jquery.min.js']"/>
+  <drop content="script[src *= 'jquery.tools.min.js']"/>
+  
+  <append content="/html/head/script" theme="/html/head/link[last()]"/>
+  <append content="link[href *= 'css']" theme="/html/head/link[last()]"/>
+
+  <prepend href="/programm/tips_box/"
+    content="children:body"
+    theme="children:#column-1" />
+  <prepend href="/programm/current_box/"
+    content="children:body"
+    theme="children:#column-1" />
+  <replace content="children:#content-main" theme="children:#column-main" />
+</rule>
+
+
+<!-- programmverwaltung -->
+<!-- TODO: submitting does not work... -->
+<!--rule class="dj-admin" suppress-standard="1">
+  <theme href="/programm/programmflyer?deliv_force_external=1;deliv_full_headers=1" />
+  <drop theme="attributes(class):#the_navigation li a"/>
+  <drop content="#footer"/>
+  <drop content=".object-tools .viewsitelink" />
+  <prepend content="link[href *= 'css']" theme="/html/head/link[1]"/>
+  <append href="/static/snippets.html"
+      content="link[href *= 'djangoadmin.css']" theme="/html/head/link[last()]"/>
+  <replace content="children:body" theme="children:#column-main" />
+</rule-->
+
+<rule class="today" suppress-standard="1">
+  <append href="/static/snippets.html"
+    content="attributes(class):#nav-selected-classes"
+    theme="attributes(class):#the_navigation li.section-today a"/>
+</rule>
+<rule class="week" suppress-standard="1">
+  <append href="/static/snippets.html"
+    content="attributes(class):#nav-selected-classes"
+    theme="attributes(class):#the_navigation li.section-week a"/>
+  <replace href="/static/snippets.html"
+    content="attributes:#column-main"
+    theme="attributes:#column-main"/>
+  <drop theme="#column-1"/>
+  <drop theme="#column-2"/>
+</rule>
+<rule class="shows" suppress-standard="1">
+  <append href="/static/snippets.html"
+    content="attributes(class):#nav-selected-classes"
+    theme="attributes(class):#the_navigation li.section-shows a"/>
+</rule>
+<rule class="hosts" suppress-standard="1">
+  <append href="/static/snippets.html"
+    content="attributes(class):#nav-selected-classes"
+    theme="attributes(class):#the_navigation li.section-hosts a"/>
+</rule>
+<rule class="tips" suppress-standard="1">
+  <append href="/static/snippets.html"
+    content="attributes(class):#nav-selected-classes"
+    theme="attributes(class):#the_navigation li.section-tips a"/>
+</rule>
+<rule class="topics" suppress-standard="1">
+  <append href="/static/snippets.html"
+    content="attributes(class):#nav-selected-classes"
+    theme="attributes(class):#the_navigation li.section-topics a"/>
+</rule>
+
+<rule class="program" suppress-standard="1">
+  <!-- rename plone paths to those of django. unify paths. show, shows -> shows -->
+  <theme href="/programm/programmflyer?deliv_force_external=1" />
+  <!--theme href="/programm/programmflyer?deliv_force_external=1;deliv_full_headers=1" /-->
+  <replace content="/html/head/title" theme="/html/head/title"/>
+  <drop theme="/html/head/base"/>
+  <drop theme="attributes(class):#the_navigation li a"/>
+  <drop theme="#portal-breadcrumbs"/>
+
+  <prepend href="/programm/tips_box/"
+    content="children:body"
+    theme="children:#column-1" />
+  <prepend href="/programm/current_box/"
+    content="children:body"
+    theme="children:#column-1" />
+  <replace if-content="#filter-topic"
+    content="children:#filter-topic"
+    theme="children:#column-1"/>
+  <prepend if-content="#filter-format"
+    content="children:#filter-format"
+    theme="children:#column-2"/>
+  <replace content="children:#content-main" theme="children:#column-main" />
+</rule>
+
+<rule class="programblocks" suppress-standard="1">
+  <prepend href="/programm/tips_box/"
+    content="children:body"
+    theme="children:#column-1" />
+  <prepend href="/programm/current_box/"
+    content="children:body"
+    theme="children:#column-1" />
+</rule>
+
+<!-- plone -->
+<rule class="common" suppress-standard="1">
+  <theme href="/static/index.html" />
+
+  <drop theme="/html/head/meta"/>
+
+  <replace content="/html/head/title" theme="/html/head/title"/>
+  <append content="/html/head/base" theme="children:/html/head"/>
+  <append content="/html/head/meta" theme="children:/html/head"/>
+  <append content="link[rel *= 'kss-base-url']" theme="children:/html/head"/>
+
+  <!-- workaround jscalendar/calendar-system.css bug
+       see: http://blog.jazkarta.com/2010/04/02/deliverance-great-plone-theming-no-zope-after-taste/ -->
+  <drop content="style[media = 'all']"/>
+  <drop
+    if-content="not:body.template-atct_edit"
+    theme="link[href *= 'calendar-system']"/>
+  
+  <!-- Add in the Plone-created CSS, KSS and JS in addition to the static ones -->
+  <drop theme="link[href *= 'plonebase']"/>
+  
+  <drop content="link[href *= 'public']"/>
+  <drop content="link[href *= 'columns']"/>
+  <drop content="link[href *= 'portlets']"/>
+  <drop content="link[href *= 'deprecated']"/>
+  <drop content="link[href *= 'navtree']"/>
+  <drop content="link[href *= 'invisibles']"/>
+  <drop content="link[href *= 'print']"/>
+  <drop content="link[href *= 'mobile']"/>
+  
+  <prepend content="/html/head/style" theme="/html/head/link[1]"/>
+  <prepend content="link[href *= 'css']" theme="/html/head/link[1]"/>
+  <prepend content="link[rel *= 'kinetic-stylesheet']" theme="/html/head/link"/>
+  <prepend content="/html/head/script" theme="/html/head/link"/>
+
+  <append content="link[rel = 'author']" theme="children:/html/head"/>
+  <append content="link[rel = 'home']" theme="children:/html/head"/>
+  <append content="link[rel = 'contents']" theme="children:/html/head"/>
+  <append content="link[rel = 'search']" theme="children:/html/head"/>
+
+  <!-- theme element droppings -->
+  <drop theme="children:#the_navigation"/>
+  <drop theme="children:#portal-breadcrumbs"/>
+  <drop theme="#column-main h1"/>
+  <drop theme="#column-main div.documentDescription"/>
+  <drop theme="children:#column-1"/>
+  <drop theme="children:#column-2"/>
+
+  <replace content="attributes(class,dir):/html/body" theme="attributes:/html/body"/>
+
+  <!-- Accessibility -->
+  <prepend content="#portal-header > p.hiddenStructure" theme="children:body"/>
+
+  <!-- Set correct Link for the the_logo -->
+  <replace content="attributes:#portal-logo" theme="attributes:#the_logo a"/>
+
+  <!-- Search box -->
+  <drop content="#portal-searchbox div.searchSection"/>
+  <drop content="tag:.LSBox"/>
+  <replace content="children:#portal-searchbox" theme="children:#the_searchbox"/>
+
+  <!-- metamenu -->
+  <drop
+    if-content="not:#portal-languageselector"
+    theme="#the_lang"/>
+  <replace
+    if-content="#portal-languageselector"
+    content="children:#portal-languageselector"
+    theme="children:#the_lang"/>
+  <replace content="#portal-siteactions" theme="#portal-siteactions"/>
+
+  <!--the_navigation -->
+  <append
+      content="children:#portal-column-two dl.portletNavigationTree ul.navTreeLevel0"
+      theme="children:#the_navigation"/>
+  <drop content="#portal-column-two dl.portletNavigationTree"/>
+
+  <append content="children:#portal-breadcrumbs" theme="children:#portal-breadcrumbs"/>
+
+  <!-- teaser on startpage -->
+  <drop theme="children:#teaser-main"/>
+  <drop if-content="not:#portal-column-one dl.portletTeaser"
+      theme="#teaser-main"/>
+  <append
+      content="children:#portal-column-one dl.portletTeaser dd"
+      theme="children:#column-main #teaser-main" />
+  <drop content="#portal-column-one dl.portletTeaser"/>
+ 
+  <!-- Portlets -->
+  <drop content="tag:div[id *= 'portletwrapper']"/>
+  <drop content="span.portletTopLeft"/>
+  <drop content="span.portletTopRight"/>
+  <replace content="children:#portal-column-one" theme="children:#column-1"/>
+  <replace content="children:#portal-column-two" theme="children:#column-2"/>
+
+</rule>
+
+<rule class="plone">
+  <!-- main content -->
+  <append content="attributes(class):div.documentEditable" theme="attributes(class):#column-main" />
+  <append content=".portalMessage" theme="children:#column-main" />
+  <append content="#content h1" theme="children:#column-main" />
+  <append content="#plone-document-byline" theme="children:#column-main" />
+  <append content="#edit-bar" theme="children:#column-main" />
+  <append content="#content" theme="children:#column-main" />
+</rule>
+
+</ruleset>
