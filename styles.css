@@ -68,7 +68,7 @@ h4 {
 .documentDescription { font-weight:bold; }
 .documentByLine { font-size:smaller; }
 
-* li { display:list-item; }
+#content-core li { display:list-item; }
 
 a { text-decoration:underline;
     color:#636363; }
