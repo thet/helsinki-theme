@@ -99,7 +99,6 @@ input[type="password"]:hover,
 input[type="search"]:hover,
 textarea:hover
 { background-color:#EEE !important; }
-#onair input:hover { cursor:default; }
 
 /*.statePublished { color:black !important; }
 a.statePublished { color:#636363 !important; }
@@ -182,17 +181,20 @@ a.statePublished:hover { color:black !important; }
     background:url(img/nowplay.png) no-repeat left center;
     padding-left:20px; }
 #livestream a:hover {
-    background-image:url(img/nowplay-over.png); }
+    background-image:url(img/nowplay-over.png);
+    color:#FBD62A !important; }
+
 #onair a {
     background:url(img/onair.png) no-repeat left center;
     padding-left:13px; }
-#onair a:hover {
-    background-image:url(img/onair-over.png); }
+#onair:hover a {
+    background-image:url(img/onair-over.png);
+    color:#FBD62A !important; }
+#onair:hover input {
+    cursor:default;
+    background-color:#EEE !important; }
 #onair input { width:348px; }
 
-#livestream a:hover,
-#onair a:hover {
-    color:#FBD62A !important; }
 
 
 /* main the_navigation */
