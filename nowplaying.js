@@ -14,7 +14,3 @@ jQuery(document).ready(function() {
             jQuery("#onair input").val(nop_str);
         }});
 });
-/*jQuery("#onair input").focus(function(event) {
-    event.preventDefault();
-    window.location.href = jQuery("#onair a").attr("href");
-});*/
