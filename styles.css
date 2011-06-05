@@ -273,9 +273,8 @@ ul#the_navigation ul {
     position:absolute;
     top:64px;
     left:0px;
-    margin:0px 0px 0px 20px;
+    margin:0px 0px 0px 10px;
     padding:0px 0px 0px 0px;
-    width:700px;
     text-align:left; }
 ul#the_navigation ul ul { top:20px; }
 /* don't display menus from 5th level on */
@@ -294,7 +293,13 @@ ul#the_navigation ul li a.navTreeCurrentItem,
 ul#the_navigation ul li a.navTreeItemInPath, 
 ul#the_navigation ul li a:hover {
     /*color:#918F90;*/
-    color:black !important; } 
+    color:black !important; }
+
+/* nav rollover */
+ul#the_navigation ul { display:none; }
+ul#the_navigation li.navTreeItemInPath > ul,
+ul#the_navigation li.navTreeCurrentNode > ul { display:block; }
+
 
 /* project nav */
 #column-1 .portletNavigationTree .navTreeTopNode { display:none; }
