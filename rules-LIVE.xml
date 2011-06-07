@@ -43,10 +43,12 @@
   <dest href="https://pv.helsinki.at/program" />
   <response rewrite-links="1" />
 </proxy>
-<match path="/programm/today" class="program today" />
+<match path="/programm/today" class="program today filter-format box-tips box-calendar" />
+<match path="regex:\/programm\/\d{4}\/\d{1,2}\/\d{1,2}\/?$" class="program today filter-format box-tips box-calendar" />
 <match path="/programm/week" class="program week" />
-<match path="/programm/shows" class="program shows" />
-<match path="/programm/hosts" class="program hosts" />
+<match path="regex:\/programm\/\d{4}\/\d{1,2}\/?$" class="program week" />
+<match path="/programm/shows" class="program shows filter-format filter-topic" />
+<match path="/programm/hosts" class="program hosts box-tips box-current" />
 <match path="/programm/tips" class="program tips" />
 <match path="/programm/topics" class="program topics" />
 
@@ -93,7 +95,7 @@
 
 <!-- programmverwaltung -->
 <!-- TODO: submitting does not work... -->
-<!--rule class="dj-admin" suppress-standard="1">
+<!-- rule class="dj-admin" suppress-standard="1">
   <theme href="/programm/programmflyer?deliv_force_external=1;deliv_full_headers=1" />
   <drop theme="attributes(class):#the_navigation li a"/>
   <drop content="#footer"/>
@@ -102,7 +104,7 @@
   <append href="/static/snippets.html"
       content="link[href *= 'djangoadmin.css']" theme="/html/head/link[last()]"/>
   <replace content="children:body" theme="children:#column-main" />
-</rule-->
+</rule -->
 
 <rule class="today" suppress-standard="1">
   <append href="/static/snippets.html"
@@ -148,22 +150,56 @@
   <drop theme="/html/head/base"/>
   <drop theme="attributes(class):#the_navigation li a"/>
   <drop theme="#portal-breadcrumbs"/>
+  
+  <drop theme="children:#column-1" />
+  <!-- drop theme="children:#column-2" /--> <!-- really? also teasers? -->
 
-  <prepend href="/programm/tips_box/"
-    content="children:body"
-    theme="children:#column-1" />
-  <prepend href="/programm/current_box/"
-    content="children:body"
-    theme="children:#column-1" />
-  <replace if-content="#filter-topic"
-    content="children:#filter-topic"
-    theme="children:#column-1"/>
-  <prepend if-content="#filter-format"
-    content="children:#filter-format"
-    theme="children:#column-2"/>
   <replace content="children:#content-main" theme="children:#column-main" />
 </rule>
 
+<rule class="filter-topic">
+  <prepend if-content="#filter-topic"
+    content="children:#filter-topic"
+    theme="children:#column-1"/>
+</rule>
+<rule class="filter-format">
+  <prepend if-content="#filter-format"
+    content="children:#filter-format"
+    theme="children:#column-2"/>
+</rule>
+<rule class="box-tips">
+  <prepend href="/programm/tips_box/"
+    content="children:body"
+    theme="children:#column-1" />
+</rule>
+<rule class="box-current">
+  <prepend href="/programm/current_box/"
+    content="children:body"
+    theme="children:#column-1" />
+</rule>
+<rule class="box-calendar">
+  <!-- jquery ui requirements -->
+  <append if-content="link[href *= 'jquery-ui.css']"
+    content="link[href *= 'jquery-ui.css']"
+    theme="/html/head/script" />  
+  <append if-content="script[src *= 'programcalendar.js']"
+    content="script[src *= 'programcalendar.js']"
+    theme="/html/head/script" />
+  <append if-content="script[src *= 'jquery.ui.datepicker-de.js']"
+    content="script[src *= 'jquery.ui.datepicker-de.js']"
+    theme="/html/head/script" />
+  <append if-content="script[src *= 'jquery-ui.min.js']"
+    content="script[src *= 'jquery-ui.min.js']"
+    theme="/html/head/script" />
+  <prepend if-content="#box_calendar"
+    content="#box_calendar"
+    theme="children:#column-1"/>
+</rule>
+
+
+
+
+<!-- plone -->
 <rule class="programblocks" suppress-standard="1">
   <prepend href="/programm/tips_box/"
     content="children:body"
@@ -173,7 +209,6 @@
     theme="children:#column-1" />
 </rule>
 
-<!-- plone -->
 <rule class="common" suppress-standard="1">
   <theme href="/static/index.html" />
 
