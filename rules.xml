@@ -52,13 +52,17 @@
   <dest href="http://localhost:8000/program" />
   <response rewrite-links="1" />
 </proxy>
-<match path="/programm/today" class="program program-content-comments today filter-format box-tips box-calendar" />
-<match path="regex:\/programm\/\d{4}\/\d{1,2}\/\d{1,2}\/?$" class="program program-content-comments today filter-format box-tips box-calendar" />
-<match path="/programm/week" class="program program-content week" />
-<match path="regex:\/programm\/\d{4}\/\d{1,2}\/?$" class="program program-content week" />
-<match path="/programm/shows" class="program program-content shows filter-format filter-topic" />
-<match path="/programm/hosts" class="program program-content hosts box-tips box-current" />
-<match path="/programm/tips" class="program program-content tips" />
+<match path="/programm/today" class="program today filter-format box-tips box-calendar" />
+<match path="regex:\/programm\/\d{4}\/\d{1,2}\/\d{1,2}\/?$" class="program today filter-format box-tips box-calendar" />
+<match path="/programm/week" class="program week" />
+<match path="regex:\/programm\/\d{4}\/\d{1,2}\/?$" class="program week" />
+<match path="regex:\/programm\/shows\/?$" class="program shows filter-format filter-topic" />
+<match path="regex:\/programm\/shows\/.+" class="program comments shows" />
+<match path="regex:\/programm\/hosts\/?$" class="program hosts box-tips box-current" />
+<match path="regex:\/programm\/hosts\/.+" class="program comments hosts box-tips box-current" />
+<match path="regex:\/programm\/tips\/?$" class="program tips" />
+<match path="regex:\/programm\/tips\/.+" class="program comments tips" />
+<match path="regex:\/programm\/[0-9]+\/?$" class="program comments tips" />
 
 
 <!-- plone proxy and matches -->
@@ -78,7 +82,7 @@
 
 
 <match path="regex:.*css" abort="1" />
-<!--match path="regex:.*js" abort="1" /-->
+<match path="regex:.*js" abort="1" />
 
 <rule class="nowplaying" suppress-standard="1">
   <theme href="/livestream?deliv_force_external=1;deliv_full_headers=1" />
@@ -103,7 +107,7 @@
 
 <!-- programmverwaltung -->
 <!-- TODO: submitting does not work... -->
-<rule class="dj-admin" suppress-standard="1">
+<!-- rule class="dj-admin" suppress-standard="1">
   <theme href="/programm/programmflyer?deliv_force_external=1;deliv_full_headers=1" />
   <drop theme="attributes(class):#the_navigation li a"/>
   <drop content="#footer"/>
@@ -112,7 +116,7 @@
   <append href="/static/snippets.html"
       content="link[href *= 'djangoadmin.css']" theme="/html/head/link[last()]"/>
   <replace content="children:body" theme="children:#column-main" />
-</rule>
+</rule -->
 
 <rule class="today" suppress-standard="1">
   <append href="/static/snippets.html"
@@ -165,28 +169,14 @@
   <drop theme="children:#column-1" />
   <!-- drop theme="children:#column-2" /--> <!-- really? also teasers? -->
 
+  <replace content="children:#content-main" theme="children:#column-main" />
 </rule>
 
-<rule class="program-content">
-  <drop theme="#column-main .portalMessage" />
-  <drop theme="#column-main h1" />
-  <drop theme="#column-main #plone-document-byline" />
-  <drop theme="#column-main #edit-bar" />
-  <drop theme="#column-main #content" />
-  <drop theme="#column-main #viewlet-above-content" />
-  <drop theme="#column-main #viewlet-below-content" />
-  <prepend content="children:#content-main" theme="children:#column-main" />
+<rule class="comments">
+  <append href="/static/snippets.html"
+    content="children:#disqus_dev"
+    theme="children:#column-main"/>
 </rule>
-<rule class="program-content-comments">
-  <drop theme="#column-main .portalMessage" />
-  <drop theme="#column-main h1" />
-  <drop theme="#column-main #plone-document-byline" />
-  <drop theme="#column-main #edit-bar" />
-  <drop theme="#column-main #content" />
-  <drop theme="#column-main #viewlet-above-content" />
-  <prepend content="children:#content-main" theme="children:#column-main" />
-</rule>
-
 <rule class="filter-topic">
   <prepend if-content="#filter-topic"
     content="children:#filter-topic"
