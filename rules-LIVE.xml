@@ -52,10 +52,10 @@
 <match path="regex:\/programm\/shows\/?$" class="program shows filter-format filter-topic" />
 <match path="regex:\/programm\/shows\/.+" class="program comments shows" />
 <match path="regex:\/programm\/hosts\/?$" class="program hosts box-tips box-current" />
-<match path="regex:\/programm\/hosts\/.+" class="program comments hosts box-tips box-current" />
-<match path="regex:\/programm\/tips\/?$" class="program tips" />
-<match path="regex:\/programm\/tips\/.+" class="program comments tips" />
-<match path="regex:\/programm\/[0-9]+\/?$" class="program comments tips" />
+<match path="regex:\/programm\/hosts\/.+" class="program hosts box-tips box-current" />
+<match path="regex:\/programm\/tips\/?$" class="program tips box-tips box-current" />
+<match path="regex:\/programm\/tips\/.+" class="program comments tips box-tips box-current" />
+<match path="regex:\/programm\/[0-9]+\/?$" class="program comments tips box-tips box-current" />
 
 
 <!-- plone proxy and matches -->
