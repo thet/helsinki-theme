@@ -13,6 +13,7 @@
   <dest href="{here}" />
 </proxy>
 
+<!-- now playing -->
 <proxy path="/nowplaying" class="nowplaying">
   <dest href="https://pv.helsinki.at/nop" />
   <response rewrite-links="1" />
@@ -20,6 +21,7 @@
 <proxy path="/get_current">
   <dest href="https://pv.helsinki.at/nop/get_current" />
 </proxy>
+
 <!-- no django content, deliver it from plone -->
 <proxy path="regex:\/programm\/?$" class="common plone">
   <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/" />
@@ -47,10 +49,13 @@
 <match path="regex:\/programm\/\d{4}\/\d{1,2}\/\d{1,2}\/?$" class="program today filter-format box-tips box-calendar" />
 <match path="/programm/week" class="program week" />
 <match path="regex:\/programm\/\d{4}\/\d{1,2}\/?$" class="program week" />
-<match path="/programm/shows" class="program shows filter-format filter-topic" />
-<match path="/programm/hosts" class="program hosts box-tips box-current" />
-<match path="/programm/tips" class="program tips" />
-<match path="/programm/topics" class="program topics" />
+<match path="regex:\/programm\/shows\/?$" class="program shows filter-format filter-topic" />
+<match path="regex:\/programm\/shows\/.+" class="program comments shows" />
+<match path="regex:\/programm\/hosts\/?$" class="program hosts box-tips box-current" />
+<match path="regex:\/programm\/hosts\/.+" class="program comments hosts box-tips box-current" />
+<match path="regex:\/programm\/tips\/?$" class="program tips" />
+<match path="regex:\/programm\/tips\/.+" class="program comments tips" />
+<match path="regex:\/programm\/[0-9]+\/?$" class="program comments tips" />
 
 
 <!-- plone proxy and matches -->
@@ -68,8 +73,9 @@
 <match path="regex:.*/plugins/.*" abort="1" /> 
 
 
-<match path="regex:.*css" abort="1" /> 
-<match path="regex:.*js" abort="1" /> 
+<match path="regex:.*css" abort="1" />
+<match path="regex:.*js" abort="1" />
+
 
 <rule class="nowplaying" suppress-standard="1">
   <theme href="/livestream?deliv_force_external=1" />
@@ -106,6 +112,24 @@
   <replace content="children:body" theme="children:#column-main" />
 </rule -->
 
+<rule class="program" suppress-standard="1">
+  <theme href="/programm/programmflyer?deliv_force_external=1" />
+  <!--theme href="/programm/programmflyer?deliv_force_external=1;deliv_full_headers=1" /-->
+  <replace content="/html/head/title" theme="/html/head/title"/>
+  <drop theme="/html/head/base"/>
+  <drop theme="link[rel='kss-base-url']"/>
+  <drop theme="attributes(class):#the_navigation li a"/>
+  <drop theme="#portal-breadcrumbs"/>
+  
+  <drop theme="a[href *= 'deliv_force_external=1']"/>
+  
+  <drop theme="children:#column-1" />
+  <!-- drop theme="children:#column-2" /--> <!-- really? also teasers? -->
+
+  <replace content="children:#content-main" theme="children:#column-main" />
+</rule>
+
+<!-- layout and menu manipulations -->
 <rule class="today" suppress-standard="1">
   <append href="/static/snippets.html"
     content="attributes(class):#nav-selected-classes"
@@ -142,21 +166,12 @@
     theme="attributes(class):#the_navigation li.section-topics a"/>
 </rule>
 
-<rule class="program" suppress-standard="1">
-  <!-- rename plone paths to those of django. unify paths. show, shows -> shows -->
-  <theme href="/programm/programmflyer?deliv_force_external=1" />
-  <!--theme href="/programm/programmflyer?deliv_force_external=1;deliv_full_headers=1" /-->
-  <replace content="/html/head/title" theme="/html/head/title"/>
-  <drop theme="/html/head/base"/>
-  <drop theme="attributes(class):#the_navigation li a"/>
-  <drop theme="#portal-breadcrumbs"/>
-  
-  <drop theme="children:#column-1" />
-  <!-- drop theme="children:#column-2" /--> <!-- really? also teasers? -->
-
-  <replace content="children:#content-main" theme="children:#column-main" />
+<!-- program content blocks -->
+<rule class="comments">
+  <append href="/static/snippets.html"
+    content="children:#disqus_dep"
+    theme="children:#column-main"/>
 </rule>
-
 <rule class="filter-topic">
   <prepend if-content="#filter-topic"
     content="children:#filter-topic"
@@ -313,6 +328,8 @@
   <append content="#plone-document-byline" theme="children:#column-main" />
   <append content="#edit-bar" theme="children:#column-main" />
   <append content="#content" theme="children:#column-main" />
+  <prepend content="#viewlet-above-content" theme="children:#column-main" /> <!-- e.g. #plone-lock-status -->
+  <append content="#viewlet-below-content" theme="children:#column-main" /> <!-- e.g. discussion -->
 </rule>
 
 </ruleset>

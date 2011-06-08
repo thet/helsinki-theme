@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ruleset>
 <server-settings>
-  <!-- server>localhost:8906</server-->
   <server>localhost:8880</server>
   <execute-pyref>false</execute-pyref>
   <dev-allow>localhost</dev-allow>
@@ -14,41 +13,35 @@
   <dest href="{here}" />
 </proxy>
 
+<!-- now playing -->
 <proxy path="/nowplaying" class="nowplaying">
-  <!-- dest href="https://pv.helsinki.at/nop" /-->
   <dest href="http://localhost:8000/nop" />
   <response rewrite-links="1" />
 </proxy>
 <proxy path="/get_current">
-  <!-- dest href="https://pv.helsinki.at/nop/get_current" /-->
   <dest href="http://localhost:8000/nop/get_current" />
 </proxy>
+
 <!-- no django content, deliver it from plone -->
 <proxy path="regex:\/programm\/?$" class="common plone">
-  <!--dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/" /-->
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/" />
 </proxy>
 <proxy path="/programm/folder_contents" class="common plone">
-  <!--dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/folder_contents" /-->
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/folder_contents" />
 </proxy>
 <proxy path="/programm/programmflyer" class="common plone">
-  <!--dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/programmflyer" /-->
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/programmflyer" />
 </proxy>
 <proxy path="/programm/programmverwaltung" class="common plone">
-  <!--dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/programmverwaltung" /-->
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/programmverwaltung" />
 </proxy>
 
 <!-- django proxy and matches with rewrites -->
-<proxy path="/programm/admin" class="dj-admin">
-  <!--dest href="https://pv.helsinki.at/admin" /-->
+<!--proxy path="/programm/admin" class="dj-admin">
   <dest href="http://localhost:8000/admin" />
   <response rewrite-links="1" />
-</proxy>
+</proxy-->
 <proxy path="/programm" class="program">
-  <!--dest href="https://pv.helsinki.at/program" /-->
   <dest href="http://localhost:8000/program" />
   <response rewrite-links="1" />
 </proxy>
@@ -67,7 +60,6 @@
 
 <!-- plone proxy and matches -->
 <proxy path="/" class="common plone">
-  <!--dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/" /-->
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/" />
 </proxy>
 <match path="regex:^/$" class="common plone programblocks" />
@@ -83,6 +75,7 @@
 
 <match path="regex:.*css" abort="1" />
 <match path="regex:.*js" abort="1" />
+
 
 <rule class="nowplaying" suppress-standard="1">
   <theme href="/livestream?deliv_force_external=1;deliv_full_headers=1" />
@@ -118,6 +111,23 @@
   <replace content="children:body" theme="children:#column-main" />
 </rule -->
 
+<rule class="program" suppress-standard="1">
+  <theme href="/programm/programmflyer?deliv_force_external=1;deliv_full_headers=1" />
+  <replace content="/html/head/title" theme="/html/head/title"/>
+  <drop theme="/html/head/base"/>
+  <drop theme="link[rel='kss-base-url']"/>
+  <drop theme="attributes(class):#the_navigation li a"/>
+  <drop theme="#portal-breadcrumbs"/>
+  
+  <drop theme="a[href *= 'deliv_force_external=1']"/>
+  
+  <drop theme="children:#column-1" />
+  <!-- drop theme="children:#column-2" /--> <!-- really? also teasers? -->
+
+  <replace content="children:#content-main" theme="children:#column-main" />
+</rule>
+
+<!-- layout and menu manipulations -->
 <rule class="today" suppress-standard="1">
   <append href="/static/snippets.html"
     content="attributes(class):#nav-selected-classes"
@@ -154,24 +164,7 @@
     theme="attributes(class):#the_navigation li.section-topics a"/>
 </rule>
 
-<rule class="program" suppress-standard="1">
-  <!-- rename plone paths to those of django. unify paths. show, shows -> shows -->
-  <!-- theme href="/programm/programmflyer?deliv_force_external=1;deliv_full_headers=1" /-->
-  <theme href="/programm/programmflyer?deliv_force_external=1" />
-  <replace content="/html/head/title" theme="/html/head/title"/>
-  <drop theme="/html/head/base"/>
-  <drop theme="link[rel='kss-base-url']"/>
-  <drop theme="attributes(class):#the_navigation li a"/>
-  <drop theme="#portal-breadcrumbs"/>
-  
-  <drop theme="a[href *= 'deliv_force_external=1']"/>
-  
-  <drop theme="children:#column-1" />
-  <!-- drop theme="children:#column-2" /--> <!-- really? also teasers? -->
-
-  <replace content="children:#content-main" theme="children:#column-main" />
-</rule>
-
+<!-- program content blocks -->
 <rule class="comments">
   <append href="/static/snippets.html"
     content="children:#disqus_dev"
