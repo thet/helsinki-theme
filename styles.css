@@ -32,7 +32,7 @@ body {
 ::-moz-selection 	{background: #FBD62A;}
 
 .state-published {
-    color:#636363 !important; }
+    color:black !important; }
 
 
 
@@ -99,8 +99,25 @@ table td { vertical-align:top; }
 #content-core li { display:list-item; }
 
 a { color:black; }
-a:hover { background:#BBB; }
+a:hover { 
+    background:#BBB; }
 #column-main a { font-weight:bold; }
+
+
+div.listingBar a.next,
+div.listingBar a.previous { padding:0; }
+div.listingBar a {
+    border:none;
+    display:inline-block;
+    padding:0 5px; }
+div.listingBar a:hover {
+    background:#BBB;
+    border:none;
+    color:black; }
+
+
+
+
 
 .formTabs a:hover, #edit-bar a:hover,
 #the_toolbox a:hover, #the_footer a:hover {
@@ -123,6 +140,7 @@ input[type="text"]:hover,
 input[type="password"]:hover,
 input[type="search"]:hover,
 textarea:hover { background-color:#DDD !important; }
+
 
 
 /* top layout */
