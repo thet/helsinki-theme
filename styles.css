@@ -454,10 +454,27 @@ fieldset, .editionComment {
     background:red; }
 
 
-/* portlet static "mach mit" */
+/* community portlets */
 
+.portlet-static-facebook dd p {
+    font-size:14px;
+    text-transform:uppercase; }
+span.findfacebook {
+    display:inline-block;
+    width:30px;
+    height:30px;
+    background-repeat:no-repeat;
+    background-image:url(img/facebook.png); }
+span.findfacebook span { display:none; }
+.portlet-static-facebook dd p a {
+    color:black !important; }
+
+.portlet-static-support-us dt,
+.portlet-static-facebook dt,
 .portlet-static-mach-mit dt { display:none; }
+.portlet-static-support-us dd p a,
 .portlet-static-mach-mit dd p a { color:black !important; }
+.portlet-static-support-us dd p,
 .portlet-static-mach-mit dd p {
     padding:5px;
     background-repeat:repeat;
@@ -468,6 +485,7 @@ fieldset, .editionComment {
     line-height:24px;
     text-transform:uppercase; }
 
+.portlet-static-support-us dd p { background-image:url(img/str-vert.png); }
 .portlet-static-mach-mit dd p { background-image:url(img/str-quer-spiegel.png); }
 .portlet-static-mach-mit dd p+p { background-image:url(img/str-vert.png); }
 .portlet-static-mach-mit dd p+p+p { background-image:url(img/pkt.png); }
@@ -609,6 +627,7 @@ a:hover,
         2px 2px 0px #FBD62A; }
 
 ul#the_navigation > li > a,
+.portlet-static-support-us dd p a:hover,
 .portlet-static-mach-mit dd p a:hover,
 .text_shadow_3 {
     text-shadow:
@@ -640,6 +659,7 @@ ul#the_navigation > li > a,
         -3px -3px 0px #FBD62A,
         3px 3px 0px #FBD62A; }
 
+.portlet-static-support-us dd p,
 .portlet-static-mach-mit dd p,
 .text_shadow_3_white {
     text-shadow:
