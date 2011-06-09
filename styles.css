@@ -83,8 +83,7 @@ table td { vertical-align:top; }
 .documentDescription { font-weight:bold; }
 .documentByLine {
     font-size:smaller;
-    margin-bottom:1em;
-}
+    margin-bottom:1em; }
 
 #viewlet-below-content > div {
     border-top:1px solid black;
@@ -102,13 +101,6 @@ table td { vertical-align:top; }
 a { color:black; }
 a:hover { background:#BBB; }
 #column-main a { font-weight:bold; }
-/*a:hover,
-#column-1 .navTreeCurrentItem, 
-#column-1 .navTreeItemInPath { */
-    /*color:red;*/
-/*    color:black !important; }*/
-/*#column-1 dt a, #column-2 dt a { color:black; }*/
-
 
 .formTabs a:hover, #edit-bar a:hover,
 #the_toolbox a:hover, #the_footer a:hover {
@@ -130,13 +122,7 @@ textarea:focus,
 input[type="text"]:hover,
 input[type="password"]:hover,
 input[type="search"]:hover,
-textarea:hover
-{ background-color:#EEE !important; }
-
-/*.statePublished { color:black !important; }
-a.statePublished { color:#636363 !important; }
-a.statePublished:hover { color:black !important; }
-*/
+textarea:hover { background-color:#EEE !important; }
 
 
 /* top layout */
@@ -877,4 +863,3 @@ table.ui-datepicker-calendar td a.ui-state-active {
     background-color:black;
     color:white;
     font-weight:bold; }
-
