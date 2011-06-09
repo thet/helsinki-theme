@@ -829,5 +829,50 @@ div.weekday {
     padding-left:3px; }
 
 
+#calendar .ui-datepicker-prev span,
+#calendar .ui-datepicker-next span {
+    display:none; }
 
+#calendar .ui-datepicker-prev {
+    float:left;
+    display:inline-block;
+    width:20%;
+    height:17px;
+    cursor:pointer;
+    background-position:80% center;
+    background-repeat:no-repeat;
+    background-image:url(img/arrow-left.png); }
+#calendar .ui-datepicker-prev:hover {
+    background-color:black;
+    background-image:url(img/arrow-left-h.png); }
+#calendar .ui-datepicker-next {
+    float:right;
+    display:inline-block;
+    width:20%;
+    height:17px;
+    cursor:pointer;
+    background-position:20% center;
+    background-repeat:no-repeat;
+    background-image:url(img/arrow-right.png); }
+#calendar .ui-datepicker-next:hover {
+    background-color:black;
+    background-image:url(img/arrow-right-h.png); }
+#calendar .ui-datepicker-title {
+    height:17px;
+    width:auto;
+    font-weight:bold;
+    text-align:center; }
+table.ui-datepicker-calendar {
+    width:100%; }
+table.ui-datepicker-calendar td {
+    width:14.3%;
+}
+table.ui-datepicker-calendar td a.ui-state-default {
+    text-align:center;
+    display:inline-block;
+    width:100%; }
+table.ui-datepicker-calendar td a.ui-state-active {
+    background-color:black;
+    color:white;
+    font-weight:bold; }
 
