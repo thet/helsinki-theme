@@ -99,7 +99,8 @@ table td { vertical-align:top; }
 #content-core li { display:list-item; }
 
 a { color:black; }
-a:hover { 
+a:hover {
+    color:black;
     background:#BBB; }
 #column-main a { font-weight:bold; }
 
@@ -885,6 +886,15 @@ div.weekday {
     padding-right:3px; }
 .program-box .show {
     padding-left:3px; }
+.program-box .previous,
+.program-box .previous a,
+.program-box .next,
+.program-box .next a,
+.program-box .after_next,
+.program-box .after_next a { color:#AAA; }
+.program-box .previous a:hover,
+.program-box .next a:hover,
+.program-box .after_next a:hover { color:black; }
 
 
 #calendar .ui-datepicker-prev span,
@@ -933,3 +943,16 @@ table.ui-datepicker-calendar td a.ui-state-active {
     background-color:black;
     color:white;
     font-weight:bold; }
+
+ul.nowplaying { margin-top:20px; }
+ul.nowplaying li {
+    display:list-item;
+    margin-bottom:10px; }
+.nowplaying .artist { font-weight:bold; }
+.nowplaying .track {}
+.nowplaying .meta {}
+
+.host-list {
+    -moz-column-count: 3;
+    -moz-column-gap: 20px;
+}
