@@ -83,7 +83,7 @@
   <drop theme="/html/head/base"/>
   <drop theme="#portal-breadcrumbs"/>
   <drop content="script[src *= 'jquery.min.js']"/>
-  <drop content="script[src *= 'jquery.tools.min.js']"/>
+  <!-- drop content="script[src *= 'jquery.tools.min.js']"/-->
   
   <append content="/html/head/script" theme="/html/head/link[last()]"/>
   <append content="link[href *= 'css']" theme="/html/head/link[last()]"/>
@@ -192,9 +192,9 @@
 </rule>
 <rule class="box-calendar">
   <!-- jquery ui requirements -->
-  <append if-content="link[href *= 'jquery-ui.css']"
+  <!-- append if-content="link[href *= 'jquery-ui.css']"
     content="link[href *= 'jquery-ui.css']"
-    theme="/html/head/script" />  
+    theme="/html/head/script" /-->
   <append if-content="script[src *= 'programcalendar.js']"
     content="script[src *= 'programcalendar.js']"
     theme="/html/head/script" />
