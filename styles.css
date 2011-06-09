@@ -116,6 +116,9 @@ a:hover,
     -moz-text-shadow:none;
     -webkit-text-shadow:none; }
 
+input[type="text"],
+input[type="password"],
+input[type="search"] { padding:0 5px; }
 #the_toolbox input:focus,
 #the_toolbox input:hover,
 #the_toolbox input[disabled="disabled"]:focus,
@@ -205,7 +208,7 @@ a.statePublished:hover { color:black !important; }
     background:url(img/suche.png) no-repeat left center; }
 #the_searchbox:hover {
     background-image:url(img/suche-over.png); }
-#the_searchbox input { width:200px; }
+#the_searchbox input { width:190px; }
 #the_searchbox input.searchButton { display:none; }
 #livestream a,
 #onair a {
@@ -228,7 +231,7 @@ a.statePublished:hover { color:black !important; }
 #onair:hover input {
     cursor:default;
     background-color:#EEE !important; }
-#onair input { width:348px; }
+#onair input { width:338px; }
 
 
 
