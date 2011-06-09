@@ -99,15 +99,15 @@ table td { vertical-align:top; }
 
 #content-core li { display:list-item; }
 
-a { text-decoration:underline;
-    color:#636363; }
+a { color:black; }
+a:hover { background:#BBB; }
 #column-main a { font-weight:bold; }
-a:hover,
+/*a:hover,
 #column-1 .navTreeCurrentItem, 
-#column-1 .navTreeItemInPath { 
+#column-1 .navTreeItemInPath { */
     /*color:red;*/
-    color:black !important; }
-#column-1 dt a, #column-2 dt a { color:black; }
+/*    color:black !important; }*/
+/*#column-1 dt a, #column-2 dt a { color:black; }*/
 
 
 .formTabs a:hover, #edit-bar a:hover,
@@ -567,7 +567,6 @@ ul#the_navigation ul li a.navTreeItemInPath,
         -1px -1px 0px #FBD62A,
         1px 1px 0px #FBD62A; }
 
-a:hover,
 .text_shadow_1_grey {
     text-shadow:
         -1px 0px 0px #BBB,
