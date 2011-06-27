@@ -853,14 +853,23 @@ a.abbrev,
 /* weekschedule */
 div.weekday {
     /*width:130px;*/
-    width:126px;
+    width:125px;
     float:left; }
 .weekday-starts {
+    background-color:#858488;
+    color:white;
+    font-weight:bold;
     overflow:hidden;
+    white-space:nowrap;
     /*width:38px;*/
     font-size:10px;
-    width:33px;
     float:left; }
+.weekday-starts-left {
+    border-right:2px solid white;
+    width:35px; }
+.weekday-starts-right {
+    border-left:2px solid white;
+    width:34px; }
 .weekday .timeslot {
     overflow: hidden;
     text-overflow: ellipsis;
