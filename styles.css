@@ -852,17 +852,38 @@ a.abbrev,
 
 /* weekschedule */
 div.weekday {
-    width:130px;
+    /*width:130px;*/
+    width:126px;
     float:left; }
-#weekday-starts {
-    width:50px;
+.weekday-starts {
+    overflow:hidden;
+    /*width:38px;*/
+    font-size:10px;
+    width:33px;
     float:left; }
 .weekday .timeslot {
-    min-height:30px;
-    border-bottom:1px solid white;
     overflow: hidden;
     text-overflow: ellipsis;
     -o-text-overflow: ellipsis; }
+.weekday .timeslot div {
+    border-top:1px solid white; }
+
+div.weekday {
+    border-right:2px solid white; }
+div.weekday-last { border-right:none; }
+
+div.weekday, .weekday-starts {
+    text-align:center; }
+div.weekday h2 {
+    margin:0;
+    padding:5px 0;
+    background-color:black;
+    color:white;
+    text-transform:uppercase;
+    font-size:14px;
+    line-height:16px;
+    border-bottom:1px solid white; }
+
 
 /* show detail */
 .show-detail-header { 
