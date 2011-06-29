@@ -307,13 +307,22 @@ ul#the_navigation > li.section-projekte > a {
 ul#the_navigation ul {
     /* margin-top=58+6
      * */
+    left:0;
     position:absolute;
-    top:64px;
-    left:0px;
-    margin:0px 0px 0px 10px;
-    padding:0px 0px 0px 0px;
+    margin:12px 0 0 10px;
+    padding:0;
     text-align:left; }
-ul#the_navigation ul ul { top:20px; }
+ul#the_navigation ul ul { margin-top:2px; }
+
+ul#the_navigation li.section-info ul ul { margin-top:19px; }
+ul#the_navigation li.section-info ul ul ul { margin-top:2px; }
+
+ul#the_navigation ul { width:768px; }
+ul#the_navigation ul ul { width:758px; }
+ul#the_navigation ul ul ul { width:748px; }
+ul#the_navigation ul ul ul ul { width:738px; }
+
+
 /* don't display menus from 5th level on */
 ul#the_navigation ul ul ul ul { display:none; }
 ul#the_navigation ul li { margin-right:0px; }
