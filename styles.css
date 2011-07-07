@@ -856,10 +856,8 @@ p.show-description { font-style:italic; }
 .show-abbrevs {
     width:60px; }
 #timeslots .show-detail {
-    width:431px;
     margin-left:120px; }
 #shows .show-detail {
-    width:491px;
     margin-left:60px; }
 
 /* weekschedule */
