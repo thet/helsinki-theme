@@ -1001,3 +1001,7 @@ ul.nowplaying li {
 ul.recommendations-list li {
     white-space:nowrap;
     display:list-item; }
+ul.recommendations-list li a {
+    display:inline-block;
+    min-width:100px; }
+
