@@ -852,7 +852,7 @@ p.show-description { font-style:italic; }
     float:left; }
 .show-start { width:60px; }
 .show-abbrevs {
-    padding:5px;
+    padding:2px 5px;
     text-align:center;
     width:50px; }
 #timeslots .show-detail {
