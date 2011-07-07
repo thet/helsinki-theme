@@ -102,7 +102,7 @@ a { color:black; }
 .program-box .previous a:hover,
 .program-box .next a:hover,
 .program-box .after_next a:hover,
-a:hover { color:#777 !important; }
+a:hover { color:#777; }
 .program-box .previous,
 .program-box .previous a,
 .program-box .next,
@@ -112,11 +112,11 @@ a:hover { color:#777 !important; }
 #column-main a { font-weight:bold; }
 ul#the_navigation ul li a.navTreeCurrentItem, 
 ul#the_navigation ul li a.navTreeItemInPath {
-    color:black !important; }
+    color:black; }
 
-.state-published {
+/*.state-published {
     color:#777 !important; }
-
+*/
 
 div.listingBar a.next,
 div.listingBar a.previous { padding:0; }
