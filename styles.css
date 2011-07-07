@@ -723,11 +723,9 @@ dl.filterbox li { line-height:1em; }
 .filterbox .abbrev { padding-left:20px; }
 .show-abbrevs .abbrev {
     display: inline-block;
-    float: left;
     width: 11px;
     height: 11px;
-    margin-bottom: 2px;
-    margin-right: 2px; }
+    margin-bottom: 2px; }
 .filterbox a:hover {
     font-weight:bold;
     background-color:transparent; }
@@ -854,6 +852,7 @@ p.show-description { font-style:italic; }
     float:left; }
 .show-start { width:60px; }
 .show-abbrevs {
+    text-align:center;
     width:60px; }
 #timeslots .show-detail {
     margin-left:120px; }
