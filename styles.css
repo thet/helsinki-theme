@@ -71,12 +71,14 @@ p {
 
 .portlet h3 {
     margin-top:0;
-    margin-bottom:0.5em;
+    margin-bottom:0.2em;
     font-size:1em;
     text-transform:none; }
 .portlet p {
     margin-top:0;
     margin-bottom:0.5em; }
+
+.portlet { line-height:1.2em; }
 
 table td { vertical-align:top; }
 
@@ -863,7 +865,8 @@ a.abbrev,
 div.weekday {
     /*width:130px;*/
     width:125px;
-    float:left; }
+    float:left; 
+    line-height:1.2em; }
 .weekday-starts {
     background-color:#858488;
     color:white;
@@ -997,3 +1000,6 @@ ul.nowplaying li {
     -moz-column-count: 3;
     -moz-column-gap: 20px;
 }
+
+
+

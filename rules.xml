@@ -22,6 +22,7 @@
   <dest href="http://localhost:8000/nop/get_current" />
 </proxy>
 
+
 <!-- no django content, deliver it from plone -->
 <proxy path="regex:\/programm\/?$" class="common plone">
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/" />
