@@ -998,3 +998,4 @@ ul.nowplaying li {
     display:list-item;
     font-size:0.9em; }
 
+ul.recommendations-list li { white-space:nowrap; }
