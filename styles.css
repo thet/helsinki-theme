@@ -726,9 +726,6 @@ dl.filterbox li { line-height:1em; }
     width: 11px;
     height: 11px;
     margin-bottom: 2px; }
-.filterbox a:hover {
-    font-weight:bold;
-    background-color:transparent; }
 a.abbrev,
 .abbrev {
     background-repeat:no-repeat;
@@ -823,9 +820,6 @@ a.abbrev,
 .portletItem.bcformat {
     margin-bottom:5px;
     padding:3px; }
-.portletItem.bcformat a:hover {
-    font-weight:bold; 
-    background-color:transparent; }
 
 .show-start { font-size:1em; }
 #timeslots h3,
