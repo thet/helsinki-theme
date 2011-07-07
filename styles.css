@@ -850,7 +850,7 @@ p.show-description { font-style:italic; }
 .show-start,
 .show-abbrevs {
     float:left; }
-.show-start { width:60px; }
+.show-start { width:50px; }
 .show-abbrevs {
     padding:2px 5px;
     text-align:center;
