@@ -921,7 +921,6 @@ div.weekday h2 {
     display:inline-block;
     width:20%; }
 
-
 .program-box .format {
     width:8px;
     font-size:8px; }
@@ -1001,5 +1000,6 @@ ul.nowplaying li {
     -moz-column-gap: 20px;
 }
 
-
+#program-current-box td {
+    padding-bottom:0.4em; }
 
