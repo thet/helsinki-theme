@@ -112,7 +112,7 @@ a:hover { color:#777; }
 #column-main a { font-weight:bold; }
 ul#the_navigation ul li a.navTreeCurrentItem, 
 ul#the_navigation ul li a.navTreeItemInPath {
-    color:black; }
+    color:black !important; }
 
 .state-published {
     color:#777 !important; }
