@@ -838,14 +838,14 @@ a.abbrev,
     font-size:1em; }
 #shows p,
 #timeslots p {
-    margin-top:0;
-    margin-bottom:0.643em;
-    font-size:0.9em; }
+    margin:0;
+    font-size:0.9em;
+    font-style:italic; }
 
 /* showlist */
 #shows .show,
 #timeslots .timeslot {
-    padding:3px 3px;
+    padding:0.4em;
     min-height:30px;
     clear:both; 
     border-bottom:1px solid white; }
