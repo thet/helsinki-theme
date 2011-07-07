@@ -109,7 +109,7 @@ a:hover { color:#777; }
 .program-box .next a,
 .program-box .after_next,
 .program-box .after_next a { color:#AAA; }
-#column-main a { font-weight:bold; }
+#column-1 a, #column-2 a, #column-main a { font-weight:bold; }
 ul#the_navigation ul li a.navTreeCurrentItem, 
 ul#the_navigation ul li a.navTreeItemInPath {
     color:black; }
