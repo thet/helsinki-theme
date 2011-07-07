@@ -31,8 +31,6 @@ body {
 ::selection 	 	{background: #FBD62A;}
 ::-moz-selection 	{background: #FBD62A;}
 
-.state-published {
-    color:black !important; }
 
 
 
@@ -101,8 +99,6 @@ table td { vertical-align:top; }
 #content-core li { display:list-item; }
 
 a { color:black; }
-ul#the_navigation ul li a.navTreeCurrentItem, 
-ul#the_navigation ul li a.navTreeItemInPath, 
 .program-box .previous a:hover,
 .program-box .next a:hover,
 .program-box .after_next a:hover,
@@ -114,6 +110,12 @@ a:hover { color:#777; }
 .program-box .after_next,
 .program-box .after_next a { color:#AAA; }
 #column-main a { font-weight:bold; }
+ul#the_navigation ul li a.navTreeCurrentItem, 
+ul#the_navigation ul li a.navTreeItemInPath {
+    color:black; }
+
+.state-published {
+    color:#777 !important; }
 
 
 div.listingBar a.next,
