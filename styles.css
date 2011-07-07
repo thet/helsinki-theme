@@ -839,8 +839,8 @@ a.abbrev,
 #shows p,
 #timeslots p {
     margin:0;
-    font-size:0.9em;
-    font-style:italic; }
+    font-size:0.9em; }
+p.show-description { font-style:italic; }
 
 /* showlist */
 #shows .show,
