@@ -1003,3 +1003,7 @@ ul.nowplaying li {
 #program-current-box td {
     padding-bottom:0.4em; }
 
+#shows ul li {
+    display:list-item;
+    font-size:0.9em; }
+
