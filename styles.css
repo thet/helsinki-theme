@@ -102,7 +102,7 @@ a { color:black; }
 .program-box .previous a:hover,
 .program-box .next a:hover,
 .program-box .after_next a:hover,
-a:hover { color:#777; }
+a:hover { color:#777 !important; }
 .program-box .previous,
 .program-box .previous a,
 .program-box .next,
