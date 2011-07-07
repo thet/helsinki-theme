@@ -101,6 +101,8 @@ table td { vertical-align:top; }
 #content-core li { display:list-item; }
 
 a { color:black; }
+ul#the_navigation ul li a.navTreeCurrentItem, 
+ul#the_navigation ul li a.navTreeItemInPath, 
 .program-box .previous a:hover,
 .program-box .next a:hover,
 .program-box .after_next a:hover,
@@ -337,18 +339,7 @@ ul#the_navigation ul ul ul ul { display:none; }
 ul#the_navigation ul li { margin-right:0px; }
 ul#the_navigation ul li:after { content:" /// "; }
 
-ul#the_navigation ul li a {
-    color:#636363 !important;
-    /*font-weight:bold;*/
-    text-transform:uppercase;
-    line-height:1em;
-    background:none !important;
-    padding:0 !important; }
-ul#the_navigation ul li a.navTreeCurrentItem, 
-ul#the_navigation ul li a.navTreeItemInPath, 
-ul#the_navigation ul li a:hover {
-    /*color:#918F90;*/
-    color:black !important; }
+ul#the_navigation ul li a {  text-transform:uppercase; }
 
 /* nav rollover */
 ul#the_navigation ul { display:none; }
