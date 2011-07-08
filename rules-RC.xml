@@ -24,16 +24,16 @@
 
 <!-- no django content, deliver it from plone -->
 <proxy path="regex:\/programm\/?$" class="common plone">
-  <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/" />
+  <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/" />
 </proxy>
 <proxy path="/programm/folder_contents" class="common plone">
-  <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/folder_contents" />
+  <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/folder_contents" />
 </proxy>
 <proxy path="/programm/programmflyer" class="common plone">
-  <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/programmflyer" />
+  <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/programmflyer" />
 </proxy>
 <proxy path="/programm/programmverwaltung" class="common plone">
-  <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/programmverwaltung" />
+  <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/programmverwaltung" />
 </proxy>
 
 <!-- django proxy and matches with rewrites -->
@@ -60,7 +60,7 @@
 
 <!-- plone proxy and matches -->
 <proxy path="/" class="common plone">
-  <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.at:80/radio-helsinki/helsinki/VirtualHostRoot/" />
+  <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/" />
 </proxy>
 <match path="regex:^/$" class="common plone programblocks" />
 <match path="/info" class="common plone programblocks" />
