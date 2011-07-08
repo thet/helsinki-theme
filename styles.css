@@ -1006,5 +1006,5 @@ ul.recommendations-list li a {
     min-width:100px; }
 
 /* disqus */
-#dsq-options { display:none !important; }
+.dsq-options { display:none !important; }
 #dsq-global-toolbar { display:none !important; }
