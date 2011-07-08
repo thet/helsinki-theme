@@ -1008,4 +1008,4 @@ ul.recommendations-list li a {
 /* disqus */
 .dsq-options { display:none !important; }
 #dsq-global-toolbar { display:none !important; }
-#dsq-comments-title { display:none; }
+#dsq-comments-title { display:none !important; }
