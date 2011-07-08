@@ -1005,3 +1005,6 @@ ul.recommendations-list li a {
     display:inline-block;
     min-width:100px; }
 
+/* disqus */
+#dsq-options { display:none; }
+#dsq-global-toolbar { display:none; }
