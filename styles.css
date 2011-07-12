@@ -1012,3 +1012,6 @@ ul.recommendations-list li a {
 .dsq-options { display:none !important; }
 #dsq-global-toolbar { display:none !important; }
 #dsq-comments-title { display:none !important; }
+
+/* cse */
+#cse-search-results iframe { width:551px; }

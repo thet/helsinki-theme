@@ -230,7 +230,7 @@
 <rule class="common" suppress-standard="1">
   <theme href="/static/index.html" />
 
-  <drop theme="/html/head/meta"/>
+  <drop theme="meta[charset *= 'utf-8']" />
 
   <replace content="/html/head/title" theme="/html/head/title"/>
   <append content="/html/head/base" theme="children:/html/head"/>
