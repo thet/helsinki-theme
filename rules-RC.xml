@@ -30,7 +30,7 @@
   <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/folder_contents" />
 </proxy>
 <proxy path="/programm/folder_summary_view" class="common plone">
-  <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/folder_summary_view" />
+  <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/folder_summary_view" />
 </proxy>
 <proxy path="/programm/programmflyer" class="common plone">
   <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/programmflyer" />
