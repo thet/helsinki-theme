@@ -29,6 +29,9 @@
 <proxy path="/programm/folder_contents" class="common plone">
   <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/folder_contents" />
 </proxy>
+<proxy path="/programm/folder_summary_view" class="common plone">
+  <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/folder_summary_view" />
+</proxy>
 <proxy path="/programm/programmflyer" class="common plone">
   <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.adm.at:80/radio-helsinki/helsinki/VirtualHostRoot/programm/programmflyer" />
 </proxy>
@@ -102,7 +105,7 @@
 <!-- programmverwaltung -->
 <!-- TODO: submitting does not work... -->
 <!-- rule class="dj-admin" suppress-standard="1">
-  <theme href="/programm/programmflyer?deliv_force_external=1;deliv_full_headers=1" />
+  <theme href="/programm/folder_summary_view?deliv_force_external=1;deliv_full_headers=1" />
   <drop theme="attributes(class):#the_navigation li a"/>
   <drop content="#footer"/>
   <drop content=".object-tools .viewsitelink" />
@@ -113,8 +116,8 @@
 </rule -->
 
 <rule class="program" suppress-standard="1">
-  <theme href="/programm/programmflyer?deliv_force_external=1" />
-  <!--theme href="/programm/programmflyer?deliv_force_external=1;deliv_full_headers=1" /-->
+  <theme href="/programm/folder_summary_view?deliv_force_external=1" />
+  <!--theme href="/programm/folder_summary_view?deliv_force_external=1;deliv_full_headers=1" /-->
   <replace content="/html/head/title" theme="/html/head/title"/>
   <drop theme="/html/head/base"/>
   <drop theme="link[rel='kss-base-url']"/>

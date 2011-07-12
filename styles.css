@@ -226,8 +226,11 @@ textarea:hover { background-color:#DDD !important; }
     background:url(img/suche.png) no-repeat left center; }
 #the_searchbox:hover {
     background-image:url(img/suche-over.png); }
-#the_searchbox input { width:190px; }
-#the_searchbox input.searchButton { display:none; }
+#the_searchbox input {
+    width:190px;
+    background-image:none !important; }
+#the_searchbox input.searchButton,
+#the_searchbox input[type='submit'] { display:none; }
 #livestream a,
 #onair a {
     color:white;
