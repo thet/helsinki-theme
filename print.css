@@ -1,6 +1,8 @@
 /* hide irrelevant */
 
-#the_metamenu, #the_header, #the_logo a, #column-1, #column-2, #the_footer { display:none; } 
+#the_metamenu, #the_header, #the_logo a, #column-1, #column-2, #the_footer,
+#dsq-new-post { display:none; }
+
 #the_logo {
     width:289px;
     height:80px;
