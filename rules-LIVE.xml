@@ -76,8 +76,8 @@
 <match path="regex:.*/plugins/.*" abort="1" /> 
 
 
-<match path="regex:.*css" abort="1" />
-<match path="regex:.*js" abort="1" />
+<match path="regex:.*\.css$" abort="1" />
+<match path="regex:.*\.js$" abort="1" />
 
 
 <rule class="nowplaying" suppress-standard="1">
