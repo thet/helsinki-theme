@@ -49,17 +49,17 @@
   <dest href="http://localhost:8000/program" />
   <response rewrite-links="1" />
 </proxy>
-<match path="/programm/today" class="program today filter-format box-tips box-calendar" />
-<match path="regex:\/programm\/\d{4}\/\d{1,2}\/\d{1,2}\/?$" class="program today filter-format box-tips box-calendar" />
+<match path="/programm/today" class="program today filter-format box-calendar box-tips" />
+<match path="regex:\/programm\/\d{4}\/\d{1,2}\/\d{1,2}\/?$" class="program today filter-format box-calendar box-tips" />
 <match path="/programm/week" class="program week" />
 <match path="regex:\/programm\/\d{4}\/\d{1,2}\/?$" class="program week" />
 <match path="regex:\/programm\/shows\/?$" class="program shows filter-format filter-topic" />
-<match path="regex:\/programm\/shows\/.+" class="program comments shows" />
-<match path="regex:\/programm\/hosts\/?$" class="program hosts box-tips box-current" />
-<match path="regex:\/programm\/hosts\/.+" class="program hosts box-tips box-current" />
-<match path="regex:\/programm\/tips\/?$" class="program tips box-tips box-current" />
-<match path="regex:\/programm\/tips\/.+" class="program comments tips box-tips box-current" />
-<match path="regex:\/programm\/[0-9]+\/?$" class="program comments tips box-tips box-current" />
+<match path="regex:\/programm\/shows\/.+" class="program comments shows  box-current box-tips" />
+<match path="regex:\/programm\/hosts\/?$" class="program hosts box-current box-tips" />
+<match path="regex:\/programm\/hosts\/.+" class="program hosts box-current box-tips" />
+<match path="regex:\/programm\/tips\/?$" class="program tips box-current box-tips" />
+<match path="regex:\/programm\/tips\/.+" class="program comments tips box-current box-tips" />
+<match path="regex:\/programm\/[0-9]+\/?$" class="program comments tips box-current box-tips" />
 
 
 <!-- plone proxy and matches -->
@@ -100,7 +100,6 @@
     theme="children:#column-1" />
   <replace content="children:#content-main" theme="children:#column-main" />
 </rule>
-
 
 <!-- programmverwaltung -->
 <!-- TODO: submitting does not work... -->
@@ -175,22 +174,22 @@
     theme="children:#column-main"/>
 </rule>
 <rule class="filter-topic">
-  <prepend if-content="#filter-topic"
+  <append if-content="#filter-topic"
     content="children:#filter-topic"
     theme="children:#column-1"/>
 </rule>
 <rule class="filter-format">
-  <prepend if-content="#filter-format"
+  <append if-content="#filter-format"
     content="children:#filter-format"
     theme="children:#column-2"/>
 </rule>
 <rule class="box-tips">
-  <prepend href="/programm/tips_box/"
+  <append href="/programm/tips_box/"
     content="children:body"
     theme="children:#column-1" />
 </rule>
 <rule class="box-current">
-  <prepend href="/programm/current_box/"
+  <append href="/programm/current_box/"
     content="children:body"
     theme="children:#column-1" />
 </rule>
@@ -208,7 +207,7 @@
   <append if-content="script[src *= 'jquery-ui.min.js']"
     content="script[src *= 'jquery-ui.min.js']"
     theme="/html/head/script" />
-  <prepend if-content="#box_calendar"
+  <append if-content="#box_calendar"
     content="#box_calendar"
     theme="children:#column-1"/>
 </rule>
