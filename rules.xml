@@ -67,7 +67,8 @@
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/" />
 </proxy>
 
-<match path="regex:\/.+$" class="common plone comments box-comments" />
+<!-- match everything below the root but not urls beginning with programm -->
+<match path="regex:\/(?!programm).+$" class="common plone comments box-comments" />
 
 <match path="regex:^/$" class="common plone programblocks" />
 <match path="/info" class="common plone programblocks" />
