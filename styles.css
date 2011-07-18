@@ -79,6 +79,7 @@ p {
 .portlet { line-height:1.2em; }
 
 table td { vertical-align:top; }
+table.listing, table.plain { background:white; }
 
 .documentDescription { font-weight:bold; }
 .documentByLine {
@@ -1013,5 +1014,13 @@ ul.recommendations-list li a {
 #dsq-global-toolbar { display:none !important; }
 #dsq-comments-title { display:none !important; }
 
+.dsq-widget-avatar { display:none; }
+#column-2 dl.comments-box dd {
+    text-align:left; }
+p.dsq-widget-meta { float:right; }
+.dsq-widget-meta > a:first-child { display:none; }
+.dsq-widget-comment { font-size:90%; }
+li.dsq-widget-item { margin:0 0 0.25em 0 !important; }
+ 
 /* cse */
 #cse-search-results iframe { width:551px; }
