@@ -65,7 +65,8 @@
 <proxy path="/" class="common plone">
   <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.at:80/radio-helsinki/helsinki/VirtualHostRoot/" />
 </proxy>
-<match path="regex:\/.+$" class="common plone box-comments" />
+
+<match path="regex:\/.+$" class="common plone comments box-comments" />
 
 <match path="regex:^/$" class="common plone programblocks" />
 <match path="/info" class="common plone programblocks" />
@@ -103,6 +104,11 @@
   <replace content="children:#content-main" theme="children:#column-main" />
 </rule>
 
+<rule class="comments">
+  <append href="/static/snippets.html"
+    content="children:#disqus_dev"
+    theme="children:#column-main"/>
+</rule>
 <rule class="box-comments">
   <append href="/static/snippets.html"
     content="children:#disqus_box_comments"
@@ -177,11 +183,6 @@
 </rule>
 
 <!-- program content blocks -->
-<rule class="comments">
-  <append href="/static/snippets.html"
-    content="children:#disqus_dep"
-    theme="children:#column-main"/>
-</rule>
 <rule class="filter-topic">
   <append if-content="#filter-topic"
     content="children:#filter-topic"
