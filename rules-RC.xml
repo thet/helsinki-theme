@@ -85,7 +85,7 @@
 <match path="regex:.*\.css$" abort="1" />
 <match path="regex:.*\.js$" abort="1" />
 
-
+<!-- CONTENT BLOCKS -->
 <rule class="nowplaying" suppress-standard="1">
   <theme href="/livestream?deliv_force_external=1" />
   <!-- theme href="/livestream?deliv_force_external=1;deliv_full_headers=1" /-->
@@ -107,17 +107,28 @@
   <replace content="children:#content-main" theme="children:#column-main" />
 </rule>
 
-<rule class="comments">
+<rule class="comments" suppress-standard="1">
   <append href="/static/snippets.html"
     content="children:#disqus_dev"
     theme="children:#column-main"/>
 </rule>
-<rule class="box-comments">
+<rule class="box-comments" suppress-standard="1">
   <append href="/static/snippets.html"
     content="children:#disqus_box_comments"
     theme="children:#column-2"/>
 </rule>
 
+<rule class="programblocks" suppress-standard="1">
+  <append href="/programm/tips_box/"
+    content="children:body"
+    theme="children:#column-1" />
+  <append href="/programm/current_box/"
+    content="children:body"
+    theme="children:#column-1" />
+</rule>
+
+
+<!-- DJANGO -->
 <!-- programmverwaltung -->
 <!-- TODO: submitting does not work... -->
 <!-- rule class="dj-admin" suppress-standard="1">
@@ -226,18 +237,7 @@
 </rule>
 
 
-
-
 <!-- plone -->
-<rule class="programblocks" suppress-standard="1">
-  <prepend href="/programm/tips_box/"
-    content="children:body"
-    theme="children:#column-1" />
-  <prepend href="/programm/current_box/"
-    content="children:body"
-    theme="children:#column-1" />
-</rule>
-
 <rule class="common" suppress-standard="1">
   <theme href="/static/index.html" />
 
