@@ -119,10 +119,10 @@
 </rule>
 
 <rule class="programblocks" suppress-standard="1">
-  <append href="/programm/tips_box/"
+  <prepend href="/programm/tips_box/"
     content="children:body"
     theme="children:#column-1" />
-  <append href="/programm/current_box/"
+  <prepend href="/programm/current_box/"
     content="children:body"
     theme="children:#column-1" />
 </rule>
