@@ -22,7 +22,6 @@
   <dest href="http://localhost:8000/nop/get_current" />
 </proxy>
 
-
 <!-- no django content, deliver it from plone -->
 <proxy path="regex:\/programm\/?$" class="common plone">
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/" />
@@ -73,7 +72,6 @@
 <match path="regex:^/$" class="common plone programblocks" />
 <match path="/info" class="common plone programblocks" />
 <match path="/livestream" class="common plone programblocks" />
-<match path="/nowplaying" class="common plone programblocks" />
 <!-- plone popups -->
 <match path="regex:.*contenthistorypopup.*" abort="1" />
 <match path="regex:.*/image_view_fullscreen$" abort="1" /> 

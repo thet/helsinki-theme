@@ -72,7 +72,6 @@
 <match path="regex:^/$" class="common plone programblocks" />
 <match path="/info" class="common plone programblocks" />
 <match path="/livestream" class="common plone programblocks" />
-<match path="/nowplaying" class="common plone programblocks" />
 <!-- plone popups -->
 <match path="regex:.*contenthistorypopup.*" abort="1" />
 <match path="regex:.*/image_view_fullscreen$" abort="1" /> 
