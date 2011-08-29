@@ -93,7 +93,7 @@
   <drop theme="/html/head/base"/>
   <drop theme="#portal-breadcrumbs"/>
   <drop content="script[src *= 'jquery.min.js']"/>
-  <!-- drop content="script[src *= 'jquery.tools.min.js']"/-->
+  <drop content="script[src *= 'jquery.tools.min.js']"/>
   
   <append content="/html/head/script" theme="/html/head/link[last()]"/>
   <append content="link[href *= 'css']" theme="/html/head/link[last()]"/>
