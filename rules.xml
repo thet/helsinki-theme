@@ -32,6 +32,9 @@
 <proxy path="/programm/folder_summary_view" class="common plone">
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/folder_summary_view" />
 </proxy>
+<proxy path="/programm/folder_rename_form" class="common plone">
+  <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/folder_rename_form" />
+</proxy>
 <proxy path="/programm/programmflyer" class="common plone">
   <dest href="http://localhost:8080/VirtualHostBase/http/localhost:8880/radio-helsinki/helsinki/VirtualHostRoot/programm/programmflyer" />
 </proxy>
