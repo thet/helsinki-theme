@@ -866,6 +866,13 @@ p.show-description { font-style:italic; }
     margin-left:60px; }
 
 /* weekschedule */
+table.week-navigation td { text-align:center; padding:0 2em; }
+table.week-navigation td.current,
+table.week-navigation td:hover { background-color:black; color:white; font-weight:bold; }
+table.week-navigation td:hover a,
+table.week-navigation td:hover a:hover { color:white; }
+table.week-navigation { margin:0 auto 0.55em auto; }
+
 div.weekday {
     /*width:130px;*/
     width:125px;
