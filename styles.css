@@ -114,7 +114,7 @@ ul#the_navigation ul li a.navTreeCurrentItem,
 ul#the_navigation ul li a.navTreeItemInPath {
     color:black; }
 #column-main a { font-weight:bold; color:white; background:black; }
-#column-main a:hover { color:#FBD62A; }
+#column-main a:hover { color:#FBD62A; background:black; }
 #column-main h1 a, #column-main h2 a, #column-main h3 a { color:black; background:none; }
 
 /* #column-main a:before { content:"⇱"; }
