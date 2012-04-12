@@ -113,9 +113,11 @@ a:hover { color:#777; }
 ul#the_navigation ul li a.navTreeCurrentItem, 
 ul#the_navigation ul li a.navTreeItemInPath {
     color:black; }
-#column-main a { font-weight:bold; color:white; background:black; }
-#column-main a:hover { color:#FBD62A; background:black; }
-#column-main h1 a, #column-main h2 a, #column-main h3 a { color:black; background:none; }
+#content-core a { font-weight:bold; color:white; background:black; }
+#content-core a:hover { color:#FBD62A; background:black; }
+
+#content-core h1 a, #content-core h2 a, #content-core h3 a,
+#content-core dl a { color:black; background:none; }
 
 /* #column-main a:before { content:"⇱"; }
 #column-main h1 a:before, #column-main h2 a:before, #column-main h3 a:before { content:''; } */
