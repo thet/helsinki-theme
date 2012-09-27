@@ -118,6 +118,9 @@ ul#the_navigation ul li a.navTreeItemInPath {
 #content-core a { color:white; background:black; }
 #column-main a:hover { color:#FBD62A; background:black; }
 
+#content-core .newsImageContainer a { background:none; }
+#column-main .newsImageContainer a:hover { background:none; }
+
 #content-core h1 a, #content-core h2 a, #content-core h3 a,
 #content-core dl a { color:black; background:none; }
 
