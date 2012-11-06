@@ -15,12 +15,20 @@
 
 <!-- now playing -->
 <proxy path="/nowplaying" class="nowplaying">
+  <dest href="https://pv.helsinki.at/nop" />
+  <response rewrite-links="1" />
+</proxy>
+<proxy path="/get_current">
+  <dest href="https://pv.helsinki.at/nop/get_current" />
+</proxy>
+<!-- now playing -->
+<!--proxy path="/nowplaying" class="nowplaying">
   <dest href="http://localhost:8000/nop" />
   <response rewrite-links="1" />
 </proxy>
 <proxy path="/get_current">
   <dest href="http://localhost:8000/nop/get_current" />
-</proxy>
+</proxy-->
 
 <!-- no django content, deliver it from plone -->
 <proxy path="regex:\/programm\/?$" class="common plone">
@@ -44,13 +52,22 @@
 
 <!-- django proxy and matches with rewrites -->
 <!--proxy path="/programm/admin" class="dj-admin">
-  <dest href="http://localhost:8000/admin" />
+  <dest href="https://pv.helsinki.at/admin" />
   <response rewrite-links="1" />
 </proxy-->
 <proxy path="/programm" class="program">
-  <dest href="http://localhost:8000/program" />
+  <dest href="https://pv.helsinki.at/program" />
   <response rewrite-links="1" />
 </proxy>
+<!-- django proxy and matches with rewrites -->
+<!--proxy path="/programm/admin" class="dj-admin">
+  <dest href="http://localhost:8000/admin" />
+  <response rewrite-links="1" />
+</proxy-->
+<!--proxy path="/programm" class="program">
+  <dest href="http://localhost:8000/program" />
+  <response rewrite-links="1" />
+</proxy-->
 <match path="/programm/today" class="program today filter-format box-comments box-calendar box-tips" />
 <match path="regex:\/programm\/\d{4}\/\d{1,2}\/\d{1,2}\/?$" class="program today filter-format box-comments box-calendar box-tips" />
 <match path="/programm/week" class="program week" />
@@ -257,7 +274,7 @@
     theme="link[href *= 'calendar-system']"/>
   
   <!-- Add in the Plone-created CSS, KSS and JS in addition to the static ones -->
-  <drop theme="link[href *= 'plonebase']"/>
+  <!--drop theme="link[href *= 'plonebase']"/-->
   
   <drop content="link[href *= 'public']"/>
   <drop content="link[href *= 'columns']"/>
