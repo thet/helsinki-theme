@@ -21,6 +21,10 @@
 <proxy path="/get_current">
   <dest href="https://pv.helsinki.at/nop/get_current" />
 </proxy>
+<proxy path="/site_media">
+  <dest href="https://pv.helsinki.at/site_media" />
+</proxy>
+
 
 <!-- no django content, deliver it from plone -->
 <proxy path="regex:\/programm\/?$" class="common plone">

@@ -727,6 +727,8 @@ ul#the_navigation > li > a,
         3px 3px 0px white; }
 
 /* program */
+
+/*
 .bf-experimentell { background-color:#A9C03E; }
 .bf-feature-magazin { background-color:#E54748; }
 .bf-horspiel-literatur { background-color:#C97485; }
@@ -734,6 +736,7 @@ ul#the_navigation > li > a,
 .bf-talk { background-color:#FAE24F; }
 .bf-unmoderiertes-musikprogramm { background-color:#ECD4AD; }
 .bf-vortrag-diskussion { background-color:#A57397; }
+*/
 
 dl.filterbox li { line-height:1em; }
 
@@ -748,6 +751,8 @@ a.abbrev,
     background-repeat:no-repeat;
     background-position:left center; }
 .abbrev span { display:none; }
+
+/*
 .mf-E { background-image:url(img/topics-11/b-e.png); }
 .filterbox .mf-E:hover { background-image:url(img/topics-11/b-e-over.png); }
 .mf-Ex { background-image:url(img/topics-11/b-ex.png); }
@@ -796,15 +801,9 @@ a.abbrev,
 .filterbox .st-S:hover { background-image:url(img/topics-11/r-s-over.png); }
 .st-W { background-image:url(img/topics-11/r-w.png); }
 .filterbox .st-W:hover { background-image:url(img/topics-11/r-w-over.png); }
+*/
 
-
-.show-detail-header .abbrev {
-    display: inline-block;
-    float: left;
-    width: 17px;
-    height: 17px;
-    margin-bottom: 2px;
-    margin-right: 2px; }
+/*
 .show-detail-header .mf-E { background-image:url(img/topics-17/b-e.png); }
 .show-detail-header .mf-Ex { background-image:url(img/topics-17/b-ex.png); }
 .show-detail-header .mf-H { background-image:url(img/topics-17/b-h.png); }
@@ -830,6 +829,15 @@ a.abbrev,
 .show-detail-header .st-P { background-image:url(img/topics-17/r-p.png); }
 .show-detail-header .st-S { background-image:url(img/topics-17/r-s.png); }
 .show-detail-header .st-W { background-image:url(img/topics-17/r-w.png); }
+*/
+
+.show-detail-header .abbrev {
+    display: inline-block;
+    float: left;
+    width: 17px;
+    height: 17px;
+    margin-bottom: 2px;
+    margin-right: 2px; }
 
 
 
