@@ -331,9 +331,10 @@
   <replace content="#portal-siteactions" theme="#portal-siteactions"/>
 
   <!--the_navigation -->
-  <drop content="#portaltab-index_html"/>
-  <drop content="#portaltab-livestream"/>
-  <append content="#portal-globalnav" theme="children:#the_navigation"/>
+  <append
+      content="children:#portal-column-two dl.portletNavigationTree ul.navTreeLevel0"
+      theme="children:#the_navigation"/>
+  <drop content="#portal-column-two dl.portletNavigationTree"/>
 
   <append content="children:#portal-breadcrumbs" theme="children:#portal-breadcrumbs"/>
 
