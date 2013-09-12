@@ -81,7 +81,9 @@
 <match path="/livestream" class="common plone programblocks" />
 <!-- plone popups -->
 <match path="regex:.*contenthistorypopup.*" abort="1" />
+<match path="regex:.*refbrowser_popup.*" abort="1" /> 
 <match path="regex:.*/image_view_fullscreen$" abort="1" /> 
+
 <!-- TinyMCE -->
 <match path="regex:^/portal_javascripts/.*" abort="1" />
 <match path="regex:.*/themes/advanced/.*" abort="1" />

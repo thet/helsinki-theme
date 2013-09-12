@@ -106,6 +106,7 @@
 <match path="regex:.*/themes/advanced/.*" abort="1" />
 <match path="regex:.*/plugins/.*" abort="1" /> 
 
+
 <match path="regex:.*\.css$" abort="1" />
 <match path="regex:.*\.js$" abort="1" />
 
@@ -278,7 +279,7 @@
     theme="link[href *= 'calendar-system']"/>
   
   <!-- Add in the Plone-created CSS, KSS and JS in addition to the static ones -->
-  <!--drop theme="link[href *= 'plonebase']"/-->
+  <!-- drop theme="link[href *= 'plonebase']"/-->
   
   <drop content="link[href *= 'public']"/>
   <drop content="link[href *= 'columns']"/>
