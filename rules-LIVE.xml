@@ -79,6 +79,10 @@
 <match path="regex:^/$" class="common plone programblocks" />
 <match path="/info" class="common plone programblocks" />
 <match path="/livestream" class="common plone programblocks" />
+
+<!-- ABORTS -->
+<!-- ajax_load=1 -->
+<match path="regex:.*foldercontents_get_table" abort="1" />
 <!-- plone popups -->
 <match path="regex:.*contenthistorypopup.*" abort="1" />
 <match path="regex:.*refbrowser_popup.*" abort="1" /> 
