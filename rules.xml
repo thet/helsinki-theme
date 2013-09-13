@@ -94,6 +94,7 @@
 <match path="regex:\/(?!programm).+$" class="common plone comments box-comments" />
 
 <match path="regex:^/$" class="common plone programblocks" />
+<match path="/news" class="common plone programblocks" />
 <match path="/info" class="common plone programblocks" />
 <match path="/livestream" class="common plone programblocks" />
 
@@ -179,9 +180,6 @@
   <drop theme="#portal-breadcrumbs"/>
   
   <drop theme="a[href *= 'deliv_force_external=1']"/>
-  
-  <drop theme="children:#column-1" />
-  <!-- drop theme="children:#column-2" /--> <!-- really? also teasers? -->
 
   <replace content="children:#content-main" theme="children:#column-main" />
 </rule>
@@ -268,6 +266,7 @@
 <rule class="common" suppress-standard="1">
   <theme href="/static/index.html" />
 
+  <drop theme=".dropme"/>
   <drop theme="meta[charset *= 'utf-8']" />
 
   <replace content="/html/head/title" theme="/html/head/title"/>
@@ -309,8 +308,6 @@
   <drop theme="children:#portal-breadcrumbs"/>
   <drop theme="#column-main h1"/>
   <drop theme="#column-main div.documentDescription"/>
-  <drop theme="children:#column-1"/>
-  <drop theme="children:#column-2"/>
 
   <replace content="attributes(class,dir):/html/body" theme="attributes:/html/body"/>
 
