@@ -287,9 +287,6 @@ ul#the_navigation > li.section-programm,
 ul#the_navigation > li.section-info,
 ul#the_navigation > li.section-projekte { display:inline-block; }
 
-ul#the_navigation > li.navTreeCurrentNode,
-ul#the_navigation > li.navTreeItemInPath,
-ul#the_navigation > li:hover { border-color:#FBD62A; }
 ul#the_navigation > li > a {
     width:244px;
     height:42px;
@@ -306,6 +303,9 @@ ul#the_navigation > li > a {
     text-decoration: none;
     text-transform:uppercase;
 }
+ul#the_navigation > li.navTreeCurrentNode > a,
+ul#the_navigation > li.navTreeItemInPath > a,
+ul#the_navigation > li:hover > a { border-color:#FBD62A; }
 ul#the_navigation > li.section-programm > a {
     background-image:url(img/str-quer-spiegel-gelb.png);
     margin-right:4px; }
