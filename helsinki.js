@@ -14,9 +14,3 @@ jQuery(document).ready(function() {
             jQuery("#onair input").val(nop_str);
         }});
 });
-
-jQuery(document).ready(function(){ 
-    jQuery("ul#the_navigation").superfish({ 
-        pathClass:  'navTreeItemInPath'
-    });
-});

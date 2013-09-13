@@ -100,19 +100,17 @@ table.listing, table.plain { background:white; }
 #content-core li { display:list-item; }
 
 a { color:black; }
+a:hover { text-decoration: underline; }
 .program-box .previous a:hover,
 .program-box .next a:hover,
-.program-box .after_next a:hover,
-a:hover { color:#777; }
+.program-box .after_next a:hover { color:#777; }
+/*a:hover { color:#777; }*/
 .program-box .previous,
 .program-box .previous a,
 .program-box .next,
 .program-box .next a,
 .program-box .after_next,
 .program-box .after_next a { color:#AAA; }
-ul#the_navigation ul li a.navTreeCurrentItem, 
-ul#the_navigation ul li a.navTreeItemInPath {
-    color:black; }
 
 #column-main a { font-weight:bold; }
 #content-core a { color:white; background:black; }
@@ -185,9 +183,8 @@ textarea:hover { background-color:#DDD !important; }
     width:778px; }
 
 /* common */
-#the_metamenu li,
-#the_navigation li { display:inline; }
-#the_lang a, #the_metamenu a, #the_logo a, #the_header a { text-decoration:none; }
+#the_metamenu li { display:inline; }
+#the_lang a, #the_metamenu a, #the_logo a { text-decoration:none; }
 
 
 /* the metamenu */
@@ -270,100 +267,101 @@ textarea:hover { background-color:#DDD !important; }
 
 
 
-/* main the_navigation */
+/* MAIN NAVIGATION */
 
 ul#the_navigation { 
-    /*margin-bottom = 176-58-33-6=79px;
-     * */
     z-index:1;
     position:relative;
     padding:0px;
     margin:6px 0px 79px 0px; }
 ul#the_navigation > li {
-    /* width = (778px - 2*6px) / 3 - 2*6px border
-     * height = 58-2*6=46px
-     */
-    width:244px;
-    height:42px;
-    border:5px solid black;
-    background:#FBD62A;
     /*display:inline-block;*/
     display:none; /* display only those, which are wanted */
-    text-align:center;
-    padding-top:2px; }
+}
 ul#the_navigation > li.section-programm,
 ul#the_navigation > li.section-info,
 ul#the_navigation > li.section-projekte { display:inline-block; }
-ul#the_navigation > li.section-programm-en,
-ul#the_navigation > li.section-info-en,
-ul#the_navigation > li.section-projekte-en { display:inline-block; }
-
 
 ul#the_navigation > li.navTreeCurrentNode,
 ul#the_navigation > li.navTreeItemInPath,
 ul#the_navigation > li:hover { border-color:#FBD62A; }
 ul#the_navigation > li > a {
+    width:244px;
+    height:42px;
+    padding-top:2px;
+    margin-bottom:10px;
+    display: block;
+    border:5px solid black;
+    background:#FBD62A;
     color:black !important;
-    font-weight:bold;
     font-size:28px;
+    font-weight:bold;
+    line-height:41px;
+    text-align:center;
+    text-decoration: none;
     text-transform:uppercase;
-    line-height:41px; }
-ul#the_navigation > li.section-programm-en,
-ul#the_navigation > li.section-programm {
+}
+ul#the_navigation > li.section-programm > a {
     background-image:url(img/str-quer-spiegel-gelb.png);
     margin-right:4px; }
-ul#the_navigation > li.section-info-en,
-ul#the_navigation > li.section-info {
+ul#the_navigation > li.section-info > a {
     background-image:url(img/pkt3-gelb.png);
     margin-right:4px; }
-ul#the_navigation > li.section-projekte-en,
-ul#the_navigation > li.section-projekte {
+ul#the_navigation > li.section-projekte > a {
     background-image:url(img/str-quer-gelb.png); }
-ul#the_navigation > li.section-programm-en > a,
-ul#the_navigation > li.section-programm > a {
+
+ul#the_navigation > li.section-programm > a > span {
     letter-spacing:-0.05em; 
     background:url(img/radio1-real.png) no-repeat left center;
     padding-left:49px !important; }
-ul#the_navigation > li.section-info-en > a,
-ul#the_navigation > li.section-info > a {
+ul#the_navigation > li.section-info > a > span {
     background:url(img/radio2-real.png) no-repeat left center;
     padding-left:65px !important;
     letter-spacing:0em; }
-ul#the_navigation > li.section-projekte-en > a,
-ul#the_navigation > li.section-projekte > a {
+ul#the_navigation > li.section-projekte > a > span {
     letter-spacing:-0.02em; 
     background:url(img/radio3-real.png) no-repeat left center;
     padding-left:55px !important; }
-ul#the_navigation ul {
-    /* margin-top=58+6
-     * */
-    left:0;
-    position:absolute;
-    margin:12px 0 0 10px;
-    padding:0;
-    text-align:left; }
-ul#the_navigation ul ul { margin-top:2px; }
 
-ul#the_navigation li.section-info ul ul { margin-top:19px; }
-ul#the_navigation li.section-info ul ul ul { margin-top:2px; }
+/* MAIN NAVIGATION SUBNAV */
+ul#the_navigation > li > ul {
+    position: absolute;
+    display: none;
+    left: 0;
+    top: 49px;
+    width: 766px;
+    margin-top:10px;
+    background: white;
+    text-align: left;
+    border:5px solid #FBD62A;
+}
+/*ul#the_navigation > li.section-info > ul {
+    display: block;
+}*/
+ul#the_navigation > li > ul:hover,
+ul#the_navigation > li:hover > ul {
+    display: block;
+}
+ul#the_navigation > li > ul > li {
+    margin: 1em;
+    color: black;
+    font-size: 1.2em;
+    display: inline-block;
+    vertical-align: top;
+}
 
-ul#the_navigation ul { width:768px; }
-ul#the_navigation ul ul { width:758px; }
-ul#the_navigation ul ul ul { width:748px; }
-ul#the_navigation ul ul ul ul { width:738px; }
+ul#the_navigation ul ul {
+    margin: 0.2em 0 0 0.5em;
+}
+ul#the_navigation ul ul li {
+    display: list-item;
+    font-size: 0.8em;
+    line-height: 1.6em;
+}
+ul#the_navigation > ul li.navTreeItemInPath,
+ul#the_navigation > ul li.navTreeCurrentNode { font-weight: bold; }
+ul#the_navigation ul ul ul { display: none; }
 
-
-/* don't display menus from 5th level on */
-ul#the_navigation ul ul ul ul { display:none; }
-ul#the_navigation ul li { margin-right:0px; }
-ul#the_navigation ul li:after { content:" /// "; }
-
-ul#the_navigation ul li a {  text-transform:uppercase; }
-
-/* nav rollover */
-ul#the_navigation ul { display:none; }
-ul#the_navigation li.navTreeItemInPath > ul,
-ul#the_navigation li.navTreeCurrentNode > ul { display:block; }
 
 
 /* project nav */
@@ -421,7 +419,7 @@ ul#the_navigation li.navTreeCurrentNode > ul { display:block; }
 /* portlets */
 #column-1, #column-2 { overflow:hidden; }
 #column-1 dl, #column-2 dl { margin: 0 0 12px 0; }
-#column-1 a, #column-2 a { text-decoration:none; }
+#column-2 a { text-decoration: none; }
 #column-1 dt, #column-2 dt { 
     font-weight:bold;
     text-transform:uppercase;
