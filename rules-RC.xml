@@ -74,7 +74,8 @@
 </proxy>
 
 <!-- match everything below the root but not urls beginning with programm -->
-<match path="regex:\/(?!programm).+$" class="common plone comments box-comments" />
+<match path="regex:\/(?!programm).+$" class="common plone box-comments" /><!-- no comments everywhere -->
+<!--match path="regex:\/(?!programm).+$" class="common plone comments box-comments" /-->
 
 <match path="regex:^/$" class="common plone programblocks" />
 <match path="/news" class="common plone programblocks" />
@@ -122,7 +123,7 @@
 
 <rule class="comments" suppress-standard="1">
   <append href="/static/snippets.html"
-    content="children:#disqus_dev"
+    content="children:#disqus_dep"
     theme="children:#column-main"/>
 </rule>
 <rule class="box-comments" suppress-standard="1">

@@ -91,7 +91,8 @@
 </proxy>
 
 <!-- match everything below the root but not urls beginning with programm -->
-<match path="regex:\/(?!programm).+$" class="common plone comments box-comments" />
+<match path="regex:\/(?!programm).+$" class="common plone box-comments" /><!-- no comments everywhere -->
+<!--match path="regex:\/(?!programm).+$" class="common plone comments box-comments" /-->
 
 <match path="regex:^/$" class="common plone programblocks" />
 <match path="/news" class="common plone programblocks" />
