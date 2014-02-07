@@ -130,6 +130,9 @@ a:hover {
     font-weight: normal;
 }
 
+#the_logo a {
+    padding: none;
+}
 
 #the_logo a:hover,
 .portlet-static-support-us a:hover,
