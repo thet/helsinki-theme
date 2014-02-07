@@ -1,5 +1,7 @@
 .portletTeaser dt { display:none; }
 
+
+.section-news #parent-fieldname-title { display: none; }
 /*
  * don't like hiding titles anymore. nav doesnt show them anymore.
  */
