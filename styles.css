@@ -1,10 +1,15 @@
 .portletTeaser dt { display:none; }
-.portaltype-folder #column-main .parent-fieldname-title { display:none; }
+
+/*
+ * don't like hiding titles anymore. nav doesnt show them anymore.
+ */
+/* .portaltype-folder #column-main .parent-fieldname-title { display:none; }
 .portaltype-folder #column-main .documentFirstHeading { display:none; }
 .portaltype-topic #column-main .parent-fieldname-title { display:none; }
 .portaltype-topic #column-main .documentFirstHeading { display:none; }
 .portaltype-folderish-document #column-main .parent-fieldname-title { display:none; }
 .portaltype-folderish-document #column-main .documentFirstHeading { display:none; }
+*/
 
 body { font-size:75%; }
 html>body { font-size:12px; }
