@@ -1105,5 +1105,16 @@ p.dsq-widget-meta { float:right; }
 .dsq-widget-comment { font-size:90%; }
 li.dsq-widget-item { margin:0 0 0.25em 0 !important; }
 
+
+/* make author name bold, but not the comment itself */
+.dsq-widget-item {
+    font-weight: bold;
+}
+. dsq-widget-comment,
+.dsq-widget-meta {
+    font-weight: normal;
+}
+
+
 /* cse */
 #cse-search-results iframe { width:551px; }
