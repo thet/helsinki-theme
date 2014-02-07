@@ -23,16 +23,16 @@ body.smallText {
     line-height:1.3em; }
 
 body {
-	background: white;
-	padding:0px 63px 0;
-	width:960px;
+    background: white;
+    padding:0px 63px 0;
+    width:960px;
     margin:0 auto;
     font-family:sans-serif;
     line-height:1.4em;
     word-wrap:break-word;
-	-webkit-tap-highlight-color: rgb(255,255,0); }
-::selection 	 	{background: #FBD62A;}
-::-moz-selection 	{background: #FBD62A;}
+    -webkit-tap-highlight-color: rgb(255,255,0); }
+::selection         {background: #FBD62A;}
+::-moz-selection    {background: #FBD62A;}
 
 
 
