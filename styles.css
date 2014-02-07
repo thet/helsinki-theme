@@ -118,7 +118,7 @@ a:hover { text-decoration: underline; }
 .program-box .after_next a { color:#AAA; }
 
 #column-main a { font-weight:bold; }
-#content-core a { color:white; background:black; }
+#content-core a { color:white; background:black; padding: 0 0.1em; }
 #column-main a:hover { color:#FBD62A; background:black; }
 
 #content-core .newsImageContainer a { background:none; }
@@ -1057,12 +1057,17 @@ ul.nowplaying li {
     display:list-item;
     font-size:0.9em; }
 
+ul.recommendations-list {
+    display: table;
+    border-spacing: 0.5em 1em;
+}
 ul.recommendations-list li {
-    white-space:nowrap;
-    display:list-item; }
-ul.recommendations-list li a {
-    display:inline-block;
-    min-width:100px; }
+    display: table-row;
+}
+ul.recommendations-list li a,
+ul.recommendations-list li .title {
+    display: table-cell;
+}
 
 /* disqus */
 .dsq-options { display:none !important; }
