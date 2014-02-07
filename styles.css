@@ -1064,7 +1064,10 @@ ul.recommendations-list {
 ul.recommendations-list li {
     display: table-row;
 }
-ul.recommendations-list li a,
+ul.recommendations-list li a {
+    display: table-cell;
+    min-width: 7em;
+}
 ul.recommendations-list li .title {
     display: table-cell;
 }
