@@ -1086,7 +1086,7 @@ ul.recommendations-list li {
 }
 ul.recommendations-list li a {
     display: table-cell;
-    min-width: 7em;
+    min-width: 8em;
 }
 ul.recommendations-list li .title {
     display: table-cell;
