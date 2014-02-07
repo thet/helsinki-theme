@@ -131,7 +131,7 @@ a:hover {
 }
 
 #the_logo a {
-    padding: none;
+    padding: 0;
 }
 
 #the_logo a:hover,
