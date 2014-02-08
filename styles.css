@@ -132,10 +132,18 @@ a:hover {
     color: black;
     text-transform: uppercase;
 }
-#the_navigation ul a {
+#the_navigation > li > ul > li > a {
     color: black;
-    font-weight: normal;
+    font-size: 1.2em;
+    font-weight: bold;
 }
+#the_navigation ul ul a {
+    color: black;
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1.6em;
+}
+
 
 #the_logo a {
     padding: 0;
@@ -376,20 +384,16 @@ ul#the_navigation > li:hover > ul {
     display: block;
 }
 ul#the_navigation > li > ul > li {
-    margin: 1em;
-    color: black;
-    font-size: 1.2em;
+    margin: 1em 0.5em 0.5em 0.5em;
     display: inline-block;
     vertical-align: top;
 }
 
 ul#the_navigation ul ul {
-    margin: 0.2em 0 0 0.5em;
+    margin: 0.2em 0 0 1em; /**/
 }
 ul#the_navigation ul ul li {
     display: list-item;
-    font-size: 0.8em;
-    line-height: 1.6em;
 }
 ul#the_navigation > ul li.navTreeItemInPath,
 ul#the_navigation > ul li.navTreeCurrentNode { font-weight: bold; }
