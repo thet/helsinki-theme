@@ -45,19 +45,19 @@ body {
 
 
 h1 {
-    font-size:2em;
+    font-size:1.6em;
     line-height: 1.2em;
     margin-top: 0;
     margin-bottom: 1em;
     text-transform: uppercase; }
 h2 {
-    font-size: 1.5em;
+    font-size: 1.4em;
     line-height: 1.2em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     text-transform: uppercase; }
 h3 {
-    font-size: 1.3em;
+    font-size: 1.2em;
     line-height: 1.1em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -113,7 +113,6 @@ table.listing, table.plain { background:white; }
 a {
     color: darkblue;
     font-weight: bold;
-    padding: 0 0.5em;
     text-decoration: none;
 }
 #the_metamenu a:hover,
@@ -1093,7 +1092,7 @@ ul.nowplaying li {
 
 ul.recommendations-list {
     display: table;
-    border-spacing: 0.5em 1em;
+    border-spacing: 0.5em 0.5em;
 }
 ul.recommendations-list li {
     display: table-row;
