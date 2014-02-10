@@ -104,13 +104,13 @@
 <match path="regex:.*foldercontents_get_table" abort="1" />
 <!-- plone popups -->
 <match path="regex:.*contenthistorypopup.*" abort="1" />
-<match path="regex:.*refbrowser_popup.*" abort="1" /> 
-<match path="regex:.*/image_view_fullscreen$" abort="1" /> 
+<match path="regex:.*refbrowser_popup.*" abort="1" />
+<match path="regex:.*/image_view_fullscreen$" abort="1" />
 
 <!-- TinyMCE -->
 <match path="regex:^/portal_javascripts/.*" abort="1" />
 <match path="regex:.*/themes/advanced/.*" abort="1" />
-<match path="regex:.*/plugins/.*" abort="1" /> 
+<match path="regex:.*/plugins/.*" abort="1" />
 
 
 <match path="regex:.*\.css$" abort="1" />
@@ -121,10 +121,12 @@
   <theme href="/livestream?deliv_force_external=1;deliv_full_headers=1" />
   <replace content="/html/head/title" theme="/html/head/title"/>
   <drop theme="/html/head/base"/>
+  <drop theme="link[rel='kss-base-url']"/>
   <drop theme="#portal-breadcrumbs"/>
+  <drop theme="a[href *= 'deliv_force_external=1']"/>
+
   <drop content="script[src *= 'jquery.min.js']"/>
   <drop content="script[src *= 'jquery.tools.min.js']"/>
-  
   <append content="/html/head/script" theme="/html/head/link[last()]"/>
   <append content="link[href *= 'css']" theme="/html/head/link[last()]"/>
 
@@ -134,6 +136,13 @@
   <prepend href="/programm/current_box/"
     content="children:body"
     theme="children:#column-1" /-->
+
+  <!-- for some reason, i need this here -->
+  <append
+      href="/livestream"
+      content="children:#portal-column-two dl.portletNavigationTree ul.navTreeLevel0"
+      theme="children:#the_navigation"/>
+
   <replace content="children:#content-main" theme="children:#column-main" />
 </rule>
 
@@ -179,7 +188,6 @@
   <drop theme="link[rel='kss-base-url']"/>
   <drop theme="attributes(class):#the_navigation li a"/>
   <drop theme="#portal-breadcrumbs"/>
-  
   <drop theme="a[href *= 'deliv_force_external=1']"/>
 
   <replace content="children:#content-main" theme="children:#column-main" />
@@ -281,10 +289,10 @@
   <drop
     if-content="not:body.template-atct_edit"
     theme="link[href *= 'calendar-system']"/>
-  
+
   <!-- Add in the Plone-created CSS, KSS and JS in addition to the static ones -->
   <!-- drop theme="link[href *= 'plonebase']"/-->
-  
+
   <drop content="link[href *= 'public']"/>
   <drop content="link[href *= 'columns']"/>
   <drop content="link[href *= 'portlets']"/>
@@ -293,7 +301,7 @@
   <drop content="link[href *= 'invisibles']"/>
   <drop content="link[href *= 'print']"/>
   <drop content="link[href *= 'mobile']"/>
-  
+
   <prepend content="/html/head/style" theme="/html/head/link[1]"/>
   <prepend content="link[href *= 'css']" theme="/html/head/link[1]"/>
   <prepend content="link[rel *= 'kinetic-stylesheet']" theme="/html/head/link"/>
@@ -349,7 +357,7 @@
       content="children:#portal-column-one dl.portletTeaser dd"
       theme="children:#column-main #teaser-main" />
   <drop content="#portal-column-one dl.portletTeaser"/>
- 
+
   <!-- Portlets -->
   <drop content="tag:div[id *= 'portletwrapper']"/>
   <drop content="span.portletTopLeft"/>
