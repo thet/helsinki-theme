@@ -383,7 +383,7 @@ ul#the_navigation > li:hover > ul {
     display: block;
 }
 ul#the_navigation > li > ul > li {
-    margin: 1em 0.5em 0.5em 0.5em;
+    margin: 1em;
     display: inline-block;
     vertical-align: top;
 }
