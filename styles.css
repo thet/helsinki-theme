@@ -1,7 +1,11 @@
 .portletTeaser dt { display:none; }
-
-
 .section-news.template-folder_summary_view #parent-fieldname-title { display: none; }
+
+.template-login_form #column-main {
+    margin-top: 10px;
+    left: 160px;
+}
+
 /*
  * don't like hiding titles anymore. nav doesnt show them anymore.
  */
@@ -126,6 +130,8 @@ a:hover {
     background:black;
     text-decoration: none;
 }
+
+h2 a { color: black; }
 
 #the_metamenu a {
     color: black;
@@ -445,6 +451,7 @@ ul#the_navigation ul ul ul { display: none; }
     width:213px;
     margin-top:-65px;
     margin-right:10px;
+    min-height: 100px; /* fix column-2 reaching too far to left */
 }
 #column-2 {
     margin-top:12px;
@@ -473,8 +480,9 @@ ul#the_navigation ul ul ul { display: none; }
     color:#FBD62A !important; }
 #column-main.fullwidth {
     left:0;
-    margin-right:0;
-    width:960px; }
+    margin:0;
+    width:960px;
+}
 
 /* portlets */
 #column-1, #column-2 { overflow:hidden; }
