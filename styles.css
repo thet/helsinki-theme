@@ -574,31 +574,32 @@ span.findfacebook span { display:none; }
 .portlet-static-support-us dt,
 .portlet-static-facebook dt,
 .portlet-static-mach-mit dt { display:none; }
-.portlet-static-support-us dd p a,
-.portlet-static-mach-mit dd p a { color:black !important; }
-.portlet-static-support-us dd p,
-.portlet-static-mach-mit dd p {
+.portlet-static-support-us dd a,
+.portlet-static-mach-mit dd a { color:black !important; }
+.portlet-static-support-us dd a,
+.portlet-static-mach-mit dd a {
+    display:block;
     padding:5px;
     background-repeat:repeat;
-    display:block;
     margin:0 0 6px 0;
     font-weight:bold;
     font-size:20px;
     line-height:24px;
     text-transform:uppercase; }
+.portlet-static-mach-mit dd a { display: none; } /* show one item randomly via javascript */
 
-.portlet-static-support-us dd p { background-image:url(img/str-vert.png); }
-.portlet-static-mach-mit dd p { background-image:url(img/str-quer-spiegel.png); }
-.portlet-static-mach-mit dd p+p { background-image:url(img/str-vert.png); }
-.portlet-static-mach-mit dd p+p+p { background-image:url(img/pkt.png); }
-.portlet-static-mach-mit dd p+p+p+p { background-image:url(img/str-quer.png); }
-.portlet-static-mach-mit dd p+p+p+p+p { background-image:url(img/str-vert.png); }
-.portlet-static-mach-mit dd p+p+p+p+p+p { background-image:url(img/str-quer-spiegel.png); }
-.portlet-static-mach-mit dd p+p+p+p+p+p+p { background-image:url(img/pkt.png); }
-.portlet-static-mach-mit dd p+p+p+p+p+p+p+p { background-image:url(img/str-vert.png); }
-.portlet-static-mach-mit dd p+p+p+p+p+p+p+p+p { background-image:url(img/str-quer.png); }
-.portlet-static-mach-mit dd p+p+p+p+p+p+p+p+p+p { background-image:url(img/str-quer-spiegel.png); }
-.portlet-static-mach-mit dd p+p+p+p+p+p+p+p+p+p+p { background-image:url(img/str-vert.png); }
+.portlet-static-support-us dd a { background-image:url(img/str-vert.png); }
+.portlet-static-mach-mit dd a:nth-child(1) { background-image:url(img/str-quer-spiegel.png); }
+.portlet-static-mach-mit dd a:nth-child(2) { background-image:url(img/str-vert.png); }
+.portlet-static-mach-mit dd a:nth-child(3) { background-image:url(img/pkt.png); }
+.portlet-static-mach-mit dd a:nth-child(4) { background-image:url(img/str-quer.png); }
+.portlet-static-mach-mit dd a:nth-child(5) { background-image:url(img/str-vert.png); }
+.portlet-static-mach-mit dd a:nth-child(6) { background-image:url(img/str-quer-spiegel.png); }
+.portlet-static-mach-mit dd a:nth-child(7) { background-image:url(img/pkt.png); }
+.portlet-static-mach-mit dd a:nth-child(8) { background-image:url(img/str-vert.png); }
+.portlet-static-mach-mit dd a:nth-child(9) { background-image:url(img/str-quer.png); }
+.portlet-static-mach-mit dd a:nth-child(10) { background-image:url(img/str-quer-spiegel.png); }
+.portlet-static-mach-mit dd a:nth-child(11) { background-image:url(img/str-vert.png); }
 
 
 #column-1 dl { background-image:url(img/pkt.png); }
@@ -730,8 +731,8 @@ ul#the_navigation ul li a.navTreeItemInPath,
         2px 2px 0px #FBD62A; }
 
 ul#the_navigation > li > a,
-.portlet-static-support-us dd p a:hover,
-.portlet-static-mach-mit dd p a:hover,
+.portlet-static-support-us dd a:hover,
+.portlet-static-mach-mit dd a:hover,
 .text_shadow_3 {
     text-shadow:
         -3px 0px 0px #FBD62A,
@@ -762,8 +763,8 @@ ul#the_navigation > li > a,
         -3px -3px 0px #FBD62A,
         3px 3px 0px #FBD62A; }
 
-.portlet-static-support-us dd p,
-.portlet-static-mach-mit dd p,
+.portlet-static-support-us dd a,
+.portlet-static-mach-mit dd a,
 .text_shadow_3_white {
     text-shadow:
         -3px 0px 0px white,
