@@ -155,9 +155,7 @@ h2 a { color: black; }
 }
 
 #the_logo a:hover,
-.portlet-static-support-us a:hover,
-.portlet-static-facebook a:hover,
-.portlet-static-mach-mit a:hover {
+.portlet-static-facebook a:hover {
     background: none;
 }
 
