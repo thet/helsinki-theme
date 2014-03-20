@@ -235,11 +235,11 @@
   <!-- append if-content="link[href *= 'jquery-ui.css']"
     content="link[href *= 'jquery-ui.css']"
     theme="/html/head/script" /-->
-  <append if-content="script[src *= 'programcalendar.js']"
+  <!--append if-content="script[src *= 'programcalendar.js']"
     content="script[src *= 'programcalendar.js']"
-    theme="/html/head/script" />
-  <append if-content="script[src *= 'jquery.ui.datepicker-de.js']"
-    content="script[src *= 'jquery.ui.datepicker-de.js']"
+    theme="/html/head/script" /-->
+  <append if-content="script[src *= 'jquery.ui.datepicker.min.js']"
+    content="script[src *= 'jquery.ui.datepicker.min.js']"
     theme="/html/head/script" />
   <append if-content="script[src *= 'jquery-ui.min.js']"
     content="script[src *= 'jquery-ui.min.js']"

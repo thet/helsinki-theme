@@ -30,4 +30,14 @@ jQuery(document).ready(function () {
             jQuery("#onair input").val(nop_str);
         }
     });
+
+    jQuery("#calendar").datepicker({
+        dateFormat: "yy.mm.dd",
+        defaultDate: window.location.href.split('/').slice(4, 7).join('.'),
+        onSelect: function (dateText, inst) {
+            window.location = '/programm/' + dateText.split('.').join('/');
+        }
+    });
+
+
 });
