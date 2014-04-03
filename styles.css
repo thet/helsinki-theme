@@ -483,6 +483,7 @@ ul#the_navigation ul ul ul { display: none; }
 }
 
 /* portlets */
+dd { margin-bottom: 0.5em; }
 #column-1, #column-2 { overflow:hidden; }
 #column-1 dl, #column-2 dl { margin: 0 0 12px 0; }
 #column-2 a { text-decoration: none; }
@@ -491,7 +492,9 @@ ul#the_navigation ul ul ul { display: none; }
     text-transform:uppercase;
     text-align:center;
     line-height:1.4em; }
-#column-1 dd, #column-2 dd { font-size:95%; }
+#column-1 dd, #column-2 dd {
+    font-size:95%;
+}
 
 #column-1 dl {
     background:url(img/pkt.png) repeat;
