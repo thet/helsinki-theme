@@ -502,7 +502,10 @@ ul#the_navigation ul ul ul { display: none; }
     background:white;
     padding:4px 6px 4px 6px; }
 
-#column-2 dt, #column-2 dd { text-align:center; }
+.portlet-static-mach-mit,
+.portlet-static-support-us { text-align: center; }
+#column-2 dd { font-size: 0.8em; }
+
 #column-2 dt {
     background:url(img/str-vert.png);
     padding:10px;
