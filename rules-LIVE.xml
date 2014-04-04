@@ -73,6 +73,8 @@
   <dest href="http://localhost:8106/VirtualHostBase/http/helsinki.at:80/radio-helsinki/helsinki/VirtualHostRoot/" />
 </proxy>
 
+<match path="/vonunten-neu" class="common plone vonunten" />
+
 <!-- match everything below the root but not urls beginning with programm -->
 <match path="regex:\/(?!(programm|nowplaying)).+$" class="common plone box-comments" /><!-- no comments everywhere -->
 <!--match path="regex:\/(?!programm).+$" class="common plone comments box-comments" /-->
@@ -143,6 +145,14 @@
     content="children:body"
     theme="children:#column-1" />
 </rule>
+
+<rule class="vonunten" suppress-standard="1">
+  <append href="/static/snippets.html"
+    content="#vonunten_twitter"
+    theme="children:#column-2"/>
+</rule>
+
+
 
 
 <!-- DJANGO -->
