@@ -15,14 +15,14 @@
 
 <!-- now playing -->
 <proxy path="/nowplaying" class="nowplaying">
-  <dest href="https://pv.helsinki.at/nop" />
+  <dest href="http://pv.helsinki.at/nop" />
   <response rewrite-links="1" />
 </proxy>
 <proxy path="/get_current">
-  <dest href="https://pv.helsinki.at/nop/get_current" />
+  <dest href="http://pv.helsinki.at/nop/get_current" />
 </proxy>
 <proxy path="/site_media">
-  <dest href="https://pv.helsinki.at/site_media" />
+  <dest href="http://pv.helsinki.at/site_media" />
 </proxy>
 
 
@@ -48,11 +48,11 @@
 
 <!-- django proxy and matches with rewrites -->
 <!--proxy path="/programm/admin" class="dj-admin">
-  <dest href="https://pv.helsinki.at/admin" />
+  <dest href="http://pv.helsinki.at/admin" />
   <response rewrite-links="1" />
 </proxy-->
 <proxy path="/programm" class="program">
-  <dest href="https://pv.helsinki.at/program" />
+  <dest href="http://pv.helsinki.at/program" />
   <response rewrite-links="1" />
 </proxy>
 <match path="/programm/today" class="program today filter-format box-comments box-calendar box-tips" />
